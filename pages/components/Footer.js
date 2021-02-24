@@ -33,7 +33,7 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="col-xs-12 col-sm-4 col-md-4">
+          <div className="col-xs-12 col-sm-4 col-md-4 quick-links-col">
             <h5>Popular Stores</h5>
             <ul className="list-unstyled quick-links">
               {/* <li className="nav-item">

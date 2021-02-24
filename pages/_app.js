@@ -33,13 +33,14 @@ function MyApp({ Component, pageProps }) {
         </script>
         <script src="//js.mamydirect.com/js/?h=j528d0OH" type="text/javascript" async></script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-RVN1V7NSW4"></script>
-        
+        <script data-ad-client="ca-pub-1481948700257830" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       </Head>
       <Navbar />
       <div className="container main-container">
         <Component {...pageProps} />
       </div>
       <Footer />
+      
     </div>
   );
 }

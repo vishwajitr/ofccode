@@ -9,7 +9,7 @@ const Header = () => {
           <Link href="/">
             <a className="navbar-brand">OffersCode.in</a>
           </Link>
-          <button
+          {/* <button
             className="navbar-toggler"
             type="button"
             data-toggle="collapse"
@@ -19,7 +19,7 @@ const Header = () => {
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
-          </button>
+          </button> */}
 
           <div className="collapse navbar-collapse" id="navbarsExample07">
             <ul className="navbar-nav mr-auto">
@@ -51,7 +51,7 @@ const Header = () => {
 
       <nav className="navbar navbar-expand-lg navbar-light rounded">
         <div className="container">
-          <button
+          {/* <button
             className="navbar-toggler"
             type="button"
             data-toggle="collapse"
@@ -61,7 +61,7 @@ const Header = () => {
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
-          </button>
+          </button> */}
 
           <div className="collapse navbar-collapse" id="navbarsExample10">
             <ul className="navbar-nav">

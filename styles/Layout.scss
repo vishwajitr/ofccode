@@ -338,3 +338,18 @@ $color-primary: blueviolet;
     }
   }
 }
+
+
+
+
+@media only screen and (max-width: 600px) {
+  .topStores__wrapper .storeCard.storeCard-small {
+    width: 48%;
+  }
+  .footer .text-center {
+    text-align: left  !important;
+  }
+  .footer .quick-links-col{
+    padding-left: 25px ;
+  }
+}
