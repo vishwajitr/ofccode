@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <div>
       <Head>
-        <title>OffersCode.in: Coupons, Cashback, Offers and Promo Code..</title>
+        <title>OffersCode.in: Coupons, Cashback, Offers and Promo Code...</title>
         <link rel="icon" href="/favicon.ico" />
         <meta charSet="UTF-8" />
         <meta
