@@ -1,0 +1,112 @@
+@import "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.main-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  min-height: 300px;
+}
+
+.topStores__wrapper {
+  .storeCard {
+    &.storeCard-small {
+      width: 20%;
+      min-height: 200px;
+      display: inline-block;
+      vertical-align: top;
+      margin: 0px 0px 10px;
+      padding: 20px 10px;
+      text-align: center;
+      img {
+        width: 140px;
+        max-width: 100%;
+        box-shadow: 1px 1px 3px #0000002b;
+        padding: 24px;
+      }
+    }
+  }
+}
+
+.search__wrapper {
+  padding: 30px 10px;
+  background-color: #3f51b5;
+  margin-bottom: 50px;
+  .search__block {
+    text-align: center;
+    .search {
+      max-width: 350px;
+      border-radius: 5px;
+      padding: 12px;
+    }
+  }
+}
+
+.search__block {
+  position: relative;
+  z-index: 9999;
+  max-width: 300px;
+  margin: 0px auto;
+}
+
+.search {
+  border: 1px solid #666;
+  box-sizing: border-box;
+  font-size: 18px;
+  padding: 18px;
+  width: 100%;
+}
+
+.results {
+  list-style: none;
+  overflow: hidden;
+  margin: 9px 0 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.result {
+  background: #262f5f;
+  color: #eee;
+  margin: 0 0 1px;
+  padding: 8px;
+}
+
+.result a {
+  color: #eee;
+}
+
+.headerSearch {
+  .search {
+    padding: 5px 10px;
+    outline: none;
+    font-size: 15px;
+  }
+  .result {
+    background-color: #616161;
+    color: #333;
+    padding: 4px 10px;
+    margin-bottom: 1px;
+  }
+}
+
+
