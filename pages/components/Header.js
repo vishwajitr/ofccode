@@ -110,7 +110,7 @@ const Header = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link href="/store/Firstcry">
+                <Link href="/store/firstcry">
                   <a className="nav-link">FirstCry</a>
                 </Link>
               </li>
