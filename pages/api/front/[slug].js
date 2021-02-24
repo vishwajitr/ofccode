@@ -1,6 +1,6 @@
 import { store } from '../../../stores__data'
 
-// http://127.0.0.1:3000/api/store/2
+// hhttps://ofccode-api.vercel.app/api/store/2
 export default function personHandler({ query: { slug } }, res) {
   const filtered = store.filter((p) => p.slug === slug)
 

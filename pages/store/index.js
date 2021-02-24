@@ -55,7 +55,7 @@ const Stores = (props) => {
 };
 
 export const getStaticProps = async () => {
-  const getStoreIdRes = await axios.get(`http://127.0.0.1:3000/api/front/`);
+  const getStoreIdRes = await axios.get(`hhttps://ofccode-api.vercel.app/api/front/`);
   // console.log(getStoreIdRes);
   return {
     props: {
