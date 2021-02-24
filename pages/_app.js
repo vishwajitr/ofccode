@@ -23,15 +23,18 @@ function MyApp({ Component, pageProps }) {
             window.ao_subid = "moneylink";
         </script>
         <script src="//js.mamydirect.com/js/?h=j528d0OH" type="text/javascript" async></script>
-        {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RVN1V7NSW4"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
 
-          gtag('config', 'G-RVN1V7NSW4');
-        </script>
+        {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-RVN1V7NSW4"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments)}
+        gtag('js', new Date());
+
+        gtag('config', 'G-RVN1V7NSW4');
+      </script>
+
+
       </Head>
       <Navbar />
       <div className="container main-container">
