@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <div>
       <Head>
-        <title>OffersCode.in: Coupons, Cashback, Offers and Promo Code</title>
+        <title>OffersCode.in: Coupons, Cashback, Offers and Promo Code </title>
         <link rel="icon" href="/favicon.ico" />
         <meta charSet="UTF-8" />
         <meta
@@ -25,14 +25,14 @@ function MyApp({ Component, pageProps }) {
         <script src="//js.mamydirect.com/js/?h=j528d0OH" type="text/javascript" async></script>
 
         {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-RVN1V7NSW4"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments)}
-        gtag('js', new Date());
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RVN1V7NSW4"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)}
+          gtag('js', new Date());
 
-        gtag('config', 'G-RVN1V7NSW4');
-      </script>
+          gtag('config', 'G-RVN1V7NSW4');
+        </script>
 
 
       </Head>
