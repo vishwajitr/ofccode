@@ -1,10 +1,19 @@
 import Head from "next/head";
+import TagManager from 'react-gtm-module'
 import Navbar from "./components/Header";
 import Footer from "./components/Footer";
 import "../styles/global.scss";
 import "../styles/Layout.scss";
 
+
+const tagManagerArgs = {
+  gtmId: 'GTM-WQDK67V'
+}
+if (process.browser) {
+  TagManager.initialize(tagManagerArgs);
+}
 function MyApp({ Component, pageProps }) {
+ 
   return (
     <div>
       <Head>
@@ -23,18 +32,8 @@ function MyApp({ Component, pageProps }) {
             window.ao_subid = "moneylink";
         </script>
         <script src="//js.mamydirect.com/js/?h=j528d0OH" type="text/javascript" async></script>
-
-        {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-RVN1V7NSW4"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments)}
-          gtag('js', new Date());
-
-          gtag('config', 'G-RVN1V7NSW4');
-        </script>
-
-
+        
       </Head>
       <Navbar />
       <div className="container main-container">
