@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import _ from "lodash";
 import Moment from "moment";
-import GoTo from "../../goto";
 import Link from "next/link";
 
 
@@ -11,8 +10,8 @@ const getParsedDate = (date) => {
 
 const Card = (props) => {
   const couponsData = (props.couponsData1)? props.couponsData1.data: {};
-  const store__logo = props.storeInfo.slug;
-  const store__name = props.storeInfo.name;
+  const store__logo = (props.storeInfo)? props.storeInfo.slug: {};
+  const store__name = (props.storeInfo)? props.storeInfo.name: {};
  
 
     return (
