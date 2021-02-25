@@ -7,7 +7,7 @@ const Header = () => {
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
           <Link href="/">
-            <a className="navbar-brand">OffersCode.in</a>
+            <a className="navbar-brand">OffersCode<small>.In</small></a>
           </Link>
           {/* <button
             className="navbar-toggler"

@@ -6,8 +6,8 @@ const StoreCard = (props) => {
             <div className="StoreCard__image">
                <img src={`/stores__logo/${(props.storeInfo)? props.storeInfo.slug : ""}-logo-large.jpg`}/>  
             </div>
-            <div className="StoreCard__name"><i className="fas fa-store"></i> Shop on {(props.storeInfo)? props.storeInfo.name : ""}</div>
-            <div className="StoreCard__ratings"><Link href="/"><a>Home</a></Link> = <Link href={`/stores/`}><a>Stores</a></Link></div>
+            <div className="StoreCard__name"><i className="fas fa-store"></i> <Link href="/"><a>Shop on {(props.storeInfo)? props.storeInfo.name : ""}</a></Link></div>
+            <div className="StoreCard__ratings"><Link href="/" title="OffersCode.in | Home"><a>Home</a></Link> <i className="fas fa-angle-right"></i> <Link href={`/stores/`}><a>Stores</a></Link></div>
             <div className="StoreCard__ratings">
             <img src="/5star.png"/>
             </div>

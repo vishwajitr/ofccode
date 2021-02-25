@@ -3,7 +3,7 @@ class PrivacyPage extends Component {
   render() {
     return (
       <section>
-        <div class="nv-content-wrap entry-content">
+        <div className="nv-content-wrap entry-content">
           <h2>Privacy Policy for OffersCode</h2>
 
           <p>

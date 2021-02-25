@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="row text-center text-xs-center text-sm-left text-md-left">
           <div className="col-xs-12 col-sm-4 col-md-4">
             <div className="col-xs-12 col-sm-12 col-md-12">
-              <h3 className="footer-logo-text">OffersCode.in</h3>
+              <h3 className="footer-logo-text">OffersCode<small>.In</small></h3>
               <p>
                 OffersCode.in, one source for all things offers,
                 deals and coupons. We’re dedicated to providing you the best of
@@ -108,16 +108,9 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="row">
-          <hr />
-        </div>
-        <div className="row">
-          <div className="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-            <p className="h6">OffersCode.in © All right Reversed.</p>
-            <br />
+          <div className="col-md-12">
+            <p className="h6">OffersCode<small>.In</small> © All right Reversed.</p>
           </div>
-          <hr />
-        </div>
       </div>
     </section>
   );

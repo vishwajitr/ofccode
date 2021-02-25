@@ -8,8 +8,9 @@ const TopStores = ({ storeInfo }) => {
   // return 'abc';
   const array = storeInfo;
   const LiElements = array.map((store, index) => (
-    <li className="storeCard storeCard-small " key={index}>
-      <Link href="/store/${store.slug}" as={`/store/${store.slug}`}>
+    <li className="storeCard-Col" key={index}>
+     <div  className="storeCard storeCard-small">
+     <Link href="/store/${store.slug}" as={`/store/${store.slug}`}>
         <a>
           <img src={`/stores__logo/${store.slug}-logo-large.jpg`} />
         </a>
@@ -19,6 +20,7 @@ const TopStores = ({ storeInfo }) => {
           <a className="nav-link">{store.name}</a>
         </h5>
       </Link>
+       </div> 
     </li>
   ));
   return LiElements;
@@ -35,7 +37,7 @@ const Index = (props) => {
           Top Stores
         </h3>
 
-        <TopStores storeInfo={props.storeInfo} />
+        <ul className="topStores__Ul"><TopStores storeInfo={props.storeInfo} /></ul>
       </div>
     </div>
   );

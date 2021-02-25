@@ -1,9 +1,28 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import _ from "lodash";
+import Moment from "moment";
 var Papa = require("papaparse");
 import { useRouter } from 'next/router';
 import Content from "../components/Content";
+
+const getParsedDate = () => {
+  var d = new Date();
+  var month = new Array();
+  month[0] = "January";
+  month[1] = "February";
+  month[2] = "March";
+  month[3] = "April";
+  month[4] = "May";
+  month[5] = "June";
+  month[6] = "July";
+  month[7] = "August";
+  month[8] = "September";
+  month[9] = "October";
+  month[10] = "November";
+  month[11] = "December";
+  return month[d.getMonth()];
+}
 
 
 const StorePage =  (props) => {
@@ -12,7 +31,7 @@ const router = useRouter()
 
   return (
     <div>     
-    <Content {...props} headerTag1={"Coupons and Promo Code : " + props.storeInfo.slug}/>
+    <Content {...props} headerTag1={props.storeInfo.slug + " Coupons, Offers, Promo Codes & Coupons Codes " +getParsedDate() + " 2021"}/>
     </div>
   );   
 }
