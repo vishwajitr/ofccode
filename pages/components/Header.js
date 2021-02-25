@@ -105,8 +105,8 @@ const Header = () => {
 
 
               <li className="nav-item">
-                <Link href="/store/paytmmall">
-                  <a className="nav-link">PaytmMall</a>
+                <Link href="/store/buywow">
+                  <a className="nav-link">Wow</a>
                 </Link>
               </li>
               <li className="nav-item">

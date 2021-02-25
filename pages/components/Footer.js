@@ -56,8 +56,8 @@ const Footer = () => {
               </li> */}
               <li className="nav-item">
                 <i className="fas fa-angle-double-right"></i>
-                <Link href="/store/paytmmall">
-                  <a>PaytmMall</a>
+                <Link href="/store/buywow">
+                  <a>Wow</a>
                 </Link>
               </li>
               <li className="nav-item">
