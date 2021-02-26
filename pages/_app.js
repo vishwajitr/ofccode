@@ -1,23 +1,53 @@
+import React, { useState, useEffect } from 'react';
 import Head from "next/head";
 import TagManager from 'react-gtm-module'
 import Navbar from "./components/Header";
 import Footer from "./components/Footer";
 import "../styles/global.scss";
 import "../styles/Layout.scss";
-
+import { useReducer } from "react";
 
 const tagManagerArgs = {
   gtmId: 'GTM-WQDK67V'
 }
 if (process.browser) {
   TagManager.initialize(tagManagerArgs);
+  
 }
+
+
+
+
 function MyApp({ Component, pageProps }) {
- 
+
+  // Similar to componentDidMount and componentDidUpdate:
+  useEffect(() => {
+    window.OneSignal = window.OneSignal || [];
+    const OneSignal = window.OneSignal;
+  
+    OneSignal.push(()=> {
+      OneSignal.init(
+        {
+          appId: "b0bdcbd7-4c41-46e8-89db-1984ea5e49e1", //STEP 9         
+          welcomeNotification: {
+            "title": "One Signal",
+            "message": "Thanks for subscribing!",
+          } 
+      },
+        //Automatically subscribe to the new_app_version tag
+        OneSignal.sendTag("new_app_version", "new_app_version", tagsSent => {
+          // Callback called when tag has finished sending
+          console.log('new_app_version TAG SENT', tagsSent);
+        })
+      );
+    });
+
+  });
+
   return (
     <div>
       <Head>
-        <title>OffersCode.in | Coupons, Cashback, Offers and Promo Code </title>
+        <title>OffersCode.in | Coupons, Cashback, Offers and Promo Code</title>
         <link rel="icon" href="/favicon.ico" />
         <meta charSet="UTF-8" />
         <meta
@@ -33,7 +63,8 @@ function MyApp({ Component, pageProps }) {
         </script>
         <script src="//js.mamydirect.com/js/?h=j528d0OH" type="text/javascript" async></script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-RVN1V7NSW4"></script>
-        <script data-ad-client="ca-pub-1481948700257830" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script data-ad-client="ca-pub-1481948700257830" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>     
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
       </Head>
       <Navbar />
       <div className="container main-container">
