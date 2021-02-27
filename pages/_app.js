@@ -50,14 +50,43 @@ function MyApp({ Component, pageProps }) {
         <title>OffersCode.in | Coupons, Cashback, Offers and Promo Code</title>
         <link rel="icon" href="/favicon.ico" />
         <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content="Coupons, Deals" />
         <meta
           name="description"
           content="Now SAVE MORE with OffersCode! Get the latest and up-to-date coupons, cashback offers on some of India’s top online shopping sites like Amazon, Paytm, Snapdeal, Flipkart, Myntra and many more at OffersCode.in."
         />
-        <meta name="keywords" content="Coupons, Deals" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:site_name" content="OffersCode" />
-        <meta itemProp="url" name="url" content="https://www.offersCode.in" />
+        <meta itemProp="url" name="url" content="https://offersCode.in" />
+                
+        {/* <!-- Open Graph Meta tags --> */}        
+        <link rel="canonical" href="https://offerscode.in/" />
+        <meta property="og:site_name" content="offerscode.in" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Offerscode.in" />
+        <meta property="og:url" content="https://offerscode.in/" />
+        <meta property="og:description" content="Now SAVE MORE with OffersCode! Get the latest and up-to-date coupons, cashback offers on some of India’s top online shopping sites like Amazon, Paytm, Snapdeal, Flipkart, Myntra and many more at OffersCode.in." />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content="logo.jpg" />
+        <meta property="og:article:published_time" content=""/>
+        
+        {/* <!-- twitter Meta tags --> */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:description" content="Now SAVE MORE with OffersCode! Get the latest and up-to-date coupons, cashback offers on some of India’s top online shopping sites like Amazon, Paytm, Snapdeal, Flipkart, Myntra and many more at OffersCode.in." />
+        <meta name="twitter:title" content="offerscode.in" />
+        <meta name="twitter:site" content="@offerscodein" />
+        <meta name="twitter:creator" content="@offerscodein" />
+
+        
+
+
+        {/* <!-- Standard Meta tags --> */}
+        <meta itemProp="name" content="offerscode.in"/>
+        <meta itemProp="description" content="Now SAVE MORE with OffersCode! Get the latest and up-to-date coupons, cashback offers on some of India’s top online shopping sites like Amazon, Paytm, Snapdeal, Flipkart, Myntra and many more at OffersCode.in."/>
+        <meta itemProp="image" content="logo.jpg"/>
+
+
+
+        
         <script>
             window.ao_subid = "moneylink";
         </script>

@@ -38,7 +38,7 @@ const Card = (props) => {
                             <div className="deal__info-subtext">Off</div>
                           </div>
                         ) : (
-                          <div><img src={`/stores__logo/${(props.storeInfo)? props.storeInfo.slug : ""}-logo-large.jpg`}/>  </div>
+                          <div><img src={`/stores__logo/${(props.storeInfo)? props.storeInfo.slug : ""}-logo-large.jpg`} alt="{value[1]}"/>  </div>
                         )}
                       </div>
                     </div>
@@ -55,6 +55,7 @@ const Card = (props) => {
                            data-website={value[2]}
                            target="_blank"
                            title={`OffersCode.in - Promo code for `+ store__name +` deal `+value[1]}
+                           rel="nofollow"
                          >
                            <h2>{value[1]}</h2>
                          </a>
@@ -82,6 +83,7 @@ const Card = (props) => {
                            data-website={value[2]}
                            target="_blank"
                            title={`OffersCode.in - Promo code for `+ store__name +` deal `+value[1]}
+                           rel="nofollow"
                          >
                            {value[9]}
                          </a>
@@ -100,6 +102,7 @@ const Card = (props) => {
                             data-website={value[2]}
                             target="_blank"
                             // gotoLink = {value[11]}  
+                            rel="nofollow"
                           >
                             Get Deal
                           </a>
