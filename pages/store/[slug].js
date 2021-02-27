@@ -30,7 +30,7 @@ const router = useRouter()
 
   return (
     <div>     
-    <Content {...props} headerTag1={props.storeInfo.slug + " Coupons, Offers, Promo Codes & Coupons Codes " +getParsedDate() + " 2021"}/>
+    <Content {...props} headerTag1={props.storeInfo.name + " Coupons, Offers, Promo Codes & Coupons Codes " +getParsedDate() + " 2021"} description={props.storeInfo.metaInfo.desc}/>    
     </div>
   );   
 }
