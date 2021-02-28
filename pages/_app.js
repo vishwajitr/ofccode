@@ -5,7 +5,6 @@ import Navbar from "./components/Header";
 import Footer from "./components/Footer";
 import "../styles/global.scss";
 import "../styles/Layout.scss";
-import { useReducer } from "react";
 
 const tagManagerArgs = {
   gtmId: 'GTM-WQDK67V'
@@ -14,9 +13,6 @@ if (process.browser) {
   TagManager.initialize(tagManagerArgs);
   
 }
-
-
-
 
 function MyApp({ Component, pageProps }) {
 
@@ -76,24 +72,18 @@ function MyApp({ Component, pageProps }) {
         <meta name="twitter:site" content="@offerscodein" />
         <meta name="twitter:creator" content="@offerscodein" />
 
-        
-
-
         {/* <!-- Standard Meta tags --> */}
         <meta itemProp="name" content="offerscode.in"/>
         <meta itemProp="description" content="Now SAVE MORE with OffersCode! Get the latest and up-to-date coupons, cashback offers on some of India’s top online shopping sites like Amazon, Paytm, Snapdeal, Flipkart, Myntra and many more at OffersCode.in."/>
         <meta itemProp="image" content="logo.jpg"/>
 
-
-
-        
         <script>
-            window.ao_subid = "moneylink";
+        window.ao_subid = "moneylink";
         </script>
         <script src="//js.mamydirect.com/js/?h=j528d0OH" type="text/javascript" async></script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-RVN1V7NSW4"></script>
         <script data-ad-client="ca-pub-1481948700257830" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>     
-        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+        <script src="//cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
       </Head>
       <Navbar />
       <div className="container main-container">
