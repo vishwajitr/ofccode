@@ -28,22 +28,22 @@ const getParsedDate = () => {
 const StorePage =  (props) => {
 const router = useRouter()
   // const { slug } = router.query
-  const { domainName } = 'https://offerscode.in';
+  const domainName = 'https://offerscode.in';
   let relatedKeyword = false;
   if(props.storeInfo.name){
     relatedKeyword = true;
   }
-  // console.log(router);
+  console.log(router);
   return (
     <div>     
     <Content {...props} headerTag1={props.storeInfo.name + " Coupons, Offers, Promo Codes & Coupons Codes " +getParsedDate() + " 2021"} description={props.storeInfo.metaInfo.desc}/>    
     {relatedKeyword && (props.storeInfo.name=='Boat') ? (<div>
       <h3>Related Keywords</h3>  
       <ul>
-        <li><Link href={domainName+`/?dealtype=`+ props.storeInfo.name +` coupons`}><a>which earphone is best in {props.storeInfo.name}</a></Link></li>
-        <li><Link href={domainName+`/?dealtype=`+ props.storeInfo.name +` deals`}><a>{props.storeInfo.name} Deals</a></Link></li> 
-        <li><Link href={domainName+`/?dealtype=`+ props.storeInfo.name +` promo-code`}><a>{props.storeInfo.name} PromoCode</a></Link></li> 
-        <li><Link href={domainName+`/?dealtype=latest-offers =`+ props.storeInfo.name +` `}><a>Latest {props.storeInfo.name} Offers</a></Link></li>          
+        <li><Link href={domainName + router.asPath +`/?dealtype=`+ props.storeInfo.name +` coupons`}><a>which earphone is best in {props.storeInfo.name}</a></Link></li>
+        <li><Link href={domainName + router.asPath +`/?dealtype=`+ props.storeInfo.name +` deals`}><a>{props.storeInfo.name} Deals</a></Link></li> 
+        <li><Link href={domainName + router.asPath +`/?dealtype=`+ props.storeInfo.name +` promo-code`}><a>{props.storeInfo.name} PromoCode</a></Link></li> 
+        <li><Link href={domainName + router.asPath +`/?dealtype=latest-offers =`+ props.storeInfo.name +` `}><a>Latest {props.storeInfo.name} Offers</a></Link></li>          
       </ul>
     </div>): (<div></div>)}
     </div>
