@@ -62,7 +62,7 @@ const Footer = () => {
               </li>
               <li className="nav-item">
                 <i className="fas fa-angle-double-right"></i>
-                <Link href="/firstcry-coupons">
+                <Link href="/firstcry">
                   <a>FirstCry</a>
                 </Link>
               </li>
