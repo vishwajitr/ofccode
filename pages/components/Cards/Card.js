@@ -62,11 +62,8 @@ const Card = (props) => {
                         {/* <p>{value[15]}</p> */}
                       </div>
                       <div className="deal__desc-meta">
-                        <span className="deal__desc-meta-lastused">
-                          Lasted Updated{" "}
-                          <span>{getParsedDate(value[12])}</span>
-                         
-
+                        <span className="deal__desc-meta-lastused">   
+                        <i className="fa fa-users"></i>&nbsp;<b>{Math.floor(Math.random() * 200) + 11  }</b> People Used Today   
                         </span>
                       </div>
 
@@ -109,7 +106,9 @@ const Card = (props) => {
                           </Link>
                           </div>
                           )}
-                        
+                        <span className="deal__cta-meta"> 
+                        {(value[13]!=='None') ? 'Expiring In '+ getParsedDate(value[13]) : '' }  
+                        </span>
                       </div>
                       {/* <a
                          href={value[11]}
@@ -125,6 +124,7 @@ const Card = (props) => {
                         </a> */}
                         
                       {/* <div>{value[4]}</div> */}
+                      
                     </div>
                   </div>
                 </div>

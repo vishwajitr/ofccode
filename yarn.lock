@@ -2646,6 +2646,11 @@ watchpack@^2.0.0:
     glob-to-regexp "^0.4.1"
     graceful-fs "^4.1.2"
 
+web-social-share@^7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/web-social-share/-/web-social-share-7.1.0.tgz#f0c8c79da88f89fddc78ade0c9f7db3c5106e0e9"
+  integrity sha512-Jtf4kPM9J+P7MNNXNKI9Gi4AgFi6mI1FxtS8wbPSrlES9aZVfkxn+COrMFXHd7fKTsHQiTd6vZx0O/XUYsX/QQ==
+
 webidl-conversions@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"

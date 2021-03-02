@@ -483,7 +483,12 @@ body {
       right: 12px;
       border-radius: 50px;
       font-weight: 700;
-   
+      &-meta{
+        display: inline-block;
+        color: #8a8a8a;
+        font-size: 12px;
+        font-weight: 400;
+      }
     
       &:hover {
         background-color: $color-primary;
