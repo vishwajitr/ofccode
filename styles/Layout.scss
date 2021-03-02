@@ -68,6 +68,12 @@ body {
     font-weight: 700;
     margin-bottom: 8px;
   }
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    margin-top: 10px;
+  }
 }
 
 .cardRow {
@@ -408,10 +414,15 @@ body {
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center;
+      &-storeName {
+        font-size: 12px;
+        font-weight: normal;
+        letter-spacing: 0.5px;
+        color: #333;
+      }
       &-text {
         font-size: 22px;
         font-weight: 900;
-        letter-spacing: 0.5px;
       }
       &-subtext {
         text-transform: uppercase;
@@ -433,7 +444,7 @@ body {
       font-family: Lato;
     }
     &-title {
-      h2 {
+      h3 {
         margin-top: 4px;
         font-size: 20px;
         font-weight: 700;

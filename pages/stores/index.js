@@ -1,6 +1,6 @@
 
 import Link from "next/link";
-import Search from "./components/Search";
+import Search from "../components/Search";
 import axios from "axios";
 
 const TopStores = ({ storeInfo }) => {

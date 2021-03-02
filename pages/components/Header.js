@@ -105,22 +105,22 @@ const Header = () => {
 
 
               <li className="nav-item">
-                <Link href="/store/buywow">
+                <Link href="/buywow">
                   <a className="nav-link">Wow</a>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link href="/store/firstcry">
+                <Link href="/firstcry">
                   <a className="nav-link">FirstCry</a>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link href="/store/boatlifestyle">
+                <Link href="/boatlifestyle">
                   <a className="nav-link">Boat</a>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link href="/store/tatacliq">
+                <Link href="/tatacliq">
                   <a className="nav-link">Tata Cliq</a>
                 </Link>
               </li>

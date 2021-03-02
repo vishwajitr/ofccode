@@ -32,14 +32,7 @@ const Card = (props) => {
                   <div className="deal__card">
                     <div className="deal__discount">
                       <div className="deal__info">
-                        {discount ? (
-                          <div>
-                            <div className="deal__info-text">{discount}</div>
-                            <div className="deal__info-subtext">Off</div>
-                          </div>
-                        ) : (
-                          <div><img src={`/stores__logo/${(props.storeInfo)? props.storeInfo.slug : ""}-logo-large.jpg`} alt="{value[1]}"/>  </div>
-                        )}
+                      <div><img src={`/stores__logo/${(props.storeInfo)? props.storeInfo.slug : ""}-logo-small.jpg`} alt="{value[1]}"/>  </div>                        
                       </div>
                     </div>
                     <div className="deal__desc">
@@ -57,7 +50,7 @@ const Card = (props) => {
                            title={`OffersCode.in - Promo code for `+ store__name +` deal `+value[1]}
                            rel="nofollow"
                          >
-                           <h2>{value[1]}</h2>
+                           <h3>{value[1]}</h3>
                          </a>
                         {/* <p>{value[15]}</p> */}
                       </div>

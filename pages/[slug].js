@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import axios from 'axios';
 import _ from "lodash";
-import Content from "../components/Content";
+import Content from "./components/Content";
 var Papa = require("papaparse");
 
 const getParsedDate = () => {
@@ -36,7 +36,7 @@ const router = useRouter()
   console.log(router);
   return (
     <div>     
-    <Content {...props} headerTag1={props.storeInfo.name + " Coupons, Offers, Promo Codes & Coupons Codes " +getParsedDate() + " 2021"} description={props.storeInfo.metaInfo.desc}/>    
+    <Content {...props} headerTag1={props.storeInfo.name + " Coupons And Discount Codes For " +getParsedDate() + " 2021"} headerTag2={"Latest "+props.storeInfo.name +" Coupon Codes, Discount Offers & Promotional Deals"} description={props.storeInfo.metaInfo.desc}/>    
     {relatedKeyword && (props.storeInfo.name=='Boat') ? (<div>
       <h3>Related Keywords</h3>  
       <ul>

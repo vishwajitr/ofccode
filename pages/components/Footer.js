@@ -20,7 +20,7 @@ const Footer = () => {
                     <i className="fa fa-facebook"></i>
                   </a>
                 </li>
-                <li className="list-inline-item">
+                {/* <li className="list-inline-item">
                   <a href="#">
                     <i className="fa fa-twitter"></i>
                   </a>
@@ -29,7 +29,7 @@ const Footer = () => {
                   <a href="#">
                     <i className="fa fa-instagram"></i>
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
@@ -38,49 +38,49 @@ const Footer = () => {
             <ul className="list-unstyled quick-links">
               {/* <li className="nav-item">
                 <i className="fas fa-angle-double-right"></i>
-                <Link href="/store/amazon">
+                <Link href="/amazon">
                   <a>paytmmall</a>
                 </Link>
               </li>
               <li className="nav-item">
                 <i className="fas fa-angle-double-right"></i>
-                <Link href="/store/flipkart">
+                <Link href="/flipkart">
                   <a>Flipkart</a>
                 </Link>
               </li>
               <li className="nav-item">
                 <i className="fas fa-angle-double-right"></i>
-                <Link href="/store/jabong">
+                <Link href="/jabong">
                   <a>Jabong</a>
                 </Link>
               </li> */}
               <li className="nav-item">
                 <i className="fas fa-angle-double-right"></i>
-                <Link href="/store/buywow">
+                <Link href="/buywow">
                   <a>Wow</a>
                 </Link>
               </li>
               <li className="nav-item">
                 <i className="fas fa-angle-double-right"></i>
-                <Link href="/store/firstcry">
+                <Link href="/firstcry">
                   <a>FirstCry</a>
                 </Link>
               </li>
               <li className="nav-item">
                 <i className="fas fa-angle-double-right"></i>
-                <Link href="/store/boatlifestyle">
+                <Link href="/boatlifestyle">
                   <a>Boat</a>
                 </Link>
               </li>
               <li className="nav-item">
                 <i className="fas fa-angle-double-right"></i>
-                <Link href="/store/tatacliq">
+                <Link href="/tatacliq">
                   <a>Tata Cliq</a>
                 </Link>
               </li>
               {/* <li className="nav-item">
                 <i className="fas fa-angle-double-right"></i>
-                <Link href="/store/myntra">
+                <Link href="/myntra">
                   <a>Myntra</a>
                 </Link>
               </li> */}
