@@ -56,25 +56,25 @@ const Footer = () => {
               </li> */}
               <li className="nav-item">
                 <i className="fas fa-angle-double-right"></i>
-                <Link href="/buywow">
+                <Link href="/buywow-coupons">
                   <a>Wow</a>
                 </Link>
               </li>
               <li className="nav-item">
                 <i className="fas fa-angle-double-right"></i>
-                <Link href="/firstcry">
+                <Link href="/firstcry-coupons">
                   <a>FirstCry</a>
                 </Link>
               </li>
               <li className="nav-item">
                 <i className="fas fa-angle-double-right"></i>
-                <Link href="/boatlifestyle">
+                <Link href="/boatlifestyle-coupons">
                   <a>Boat</a>
                 </Link>
               </li>
               <li className="nav-item">
                 <i className="fas fa-angle-double-right"></i>
-                <Link href="/tatacliq">
+                <Link href="/tatacliq-coupons">
                   <a>Tata Cliq</a>
                 </Link>
               </li>

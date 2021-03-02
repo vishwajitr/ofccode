@@ -105,7 +105,7 @@ const Header = () => {
 
 
               <li className="nav-item">
-                <Link href="/buywow">
+                <Link href="/buywow-coupons">
                   <a className="nav-link">Wow</a>
                 </Link>
               </li>
@@ -115,12 +115,12 @@ const Header = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link href="/boatlifestyle">
+                <Link href="/boatlifestyle-coupons">
                   <a className="nav-link">Boat</a>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link href="/tatacliq">
+                <Link href="/tatacliq-coupons">
                   <a className="nav-link">Tata Cliq</a>
                 </Link>
               </li>
