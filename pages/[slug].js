@@ -73,7 +73,7 @@ export const getStaticProps  = async ({params}) => {
   // const storeId = params.id;
   // const storeId = '13623';
   
-  const getStoreIdRes = await axios.get(`hhttps://ofccode-api.vercel.app/api/front/${params.slug}`);
+  const getStoreIdRes = await axios.get(`https://ofccode-api.vercel.app/api/front/${params.slug}`);
   const storeId = getStoreIdRes.data.affInfo.StoreId;
   const dataUrl = getStoreIdRes.data.dataUrl;
   // console.log(params);

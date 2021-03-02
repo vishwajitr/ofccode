@@ -17,6 +17,7 @@ export default function Search() {
         .then((res) => res.json())
         .then((res) => {
           setResults(res.results);
+          console.log(results);
         });
     } else {
       setResults([]);
@@ -47,9 +48,9 @@ export default function Search() {
       />
       {active && results.length > 0 && (
         <ul className="results">
-          {results.map(({ id, slug, name }) => (
+          {results.map(({ id, slug, storeSlug, name }) => (
             <li className="result" key={id}>
-              <Link href="/store/[slug]" as={`/store/${slug}`}>
+              <Link href="/[storeSlug]" as={`/${slug}`}>
                 <a>{name}</a>
               </Link>
             </li>
