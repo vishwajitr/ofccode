@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import axios from 'axios';
 import _ from "lodash";
-import Content from "./components/Content";
+import Content from "../components/Content";
 var Papa = require("papaparse");
 
 const getParsedDate = () => {
@@ -73,7 +73,7 @@ export const getStaticProps  = async ({params}) => {
   // const storeId = params.id;
   // const storeId = '13623';
   
-  const getStoreIdRes = await axios.get(`https://ofccode-api.vercel.app/api/front/${params.slug}`);
+  const getStoreIdRes = await axios.get(`https://ofccode-api.vercel.app/api/front/${storeSlug}`);
   const storeId = getStoreIdRes.data.affInfo.StoreId;
   const dataUrl = getStoreIdRes.data.dataUrl;
   // console.log(params);
