@@ -9,77 +9,102 @@
 
 <url>
   <loc>https://offerscode.in/</loc>
-  <lastmod>2021-02-27T15:04:40+00:00</lastmod>
+  <lastmod>2021-03-03T04:25:34+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://offerscode.in/about</loc>
-  <lastmod>2021-02-27T15:04:40+00:00</lastmod>
+  <lastmod>2021-03-03T04:25:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://offerscode.in/privacy</loc>
-  <lastmod>2021-02-27T15:04:40+00:00</lastmod>
+  <lastmod>2021-03-03T04:25:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://offerscode.in/contact</loc>
-  <lastmod>2021-02-27T15:04:40+00:00</lastmod>
+  <lastmod>2021-03-03T04:25:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://offerscode.in/store/buywow</loc>
-  <lastmod>2021-02-27T15:04:40+00:00</lastmod>
+  <loc>https://offerscode.in/buywow-coupons</loc>
+  <lastmod>2021-03-03T04:25:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://offerscode.in/store/firstcry</loc>
-  <lastmod>2021-02-27T15:04:40+00:00</lastmod>
+  <loc>https://offerscode.in/firstcry</loc>
+  <lastmod>2021-03-03T04:25:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://offerscode.in/store/boatlifestyle</loc>
-  <lastmod>2021-02-27T15:04:40+00:00</lastmod>
+  <loc>https://offerscode.in/boatlifestyle-coupons</loc>
+  <lastmod>2021-03-03T04:25:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://offerscode.in/store/tatacliq</loc>
-  <lastmod>2021-02-27T15:04:40+00:00</lastmod>
+  <loc>https://offerscode.in/tatacliq-coupons</loc>
+  <lastmod>2021-03-03T04:25:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://offerscode.in/store/banggood</loc>
-  <lastmod>2021-02-27T15:04:40+00:00</lastmod>
+  <loc>https://offerscode.in/banggood-coupons</loc>
+  <lastmod>2021-03-03T04:25:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://offerscode.in/store/aliexpress</loc>
-  <lastmod>2021-02-27T15:04:40+00:00</lastmod>
+  <loc>https://offerscode.in/aliexpress-coupons</loc>
+  <lastmod>2021-03-03T04:25:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://offerscode.in/store/hostinger</loc>
-  <lastmod>2021-02-27T15:04:40+00:00</lastmod>
+  <loc>https://offerscode.in/hostinger-coupons</loc>
+  <lastmod>2021-03-03T04:25:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://offerscode.in/store/coursera</loc>
-  <lastmod>2021-02-27T15:04:40+00:00</lastmod>
+  <loc>https://offerscode.in/coursera-coupons</loc>
+  <lastmod>2021-03-03T04:25:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://offerscode.in/store/crocs</loc>
-  <lastmod>2021-02-27T15:04:40+00:00</lastmod>
+  <loc>https://offerscode.in/crocs-coupons</loc>
+  <lastmod>2021-03-03T04:25:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://offerscode.in/store/clarks</loc>
-  <lastmod>2021-02-27T15:04:40+00:00</lastmod>
+  <loc>https://offerscode.in/clarks-coupons</loc>
+  <lastmod>2021-03-03T04:25:34+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://offerscode.in/stores</loc>
+  <lastmod>2021-03-03T04:25:34+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>https://offerscode.in/store/submit-coupon</loc>
-  <lastmod>2021-02-27T15:04:40+00:00</lastmod>
+  <lastmod>2021-03-03T04:25:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://offerscode.in/boatlifestyle-coupons?dealtype=Boat%20coupons</loc>
+  <lastmod>2021-03-03T04:25:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://offerscode.in/boatlifestyle-coupons?dealtype=Boat%20deals</loc>
+  <lastmod>2021-03-03T04:25:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://offerscode.in/boatlifestyle-coupons?dealtype=Boat%20promo-code</loc>
+  <lastmod>2021-03-03T04:25:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://offerscode.in/boatlifestyle-coupons?dealtype=latest-offers%20%3DBoat</loc>
+  <lastmod>2021-03-03T04:25:34+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
