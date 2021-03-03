@@ -51,7 +51,7 @@ const router = useRouter()
 }
 
 export async function getStaticPaths() {
-  const res = await axios.get('hhttps://ofccode-api.vercel.app/api/front');
+  const res = await axios.get('https://ofccode-api.vercel.app/api/front');
   // console.log(res.data)
   const stores = (res.data)?res.data:{};
   const paths = stores.map((store) => ({

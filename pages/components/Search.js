@@ -1,5 +1,6 @@
 import { useCallback, useRef, useState } from "react";
 import Link from "next/link";
+import axios from 'axios'
 
 export default function Search() {
   const searchRef = useRef(null);
@@ -9,6 +10,8 @@ export default function Search() {
 
   const searchEndpoint = (query) => `/api/front/search?q=${query}`;
 
+
+  console.log(searchEndpoint(query));
   const onChange = useCallback((event) => {
     const query = event.target.value;
     setQuery(query);
@@ -35,6 +38,7 @@ export default function Search() {
       window.removeEventListener("click", onClick);
     }
   }, []);
+  
 
   return (
     <div ref={searchRef} className="search__block">
