@@ -12,7 +12,7 @@ const TopStores = ({ storeInfo }) => {
      <div  className="storeCard storeCard-small">
      <Link href="${store.slug}" as={`${store.slug}`}>
         <a>
-          <img src={`/stores__logo/${store.storeSlug}-logo-large.jpg`} />
+          <img src={`/stores__logo/${store.slug}-logo-large.jpg`} onError={(e)=>{e.target.onerror = null; e.target.src="/stores__logo/img-notfound.jpg"}}/>
         </a>
       </Link>
       <Link href="${store.slug}" as={`${store.slug}`}>

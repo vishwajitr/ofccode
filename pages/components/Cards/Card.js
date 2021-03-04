@@ -10,7 +10,7 @@ const getParsedDate = (date) => {
 
 const Card = (props) => {
   const couponsData = (props.couponsData1)? props.couponsData1.data: {};
-  const store__logo = (props.storeInfo)? props.storeInfo.storeSlug: {};
+  const store__logo = (props.storeInfo)? props.storeInfo.slug: {};
   const store__name = (props.storeInfo)? props.storeInfo.name: {};
  
 
@@ -32,7 +32,7 @@ const Card = (props) => {
                   <div className="deal__card">
                     <div className="deal__discount">
                       <div className="deal__info">
-                      <div><img src={`/stores__logo/${(props.storeInfo)? props.storeInfo.storeSlug : ""}-logo-small.jpg`} alt={value[1]}/>  </div>                        
+                      <div><img src={`/stores__logo/${(props.storeInfo)? props.storeInfo.slug : ""}-logo-small.jpg`} alt={value[1]}/>  </div>                        
                       </div>
                     </div>
                     <div className="deal__desc">

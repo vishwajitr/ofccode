@@ -44,7 +44,9 @@ const Header = () => {
                 </Link>
               </li> */}
             </ul>           
-            <div className="form-inline my-2 my-md-0 headerSearch"> <Search /></div>           
+            <div className="form-inline my-2 my-md-0 headerSearch"> 
+            {/* <Search /> */}
+            </div>           
           </div>
         </div>
       </nav>

@@ -36,7 +36,7 @@ const router = useRouter()
   console.log(router);
   return (
     <div>     
-    <Content {...props} headerTag1={props.storeInfo.name + " Coupons And Discount Codes For " +getParsedDate() + " 2021"} headerTag2={"Latest "+props.storeInfo.name +" Coupon Codes, Discount Offers & Promotional Deals"} description={props.storeInfo.metaInfo.desc}/>    
+    <Content {...props} headerTag1={props.storeInfo.name + " Coupons And Discount Codes For " +getParsedDate() + " 2021"} headerTag2={"Latest "+props.storeInfo.name +" Coupon Codes, Discount Offers & Promotional Deals"} description={props.storeInfo.metaInfo__desc}/>    
     {relatedKeyword && (props.storeInfo.name=='Boat') ? (<div>
       <h3>Related Keywords</h3>  
       <ul>
@@ -55,7 +55,7 @@ export async function getStaticPaths() {
   // console.log(res.data)
   const stores = (res.data)?res.data:{};
   const paths = stores.map((store) => ({
-    params: { slug: store.slug, id: store.affInfo.StoreId },
+    params: { slug: store.slug, id: store.affInfo__StoreId },
   }))
   // const paths =  [
   //   { params: {slug : 'bangood', id : '13623'} }, // See the "paths" section below
@@ -74,8 +74,8 @@ export const getStaticProps  = async ({params}) => {
   // const storeId = '13623';
   
   const getStoreIdRes = await axios.get(`https://ofccode-api.vercel.app/api/front/${storeSlug}`);
-  const storeId = getStoreIdRes.data.affInfo.StoreId;
-  const dataUrl = getStoreIdRes.data.dataUrl;
+  const storeId = getStoreIdRes.data.affInfo__StoreId;
+  const dataUrl = 'https://export.admitad.com/en/webmaster/websites/1777052/coupons/export/?website=1777052&advcampaigns='+storeId+'&region=00&code=eyq48w62bj&user=vishwajit82&format=csv&v=4';
   // console.log(params);
   const res = await axios.get(dataUrl);
   // const res = await axios.get(`http://127.0.0.1:3000/CouponsData/${storeSlug}/data.csv`);
