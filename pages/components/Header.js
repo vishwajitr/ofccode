@@ -1,7 +1,56 @@
 import React, { Component } from "react";
 import Link from "next/link";
-import Search from "./Search";
+import Search from "../search/index";
+
+const HeaderList = () => {
+
+
+
+  const HeaderLinks = [
+    {
+      label: "Wow",
+      path: "/buywow-coupons",
+    },
+    {
+      label: "FirstCry",
+      path: "/firstCry-coupons",
+    },
+    {
+      label: "Boat",
+      path: "/boat-lifestyle-coupons",
+    },
+    {
+      label: "Tata Cliq",
+      path: "/tatacliq-coupons",
+    },
+  ];
+
+  const array = HeaderLinks;
+  const LiElements = array.map((list, index) => (
+    <li className="nav-item" key={index}>
+      <Link href={`$(list.path)`}>
+        <a className="nav-link">{list.label}</a>
+      </Link> 
+    </li>
+  ));
+  return LiElements;
+};
+
+
 const Header = () => {
+
+  
+  function toggleNav1(e){
+    e.preventDefault;
+    document.querySelector('#headerNav1').classList.toggle('collapse');
+  }
+
+  function toggleNav2(e){
+    e.preventDefault;
+    document.querySelector('#headerNav2').classList.toggle('collapse');
+  }
+
+
   return (
     <header className="header">
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -9,7 +58,7 @@ const Header = () => {
           <Link href="/">
             <a className="navbar-brand">OffersCode<small>.In</small></a>
           </Link>
-          {/* <button
+          <button
             className="navbar-toggler"
             type="button"
             data-toggle="collapse"
@@ -17,11 +66,12 @@ const Header = () => {
             aria-controls="navbarsExample07"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            onClick={toggleNav1}
           >
             <span className="navbar-toggler-icon"></span>
-          </button> */}
+          </button>
 
-          <div className="collapse navbar-collapse" id="navbarsExample07">
+          <div className="collapse navbar-collapse" id="headerNav1">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
                 <Link href="/about">
@@ -45,7 +95,7 @@ const Header = () => {
               </li> */}
             </ul>           
             <div className="form-inline my-2 my-md-0 headerSearch"> 
-            {/* <Search /> */}
+            <Search />
             </div>           
           </div>
         </div>
@@ -53,7 +103,7 @@ const Header = () => {
 
       <nav className="navbar navbar-expand-lg navbar-light rounded">
         <div className="container">
-          {/* <button
+          <button
             className="navbar-toggler"
             type="button"
             data-toggle="collapse"
@@ -61,76 +111,14 @@ const Header = () => {
             aria-controls="navbarsExample10"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            onClick={toggleNav2}
           >
             <span className="navbar-toggler-icon"></span>
-          </button> */}
+          </button>
 
-          <div className="collapse navbar-collapse" id="navbarsExample10">
+          <div className="collapse navbar-collapse"  id="headerNav2">
             <ul className="navbar-nav">
-              {/* <li className="nav-item">
-                <Link href="/store/amazon">
-                  <a className="nav-link">Amazon</a>
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link href="/store/flipkart">
-                  <a className="nav-link">Flipkart</a>
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link href="/store/jabong">
-                  <a className="nav-link">Jabong</a>
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link href="/store/tatacliq">
-                  <a className="nav-link">Tata Cliq</a>
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link href="/store/myntra">
-                  <a className="nav-link">Myntra</a>
-                </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link href="/store/bangood" id="13624">
-                  <a className="nav-link">Bangood</a>
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link href="/store/2gud" id="13624">
-                  <a className="nav-link">2Gud</a>
-                </Link>
-              </li> */}
-
-
-
-              <li className="nav-item">
-                <Link href="/buywow-coupons">
-                  <a className="nav-link">Wow</a>
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link href="/firstcry">
-                  <a className="nav-link">FirstCry</a>
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link href="/boatlifestyle-coupons">
-                  <a className="nav-link">Boat</a>
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link href="/tatacliq-coupons">
-                  <a className="nav-link">Tata Cliq</a>
-                </Link>
-              </li>
-              {/* <li className="nav-item">
-                <Link href="/store/myntra">
-                  <a className="nav-link">Myntra</a>
-                </Link>
-              </li> */}
+            <HeaderList/>
 
             </ul>
           </div>

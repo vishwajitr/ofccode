@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component,useState, useEffect } from "react";
 import _ from "lodash";
 import Moment from "moment";
 import Link from "next/link";
@@ -12,8 +12,6 @@ const Card = (props) => {
   const couponsData = (props.couponsData1)? props.couponsData1.data: {};
   const store__logo = (props.storeInfo)? props.storeInfo.slug: {};
   const store__name = (props.storeInfo)? props.storeInfo.name: {};
- 
-
     return (
       <section>
       <div className="clearfix">
@@ -39,7 +37,7 @@ const Card = (props) => {
                       <div className="deal__desc-type"></div>
                       <div className="deal__desc-title">
                           <a
-                           href={value[10]}
+                           href={value[11]} 
                            data-url={value[10]}
                            data-promocode={value[9]}
                            data-species={value[8]}
@@ -51,25 +49,26 @@ const Card = (props) => {
                            rel="nofollow"
                          >
                            <h3>{value[1]}</h3>
-                         </a>
-                        {/* <p>{value[15]}</p> */}
+                         </a>                        
                       </div>
                       <div className="deal__desc-meta">
                         <span className="deal__desc-meta-lastused">   
                         <i className="fa fa-users"></i>&nbsp;<b>{Math.floor(Math.random() * 200) + 11  }</b> People Used Today   
-                        </span>
+                        </span>&nbsp;|&nbsp;
+                        <span>{value[15]}</span>
                       </div>
 
                       <div className="deal__cta">
                         
                         {promocodeCard ? (
                           <a
-                           href={value[10]}
+                           href={value[11]} 
                            data-url={value[10]}
                            data-promocode={value[9]}
                            data-species={value[8]}
                            data-promolink={value[10]}
                            data-func="getPromoCode"
+                           className="getPromoCode"
                            data-website={value[2]}
                            target="_blank"
                            title={`OffersCode.in - Promo code for `+ store__name +` deal `+value[1]}
@@ -89,6 +88,7 @@ const Card = (props) => {
                             data-species={value[8]}
                             data-promolink={value[10]}
                             data-func="getDeal"
+                            className="getDeal"
                             data-website={value[2]}
                             target="_blank"
                             // gotoLink = {value[11]}  

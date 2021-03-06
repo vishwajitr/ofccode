@@ -31,12 +31,24 @@ body {
     background-color: $color-primary !important;
   }
 }
-.navbar-dark .navbar-brand {
-  color: $color-primary;
-  font-weight: bold;
-  &:hover {
-    color: $color-primary !important;
+.navbar-dark {
+  .navbar-toggler {
+    color: $color-primary-mid-light;
+    background-color: $color-primary;
   }
+  .navbar-brand {
+    color: $color-primary;
+    font-weight: bold;
+    &:hover {
+      color: $color-primary !important;
+    }
+  }
+}
+.navbar-light {
+  // .navbar-toggler{
+  //   color: $color-primary;
+  //   background-color:$color-white;
+  // }
 }
 .navbar-light .navbar-nav .active > .nav-link,
 .navbar-light .navbar-nav .nav-link.active,
@@ -452,15 +464,13 @@ body {
         padding-right: 65px;
         max-height: 52px;
         overflow: hidden;
-       
       }
-      a{
-        &:hover{
+      a {
+        &:hover {
           text-decoration: none;
           color: $color-primary-mid-light;
         }
       }
-
     }
     &-meta {
       display: inline-block;
@@ -494,29 +504,35 @@ body {
       right: 12px;
       border-radius: 50px;
       font-weight: 700;
-      &-meta{
+
+      .getPromoCode{
+        opacity: 0.4;
+        &:hover{
+          opacity: 0.1;
+        }
+      }
+
+      &-meta {
         display: inline-block;
         color: #8a8a8a;
         font-size: 12px;
         font-weight: 400;
       }
-    
+
       &:hover {
         background-color: $color-primary;
 
         a {
           color: #ffffff;
         }
-        
       }
-      
-    
+
       a {
         color: $color-primary;
         text-decoration: none;
         display: block;
         &:hover {
-          .promo__anchor{
+          .promo__anchor {
             display: block;
           }
         }
@@ -555,27 +571,65 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-  .topStores__wrapper .storeCard-Col {
-    width: 48%;
+  .topStores__wrapper {
+    .storeCard-Col {
+      width: 48%;
+    }
+    .storeCard {
+      &.storeCard-small {
+        padding: 25px 0 0;
+        img {
+          padding: 10px;
+        }
+        h5 {
+          position: relative;
+          margin-top: 10px;
+          max-width: 100%;
+          border-radius: 0;
+
+          a {
+            border-radius: 0;
+            background-color: $color-primary;
+            color: $color-white;
+          }
+        }
+      }
+    }
   }
+
   .footer .text-center {
     text-align: left !important;
   }
   .footer .quick-links-col {
     padding-left: 25px;
   }
-  .deal__card .deal__desc .deal__cta{position: relative;margin-top: 10px;font-size: 14px;    width: 135px;}
-  .deal__card .deal__desc{
+  .deal__card .deal__desc .deal__cta {
+    position: relative;
+    margin-top: 10px;
+    font-size: 14px;
+    width: 135px;
+    right: auto;
+    top: auto;
+    
+  }
+  .deal__card .deal__desc {
     padding-right: 0;
     margin-left: 53px;
+    padding-bottom: 40px;
   }
-  .deal__card{
-    padding:10px ​10px
+  .deal__card {
+    padding: 10px ​10px;
   }
-  .deal__card .deal__discount{    width: 50px;}
-  .deal__card .deal__discount .deal__info-text{font-size: 18px;}
-  .deal__card .deal__discount .deal__info{font-size: 13px;}
-  .deal__card .deal__desc-title h2{
+  .deal__card .deal__discount {
+    width: 50px;
+  }
+  .deal__card .deal__discount .deal__info-text {
+    font-size: 18px;
+  }
+  .deal__card .deal__discount .deal__info {
+    font-size: 13px;
+  }
+  .deal__card .deal__desc-title h2 {
     font-size: 16px;
     line-height: 19px;
   }
