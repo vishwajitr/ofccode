@@ -10,18 +10,11 @@ const Index = (props) => {
         <Search />
       </div>
       <div className="topStores__wrapper">
-<<<<<<< HEAD
         <h3>
           Top Stores ::..
         </h3>
 
         <ul className="topStores__Ul"><TopStores storeInfo={props.storeInfo} /></ul>
-=======
-        <h3>Top Stores :</h3>
-        <ul className="topStores__Ul">
-          <TopStores storeInfo={props.storeInfo} />
-        </ul>
->>>>>>> main
       </div>
     </div>
   );

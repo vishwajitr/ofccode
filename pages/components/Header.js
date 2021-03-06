@@ -28,7 +28,7 @@ const HeaderList = () => {
   const array = HeaderLinks;
   const LiElements = array.map((list, index) => (
     <li className="nav-item" key={index}>
-      <Link href={`$(list.path)`}>
+      <Link href={list.path}>
         <a className="nav-link">{list.label}</a>
       </Link> 
     </li>

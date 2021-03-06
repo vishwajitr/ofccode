@@ -26,7 +26,7 @@ const FooterLinksList = () => {
   const LiElements = array.map((list, index) => (
     <li className="nav-item" key={index}>
       <i className="fas fa-angle-double-right"></i>
-      <Link href={`$(list.path)`}>
+      <Link href={list.path}>
         <a>{list.label}</a>
       </Link>
     </li>

@@ -4,7 +4,7 @@ const TopStores = ({ storeInfo }) => {
   Stores = storeInfo;
   if(Stores){
   const LiElements = Stores.map((store, index) => (
-    <li className="storeCard-Col" key={index} data-storeId={store.affInfo__StoreId}>
+    <li className="storeCard-Col" key={index}>
       <div className="storeCard storeCard-small">
         <Link href="${store.slug}" as={`${store.slug + "-" + store.slugType}`}>
           <a>
