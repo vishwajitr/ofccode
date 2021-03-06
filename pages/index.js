@@ -1,30 +1,7 @@
-
-import Link from "next/link";
-import Search from "./components/Search";
 import axios from "axios";
-
-const TopStores = ({ storeInfo }) => {
-  // console.log(props);
-  // return 'abc';
-  const array = storeInfo;
-  const LiElements = array.map((store, index) => (
-    <li className="storeCard-Col" key={index}>
-     <div  className="storeCard storeCard-small">
-     <Link href="${store.slug}" as={`${store.slug}`}>
-        <a>
-          <img src={`/stores__logo/${store.storeSlug}-logo-large.jpg`} />
-        </a>
-      </Link>
-      <Link href="${store.slug}" as={`${store.slug}`}>
-        <h5>
-          <a className="nav-link">{store.name}</a>
-        </h5>
-      </Link>
-       </div> 
-    </li>
-  ));
-  return LiElements;
-};
+import Search from "../pages/search/index";
+import TopStores from "./components/Store/topStores";
+import _ from 'lodash';
 
 const Index = (props) => {
   return (
@@ -33,22 +10,40 @@ const Index = (props) => {
         <Search />
       </div>
       <div className="topStores__wrapper">
+<<<<<<< HEAD
         <h3>
           Top Stores ::..
         </h3>
 
         <ul className="topStores__Ul"><TopStores storeInfo={props.storeInfo} /></ul>
+=======
+        <h3>Top Stores :</h3>
+        <ul className="topStores__Ul">
+          <TopStores storeInfo={props.storeInfo} />
+        </ul>
+>>>>>>> main
       </div>
     </div>
   );
 };
 
-export const getStaticProps = async () => {
-  const getStoreIdRes = await axios.get(`hhttps://ofccode-api.vercel.app/api/front/`);
-  // console.log(getStoreIdRes);
+
+export async function getServerSideProps() {
+  let response = await fetch(
+    `https://ofccode-api-sportybruh1990.vercel.app/api/front`
+  );
+  let getStoreIdRes = await response.json();  
+  let selectedStoresArr  = [15481, 15542, 14719, 23961, 23825, 15591,14291,21361,22998,23433,22012];
+  let FinalData = []; 
+  var selectedStores = _.map(selectedStoresArr, function(storeId, Index) {
+     let filteredData = getStoreIdRes.filter((store) => (store.affInfo__StoreId == storeId));
+      FinalData[Index] = filteredData[0];
+  });
+  
+  getStoreIdRes = FinalData.filter((store) => (store.site__StoreEnabled == 1));
   return {
     props: {
-      storeInfo: getStoreIdRes.data,
+      storeInfo: getStoreIdRes,
     },
   };
 };

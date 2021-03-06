@@ -88,8 +88,7 @@ function MyApp({ Component, pageProps }) {
       <div className="container main-container">
         <Component {...pageProps} />
       </div>
-      <Footer />
-      
+      <Footer/>
     </div>
   );
 }
