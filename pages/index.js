@@ -11,7 +11,7 @@ const Index = (props) => {
       </div>
       <div className="topStores__wrapper">
         <h3>
-          Top Stores ::..
+          Top Stores
         </h3>
 
         <ul className="topStores__Ul"><TopStores storeInfo={props.storeInfo} /></ul>

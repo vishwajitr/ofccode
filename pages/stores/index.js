@@ -26,6 +26,7 @@ export async function getServerSideProps() {
  
   getStoreIdRes = getStoreIdRes.data;
   getStoreIdRes = getStoreIdRes.filter((store) => store.site__StoreEnabled == 1);
+  
 
   return {
     props: {
