@@ -10,7 +10,7 @@ const Index = (props) => {
         <Search />
       </div>
       <div className="topStores__wrapper">
-        <h3>Top Stores</h3>
+        <h3>Top Stores :</h3>
         <ul className="topStores__Ul">
           <TopStores storeInfo={props.storeInfo} />
         </ul>
