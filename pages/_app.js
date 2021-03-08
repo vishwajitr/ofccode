@@ -17,25 +17,27 @@ function MyApp({ Component, pageProps }) {
 
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
-    window.OneSignal = window.OneSignal || [];
-    const OneSignal = window.OneSignal;
+    window.ao_subid = "moneylink";
+
+    // window.OneSignal = window.OneSignal || [];
+    // const OneSignal = window.OneSignal;
   
-    OneSignal.push(()=> {
-      OneSignal.init(
-        {
-          appId: "b0bdcbd7-4c41-46e8-89db-1984ea5e49e1", //STEP 9         
-          welcomeNotification: {
-            "title": "One Signal",
-            "message": "Thanks for subscribing!",
-          } 
-      },
-        //Automatically subscribe to the new_app_version tag
-        OneSignal.sendTag("new_app_version", "new_app_version", tagsSent => {
-          // Callback called when tag has finished sending
-          console.log('new_app_version TAG SENT', tagsSent);
-        })
-      );
-    });
+    // OneSignal.push(()=> {
+    //   OneSignal.init(
+    //     {
+    //       appId: "b0bdcbd7-4c41-46e8-89db-1984ea5e49e1", //STEP 9         
+    //       welcomeNotification: {
+    //         "title": "One Signal",
+    //         "message": "Thanks for subscribing!",
+    //       } 
+    //   },
+    //     //Automatically subscribe to the new_app_version tag
+    //     OneSignal.sendTag("new_app_version", "new_app_version", tagsSent => {
+    //       // Callback called when tag has finished sending
+    //       console.log('new_app_version TAG SENT', tagsSent);
+    //     })
+    //   );
+    // });
 
   });
 
@@ -76,13 +78,13 @@ function MyApp({ Component, pageProps }) {
         <meta itemProp="description" content="Now SAVE MORE with OffersCode! Get the latest and up-to-date coupons, cashback offers on some of India’s top online shopping sites like Amazon, Paytm, Snapdeal, Flipkart, Myntra and many more at OffersCode.in."/>
         <meta itemProp="image" content="logo.jpg"/>
 
-        <script>
+        {/* <script>
         window.ao_subid = "moneylink";
-        </script>
+        </script> */}
         <script src="//js.mamydirect.com/js/?h=j528d0OH" type="text/javascript" async></script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-RVN1V7NSW4"></script>
         <script data-ad-client="ca-pub-1481948700257830" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>     
-        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+        {/* <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script> */}
       </Head>
       <Navbar />
       <div className="container">
