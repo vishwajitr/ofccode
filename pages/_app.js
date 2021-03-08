@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Head from "next/head";
+import AdSense from 'react-adsense';
 import TagManager from 'react-gtm-module'
 import Navbar from "./components/Header";
 import Footer from "./components/Footer";
 import "../styles/global.scss";
 import "../styles/Layout.scss";
-
 const tagManagerArgs = {
   gtmId: 'GTM-WQDK67V'
 }
@@ -16,28 +16,28 @@ if (process.browser) {
 function MyApp({ Component, pageProps }) {
 
   // Similar to componentDidMount and componentDidUpdate:
-  // useEffect(() => {
-  //   window.OneSignal = window.OneSignal || [];
-  //   const OneSignal = window.OneSignal;
+  useEffect(() => {
+    window.OneSignal = window.OneSignal || [];
+    const OneSignal = window.OneSignal;
   
-  //   OneSignal.push(()=> {
-  //     OneSignal.init(
-  //       {
-  //         appId: "b0bdcbd7-4c41-46e8-89db-1984ea5e49e1", //STEP 9         
-  //         welcomeNotification: {
-  //           "title": "One Signal",
-  //           "message": "Thanks for subscribing!",
-  //         } 
-  //     },
-  //       //Automatically subscribe to the new_app_version tag
-  //       OneSignal.sendTag("new_app_version", "new_app_version", tagsSent => {
-  //         // Callback called when tag has finished sending
-  //         console.log('new_app_version TAG SENT', tagsSent);
-  //       })
-  //     );
-  //   });
+    OneSignal.push(()=> {
+      OneSignal.init(
+        {
+          appId: "b0bdcbd7-4c41-46e8-89db-1984ea5e49e1", //STEP 9         
+          welcomeNotification: {
+            "title": "One Signal",
+            "message": "Thanks for subscribing!",
+          } 
+      },
+        //Automatically subscribe to the new_app_version tag
+        OneSignal.sendTag("new_app_version", "new_app_version", tagsSent => {
+          // Callback called when tag has finished sending
+          console.log('new_app_version TAG SENT', tagsSent);
+        })
+      );
+    });
 
-  // });
+  });
 
   return (
     <div>
@@ -86,27 +86,51 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Navbar />
       <div className="container">
-      <amp-ad width="100vw" height="320"
+      {/* <amp-ad width="100vw" height="320"
           type="adsense"
           data-ad-client="ca-pub-1481948700257830"
           data-ad-slot="9124523232"
           data-auto-format="rspv"
           data-full-width="">
         <div overflow=""></div>
-      </amp-ad>
+      </amp-ad> */}
+
+        <div className="oedx__728x90">
+        <AdSense.Google
+          client='ca-pub-1481948700257830'
+          slot='9124523232'
+          style={{ width: 728, height: 90, margin: '20px auto' }}
+          format=''
+        />
+        </div> 
+
       </div> 
       <div className="container main-container">
         <Component {...pageProps} />
       </div>
       <div className="container">
-      <amp-ad width="100vw" height="320"
+      {/* <amp-ad width="100vw" height="320"
           type="adsense"
           data-ad-client="ca-pub-1481948700257830"
           data-ad-slot="3819213905"
           data-auto-format="rspv"
           data-full-width="">
         <div overflow=""></div>
-      </amp-ad>
+      </amp-ad> */}
+
+
+  
+      <div className="oedx__728x90">
+      <AdSense.Google
+        client='ca-pub-1481948700257830'
+        slot='3819213905'
+        style={{ width: 728, height: 90, margin: '20px auto' }}
+        format=''
+      />
+      </div> 
+    
+
+
       </div> 
       <Footer/>
     </div>
