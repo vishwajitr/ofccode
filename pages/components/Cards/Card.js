@@ -12,6 +12,8 @@ const Card = (props) => {
   const couponsData = (props.couponsData1)? props.couponsData1.data: {};
   const store__logo = (props.storeInfo)? props.storeInfo.slug: {};
   const store__name = (props.storeInfo)? props.storeInfo.name: {};
+
+  if(couponsData.length>2){
     return (
       <section>
       <div className="clearfix">
@@ -128,6 +130,16 @@ const Card = (props) => {
       </div>
       </section>
     );
+  }else{
+    return (
+      <div>
+        <br/>
+        <br/>
+        <br/>
+        <h3>No New Deals Or Coupons Found</h3>
+      </div>
+    )
+  }
 }
 
 export default Card;

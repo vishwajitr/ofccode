@@ -10,7 +10,7 @@ const FooterLinksList = () => {
     },
     {
       label: "FirstCry",
-      path: "/firstCry-coupons",
+      path: "/firstcry-coupons",
     },
     {
       label: "Boat",

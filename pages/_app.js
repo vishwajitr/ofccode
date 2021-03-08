@@ -82,12 +82,32 @@ function MyApp({ Component, pageProps }) {
         <script src="//js.mamydirect.com/js/?h=j528d0OH" type="text/javascript" async></script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-RVN1V7NSW4"></script>
         <script data-ad-client="ca-pub-1481948700257830" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>     
-        {/* <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script> */}
+        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
       </Head>
       <Navbar />
+      <div className="container">
+      <amp-ad width="100vw" height="320"
+          type="adsense"
+          data-ad-client="ca-pub-1481948700257830"
+          data-ad-slot="9124523232"
+          data-auto-format="rspv"
+          data-full-width="">
+        <div overflow=""></div>
+      </amp-ad>
+      </div> 
       <div className="container main-container">
         <Component {...pageProps} />
       </div>
+      <div className="container">
+      <amp-ad width="100vw" height="320"
+          type="adsense"
+          data-ad-client="ca-pub-1481948700257830"
+          data-ad-slot="3819213905"
+          data-auto-format="rspv"
+          data-full-width="">
+        <div overflow=""></div>
+      </amp-ad>
+      </div> 
       <Footer/>
     </div>
   );
