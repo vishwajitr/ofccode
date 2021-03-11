@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Link from "next/link";
-import Search from "../search/index";
+import Search from "../search/searchBox";
 
 const HeaderList = () => {
 
@@ -22,6 +22,10 @@ const HeaderList = () => {
     {
       label: "Tata Cliq",
       path: "/tatacliq-coupons",
+    },
+    {
+      label: "Hot Offers",
+      path: "/offers",
     },
   ];
 

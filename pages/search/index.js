@@ -1,66 +1,69 @@
-import { useCallback, useRef, useState } from "react";
-import Link from "next/link";
-import axios from 'axios'
+import React, { useState, useEffect } from "react";
+import { useRouter } from 'next/router'
 
-export default function Search() {
-  const searchRef = useRef(null);
-  const [query, setQuery] = useState("");
-  const [active, setActive] = useState(false);
-  const [results, setResults] = useState([]);
+import Head from "next/head";
 
-  const searchEndpoint = (query) => `/api/front/search?q=${query}`;
+function Serach({ Component, pageProps }) {
 
+    const router = useRouter()
+    const { slug } = router.query
+    
 
-  // console.log(searchEndpoint(query));
-  const onChange = useCallback((event) => {
-    const query = event.target.value;
-    setQuery(query);
-    if (query.length) {
-      fetch(searchEndpoint(query))
-        .then((res) => res.json())
-        .then((res) => {
-          setResults(res.results);
-          // console.log(results);
-        });
-    } else {
-      setResults([]);
-    }
-  }, []);
+  // Similar to componentDidMount and componentDidUpdate:
+  useEffect(() => {
+    // <!-- other head elements from your page -->
 
-  const onFocus = useCallback(() => {
-    setActive(true);
-    window.addEventListener("click", onClick);
-  }, []);
+    (function (g, o) {
+      (g[o] =
+        g[o] ||
+        function () {
+          (g[o]["q"] = g[o]["q"] || []).push(arguments);
+        }),
+        (g[o]["t"] = 1 * new Date());
+    })(window, "_googCsa");
 
-  const onClick = useCallback((event) => {
-    if (searchRef.current && !searchRef.current.contains(event.target)) {
-      setActive(false);
-      window.removeEventListener("click", onClick);
-    }
-  }, []);
-  
+    var pageOptions = {
+      pubId: "pub-9616389000213823", // Make sure this the correct client ID!
+      query: "amazon",
+      adPage: 5,
+      channel: "searchchnm",
+    };
+
+    var adblock1 = {
+      container: "afscontainer1",
+      width: "700",
+      maxTop: 2,
+      fontFamily: "times new roman",
+      fontSizeTitle: 16,
+      colorTitleLink: "FE6751",
+      colorBackground: "fe6751",
+      detailedAttribution: false,
+    };
+
+    var adblock2 = {
+      container: "afscontainer2",
+      width: "700",
+      number: 2,
+      fontFamily: "times new roman",
+      colorTitleLink: "FE6751",
+      detailedAttribution: false,
+    };
+
+    _googCsa("ads", pageOptions, adblock1, adblock2);
+  });
 
   return (
-    <div ref={searchRef} className="search__block">
-      <input
-        className="search"
-        onChange={onChange}
-        onFocus={onFocus}
-        placeholder="Search Store"
-        type="text"
-        value={query}
-      />
-      {active && results.length > 0 && (
-        <ul className="results">
-          {results.map(({ id, slug, storeSlug, formatted_name, slugType }) => (
-            <li className="result" key={id}>
-              <Link href="/[storeSlug]" as={`/${slug+ '-' +slugType}`}>
-                <a>{formatted_name}</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
+    <div>
+      <Head>
+        <script async="async" src="https://www.google.com/adsense/search/ads.js"></script>
+        <script async src="https://cse.google.com/cse.js?cx=e877bbb1cb1dec634"></script>
+      </Head>
+      <div id="afscontainer1"></div>
+      <div class="gcse-search"></div>
+      <div class="gcse-searchresults"></div>
+      <div id="afscontainer2"></div>
     </div>
   );
 }
+
+export default Serach;

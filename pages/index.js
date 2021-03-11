@@ -1,7 +1,44 @@
 import axios from "axios";
 import Search from "../pages/search/index";
 import TopStores from "./components/Store/topStores";
+import OffersPageContent from './components/OffersPageContent'
 import _ from 'lodash';
+import Link from "next/link";
+
+
+const TopOffers = ({ cuelinksOffers }) => {
+  let topOffers = [];  
+  topOffers = cuelinksOffers;
+  if(topOffers){
+  const LiElements = topOffers.map((offer, index) => (
+    <li className="" key={index}>
+      <div className="">
+      {/* <Link href="${offer.URL}" as={`${offer.URL}`}> */}
+          <a>
+            <img
+              src={`${offer.Image_URL}`}
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = "/img-notfound.jpg";
+              }}
+              width="200"
+            />
+          </a>
+        {/* </Link> */}
+          <h5>
+        <Link href={offer.URL} as={offer.URL}>
+            <a className="nav-link" target="_blank" rel="nofollow">{offer.Title}</a>
+        </Link>
+          </h5>
+      </div>
+    </li>
+  ));
+  return LiElements;
+  }else{
+    return '';
+  }
+};
+
 
 const Index = (props) => {
   return (
@@ -15,6 +52,12 @@ const Index = (props) => {
         </h3>
 
         <ul className="topStores__Ul"><TopStores storeInfo={props.storeInfo} /></ul>
+        <br/>
+        <br/>
+        <hr/>
+        <br/>
+        <h3>Trending Offers</h3>  
+        <OffersPageContent {...props} limit={10}/>
       </div>
     </div>
   );
@@ -34,9 +77,20 @@ export async function getServerSideProps() {
   });
   
   getStoreIdRes = FinalData.filter((store) => (store.site__StoreEnabled == 1));
+
+
+
+  let clinksRes = await fetch(
+    `https://ofccode-api-sportybruh1990.vercel.app/api/front/cuelinks/offers`
+  );
+  let cuelinksOffers = await clinksRes.json();  
+  
+
+
   return {
     props: {
       storeInfo: getStoreIdRes,
+      cuelinksOffers : cuelinksOffers
     },
   };
 };

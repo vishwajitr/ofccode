@@ -6,6 +6,7 @@ import Link from "next/link";
 import axios from "axios";
 import _ from "lodash";
 import Content from "../components/Content";
+import OffersPageContent from '../components/OffersPageContent'
 var Papa = require("papaparse");
 
 const getParsedDate = () => {
@@ -44,6 +45,14 @@ const StorePage = (props) => {
         }
         description={props.storeInfo.metaInfo__desc}
       />
+        <hr/>
+       <OffersPageContent
+        {...props}
+        headerTag1={
+          "Trending Offers from Top Stores "
+        }       
+        description={'We are please to provide some trending offers from other stores if you have habbit of saving while doing online shopping this is best place for you'}
+      />
     </div>
   );
 };
@@ -62,10 +71,19 @@ export async function getServerSideProps({ params }) {
   const res = await axios.get(dataUrl);
   const data = Papa.parse(res.data);
 
+
+  let clinksRes = await fetch(
+    `https://ofccode-api-sportybruh1990.vercel.app/api/front/cuelinks/offers`
+  );
+  let cuelinksOffers = await clinksRes.json();  
+
+
+
   return {
     props: {
       storeInfo: getStoreIdRes,
       couponsData1: data,
+      cuelinksOffers: cuelinksOffers,
     },
   };
 }

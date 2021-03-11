@@ -11,7 +11,7 @@ const getParsedDate = (date) => {
 const Card = (props) => {
   const couponsData = (props.couponsData1)? props.couponsData1.data: {};
   const store__logo = (props.storeInfo)? props.storeInfo.slug: {};
-  const store__name = (props.storeInfo)? props.storeInfo.name: {};
+  const store__name = (props.storeInfo)? props.storeInfo.formatted_name: {};
 
   if(couponsData.length>2){
     return (
