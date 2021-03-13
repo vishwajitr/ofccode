@@ -56,11 +56,11 @@ function Serach({ Component, pageProps }) {
     <div>
       <Head>
         <script async="async" src="https://www.google.com/adsense/search/ads.js"></script>
-        <script async src="https://cse.google.com/cse.js?cx=e877bbb1cb1dec634"></script>
+        <script async src="https://cse.google.com/cse.js?cx=39bed8f3de88a4885"></script>
       </Head>
       <div id="afscontainer1"></div>
-      <div class="gcse-search"></div>
-      <div class="gcse-searchresults"></div>
+      <div className="gcse-search"></div>
+      <div className="gcse-searchresults"></div>
       <div id="afscontainer2"></div>
     </div>
   );

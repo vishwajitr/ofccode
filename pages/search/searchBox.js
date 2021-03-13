@@ -54,7 +54,7 @@ export default function Search() {
         <ul className="results">
           {results.map(({ id, slug, storeSlug, formatted_name, slugType }) => (
             <li className="result" key={id}>
-              <Link href="/search/?q=[storeSlug]" as={`/search/?q=${slug+ '-' +slugType}`}>
+              <Link href="/search/?q=[slug]" as={`/search/?q=${slug}`}>
                 <a>{formatted_name}</a>
               </Link>
             </li>

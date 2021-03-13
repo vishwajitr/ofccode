@@ -1,5 +1,5 @@
 import axios from "axios";
-import Search from "../search/index";
+import Search from "../search/searchBox";
 import TopStores from "../components/Store/topStores";
 
 const Index = (props) => {
@@ -26,7 +26,6 @@ export async function getServerSideProps() {
  
   getStoreIdRes = getStoreIdRes.data;
   getStoreIdRes = getStoreIdRes.filter((store) => store.site__StoreEnabled == 1);
-  
 
   return {
     props: {

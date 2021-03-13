@@ -1,5 +1,5 @@
 import axios from "axios";
-import Search from "../pages/search/index";
+import Search from "./search/searchBox";
 import TopStores from "./components/Store/topStores";
 import OffersPageContent from './components/OffersPageContent'
 import _ from 'lodash';
