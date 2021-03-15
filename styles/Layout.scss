@@ -79,6 +79,7 @@ body {
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 8px;
+    text-transform: capitalize;
   }
   h2 {
     font-size: 18px;
@@ -290,15 +291,18 @@ body {
 }
 
 .result {
-  background: #262f5f;
+  background: #fff;
   color: #eee;
   margin: 0 0 1px;
   padding: 8px;
+  a{
+    color: #007bff;
+    span{
+      font-weight: bolder;
+    }
+  }
 }
 
-.result a {
-  color: #eee;
-}
 
 .headerSearch {
   .search__block {
@@ -327,10 +331,16 @@ body {
   }
 
   .result {
-    background-color: #616161;
+    background-color: #fff;
     color: #333;
     padding: 4px 10px;
     margin-bottom: 1px;
+    a{
+      color: #007bff;
+      span{
+        font-weight: bolder;
+      }
+    }
   }
 }
 
@@ -392,12 +402,13 @@ body {
 }
 
 .deal__card {
-  padding: 15px 20px;
+  padding: 15px 10px;
   background-color: #ffffff;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
-  border-radius: 15px;
+  border: 1px solid #ddd;
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.1)!important;
   margin-bottom: 10px;
   width: 100%;
+  position: relative;
 
   .deal__discount {
     width: 90px;
@@ -486,8 +497,8 @@ body {
     }
 
     .deal__cta {
-      width: 175px;
-      height: 40px;
+      width: 135px;
+      height: 30px;
       position: absolute;
       right: 20px;
       top: 50%;
@@ -499,14 +510,13 @@ body {
       display: block;
       color: $color-primary;
       text-align: center;
-      font-size: 16px;
-      line-height: 40px;
+      font-size: 12px;
+      line-height: 30px;
       right: 12px;
-      border-radius: 50px;
       font-weight: 700;
 
       .getPromoCode{
-        opacity: 0.4;
+        // opacity: 0.4;
         &:hover{
           opacity: 0.1;
         }
@@ -632,5 +642,28 @@ body {
   .deal__card .deal__desc-title h2 {
     font-size: 16px;
     line-height: 19px;
+  }
+}
+
+.FlipkartOffers_Ul{
+  padding: 0;
+  margin: 0;
+  .offerCard-Col{
+    width: 25%;
+    padding: 10px;
+    display: inline-block;
+      
+    .offerCard{
+      margin: 0 1% 10px;
+     background-color: #ffffff;
+      padding: 20px;
+      text-align: center;
+      min-height: 300px;
+      img{
+        object-fit: contain;
+        max-width: 100%;
+        max-height: 200px;
+      }
+    }
   }
 }

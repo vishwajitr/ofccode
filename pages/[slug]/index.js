@@ -5,8 +5,8 @@ import NextPage from "next";
 import Link from "next/link";
 import axios from "axios";
 import _ from "lodash";
-import Content from "../components/Content";
-import OffersPageContent from '../components/OffersPageContent'
+import KwContent from "../components/KwContent";
+import OffersPageContent from "../components/OffersPageContent";
 var Papa = require("papaparse");
 
 const getParsedDate = () => {
@@ -27,43 +27,37 @@ const getParsedDate = () => {
   return month[d.getMonth()];
 };
 
-const StorePage = (props) => {  
+const StorePage = (props) => {
   return (
     <div>
-      <Content
-        {...props}
-        headerTag1={
-          props.storeInfo.formatted_name +
-          " Coupons And Discount Codes For " +
-          getParsedDate() +
-          " 2021"
-        }
-        headerTag2={
-          "Latest " +
-          props.storeInfo.formatted_name +
-          " Coupon Codes, Discount Offers & Promotional Deals"
-        }
-        description={props.storeInfo.metaInfo__desc}
-      />
-        <hr/>
-       <OffersPageContent
-        {...props}
-        headerTag1={
-          "Trending Offers from Top Stores "
-        }       
-        description={'We are please to provide some trending offers from other stores if you have habbit of saving while doing online shopping this is best place for you'}
-      />
+      {/* 
+      TODO
+      Share Social Media
+      //Related kws
+      Related Products
+
+      Store Overview
+
+      Popular Search
+      // Category Browse
+
+
+      */}
+      {console.log(props.keywordInfo.keyword)}
+      <KwContent {...props} headerTag1={props.keywordInfo.keyword} />
     </div>
   );
 };
 
 export async function getServerSideProps({ params }) {
-  const storeSlug = params.slug;
+  const Slug = params.slug;
   const response = await fetch(
-    `https://ofccode-api-sportybruh1990.vercel.app/api/front/${storeSlug}`
+    `http://localhost:3002/api/front/search/kws__by__slug?q=${Slug}`
   );
   const getStoreIdRes = await response.json();
-  const storeId = getStoreIdRes.affInfo__StoreId;
+
+
+  const storeId = getStoreIdRes.dataSet__storesId[0];
   const dataUrl =
     "https://export.admitad.com/en/webmaster/websites/1777052/coupons/export/?website=1777052&advcampaigns=" +
     storeId +
@@ -72,18 +66,19 @@ export async function getServerSideProps({ params }) {
   const data = Papa.parse(res.data);
 
 
-  let clinksRes = await fetch(
-    `https://ofccode-api-sportybruh1990.vercel.app/api/front/cuelinks/offers`
+
+  const kws__response = await fetch(
+    `http://localhost:3002/api/front/keywords/`
   );
-  let cuelinksOffers = await clinksRes.json();  
+  const getKeywordsRes = await kws__response.json();
 
 
-
+  
   return {
     props: {
-      storeInfo: getStoreIdRes,
+      keywordInfo: getStoreIdRes,
+      keywordSet: getKeywordsRes,
       couponsData1: data,
-      cuelinksOffers: cuelinksOffers,
     },
   };
 }

@@ -9,7 +9,7 @@ export default function Search() {
   const [active, setActive] = useState(false);
   const [results, setResults] = useState([]);
 
-  const searchEndpoint = (query) => `/api/front/search/stores__by__query?q=${query}`;
+  const searchEndpoint = (query) => `/api/front/search/kw__search?q=${query}`;
 
 
   // console.log(searchEndpoint(query));
@@ -40,27 +40,28 @@ export default function Search() {
     }
   }, []);
   
-
   const highLight = (keyword) => {
     keyword =  _.replace(keyword, query, '<span class="smallcaps">'+query+'</span>')
     return (<div dangerouslySetInnerHTML={{__html: keyword}}></div>);
   }
+
+
   return (
     <div ref={searchRef} className="search__block">
       <input
         className="search"
         onChange={onChange}
         onFocus={onFocus}
-        placeholder="Search Store"
+        placeholder="Type keyword + Coupons"
         type="text"
         value={query}
       />
       {active && results.length > 0 && (
         <ul className="results">
-          {results.map(({ id, slug, formatted_name }) => (
-            <li className="result" key={id}>
-              <Link href="/store/[slug]" as={`/store/${slug}`}>
-                <a>{highLight(formatted_name)}</a>
+          {results.map(({ _id, keyword_slug, keyword }) => (
+            <li className="result" key={_id}>
+              <Link href="/[keyword_slug]" as={`/${keyword_slug}`}>
+                <a>{highLight(keyword)}</a>
               </Link>
             </li>
           ))}

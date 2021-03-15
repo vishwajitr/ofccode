@@ -6,7 +6,7 @@ const TopStores = ({ storeInfo }) => {
   const LiElements = Stores.map((store, index) => (
     <li className="storeCard-Col" key={index}>
       <div className="storeCard storeCard-small">
-        <Link href={`${store.slug + "-" + store.slugType}`} as={`${store.slug + "-" + store.slugType}`}>
+        <Link href={`/store/${store.slug}`} as={`/store/${store.slug}`}>
           <a>
             <img
               src={`/stores__logo/${store.slug}-logo-large.jpg`}
@@ -17,7 +17,7 @@ const TopStores = ({ storeInfo }) => {
             />
           </a>
         </Link>
-        <Link href={`${store.slug + "-" + store.slugType}`} as={`${store.slug + "-" + store.slugType}`}>
+        <Link href={`/store/${store.slug}`} as={`/store/${store.slug}`}>
           <h5>
             <a className="nav-link">{store.formatted_name}</a>
           </h5>

@@ -28,7 +28,7 @@ const Card = (props) => {
     var pageOptions = {
       pubId: "pub-9616389000213823", // Make sure this the correct client ID!
       query: slug,
-      adPage: 10,
+      adPage: 6,
       channel: "searchchnm",
     };
 
@@ -89,7 +89,7 @@ const Card = (props) => {
                 }
                 return (
                   <div key={key} className={key}>
-                    <div className="">
+                    <div className="row">
                       <div className="deal__card">
                         <div className="deal__discount">
                           <div className="deal__info">
@@ -208,6 +208,7 @@ const Card = (props) => {
                 );
               }
             })}
+
             <div id="afscontainer2"></div>
            
           </div>

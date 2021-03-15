@@ -47,7 +47,7 @@ const OfferPage = (props) => {
 
 export async function getServerSideProps({ params }) {
   let clinksRes = await fetch(
-    `https://ofccode-api-sportybruh1990.vercel.app/api/front/cuelinks/offers`
+    `http://localhost:3002/api/front/cuels/offers`
   );
   let cuelinksOffers = await clinksRes.json();  
 

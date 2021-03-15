@@ -6,19 +6,19 @@ const FooterLinksList = () => {
   const FooterLinks = [
     {
       label: "Wow",
-      path: "/buywow-coupons",
+      path: "/store/buywow",
     },
     {
       label: "FirstCry",
-      path: "/firstcry-coupons",
+      path: "/store/firstcry",
     },
     {
       label: "Boat",
-      path: "/boat-lifestyle-coupons",
+      path: "/store/boat-lifestyle",
     },
     {
       label: "Tata Cliq",
-      path: "/tatacliq-coupons",
+      path: "/store/tatacliq",
     },
   ];
 

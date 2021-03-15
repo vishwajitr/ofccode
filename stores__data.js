@@ -1,5 +1,7 @@
-import admitad from './pages/api/front/admitadStores';
+import admitadStores from './pages/api/front/admi/admitadStores';
+import directStores from './pages/api/front/directPartners/directStores';
 
-export const store = [  
-  ...admitad
+export const stores = [  
+  ...directStores,
+  ...admitadStores
 ];

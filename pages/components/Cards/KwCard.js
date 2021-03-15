@@ -12,6 +12,8 @@ const getParsedDate = (date) => {
 const Card = (props) => {
   const router = useRouter();
   const { slug } = router.query;
+  const keyword = props.keywordInfo.keyword;
+  
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
     // <!-- other head elements from your page -->
@@ -27,7 +29,7 @@ const Card = (props) => {
 
     var pageOptions = {
       pubId: "pub-9616389000213823", // Make sure this the correct client ID!
-      query: slug,
+      query: keyword,
       adPage: 10,
       channel: "searchchnm",
     };

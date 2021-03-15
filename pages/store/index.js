@@ -3,7 +3,7 @@ import Link from "next/link";
 import Search from "../search/searchBox";
 import TopStores from "../components/Store/topStores";
 import axios from "axios";
-import _ from 'lodash';
+import _ from "lodash";
 
 const Stores = (props) => {
   return (
@@ -22,46 +22,52 @@ const Stores = (props) => {
         <meta itemProp="url" name="url" content="https://www.offersCode.in" />
       </Head>
       <div className="search__wrapper">
-      <Search />
+        <Search />
       </div>
       <div className="topStores__wrapper">
-        <h3>
-          Top Stores
-        </h3>
+        <h3>Top Stores</h3>
 
-        <ul className="topStores__Ul"><TopStores storeInfo={props.storeInfo} /></ul>
+        <ul className="topStores__Ul">
+          <TopStores storeInfo={props.storeInfo} />
+        </ul>
       </div>
     </div>
   );
 };
 
 export const getStaticProps = async () => {
-  let response = await fetch(
-    `https://ofccode-api-sportybruh1990.vercel.app/api/front`
-  );
-  let getStoreIdRes = await response.json();  
-  let selectedStoresArr  = [15481, 15542, 14719, 23961, 23825, 15591,14291,21361,22998,23433,22012];
-  let FinalData = []; 
-  var selectedStores = _.map(selectedStoresArr, function(storeId, Index) {
-     let filteredData = getStoreIdRes.filter((store) => (store.affInfo__StoreId == storeId));
-      FinalData[Index] = filteredData[0];
+  let response = await fetch(`http://localhost:3002/api/front`);
+  let getStoreIdRes = await response.json();
+  let selectedStoresArr = [
+    15481,
+    15542,
+    14719,
+    23961,
+    23825,
+    15591,
+    14291,
+    21361,
+    22998,
+    23433,
+    22012,
+  ];
+  let FinalData = [];
+  var selectedStores = _.map(selectedStoresArr, function (storeId, Index) {
+    let filteredData = getStoreIdRes.filter(
+      (store) => store.affInfo__StoreId == storeId
+    );
+    FinalData[Index] = filteredData[0];
   });
-  
-  getStoreIdRes = FinalData.filter((store) => (store.site__StoreEnabled == 1));
 
+  getStoreIdRes = FinalData.filter((store) => store.site__StoreEnabled == 1);
 
-
-  let clinksRes = await fetch(
-    `https://ofccode-api-sportybruh1990.vercel.app/api/front/cuelinks/offers`
-  );
-  let cuelinksOffers = await clinksRes.json();  
-  
-
+  let clinksRes = await fetch(`http://localhost:3002/api/front/cuels/offers`);
+  let cuelinksOffers = await clinksRes.json();
 
   return {
     props: {
       storeInfo: getStoreIdRes,
-      cuelinksOffers : cuelinksOffers
+      cuelinksOffers: cuelinksOffers,
     },
   };
 };
