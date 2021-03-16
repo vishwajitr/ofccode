@@ -12,7 +12,7 @@ const getParsedDate = (date) => {
 const Card = (props) => {
   const router = useRouter();
   const { slug } = router.query;
-  const keyword = props.keywordInfo.keyword;
+  const keyword = (props.keywordInfo)?props.keywordInfo.keyword: 'amazon';
   
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {

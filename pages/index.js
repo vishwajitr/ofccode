@@ -1,9 +1,17 @@
 import axios from "axios";
+import _ from "lodash";
 import Search from "./search/searchBox";
 import TopStores from "./components/Store/topStores";
 import OffersPageContent from "./components/OffersPageContent";
-import _ from "lodash";
 import Link from "next/link";
+
+const convertToSlug = (Text) =>{
+    return Text
+        .toLowerCase()
+        .replace(/ /g,'-')
+        .replace(/[^\w-]+/g,'')
+        ;
+}
 
 const FlipkartOffers = ({ flipkartOffers }) => {
   let flipkartOffersArr = [];
@@ -13,7 +21,7 @@ const FlipkartOffers = ({ flipkartOffers }) => {
       <li className="offerCard-Col" key={index}>
         <div className="offerCard offerCard-small">
           <Link href="${offer.url}" as={`${offer.url}`}>
-            <a>
+            <a target="_blank">
               <img
                 src={`${offer.imageUrls[0].url}`}
                 onError={(e) => {
@@ -24,9 +32,10 @@ const FlipkartOffers = ({ flipkartOffers }) => {
             </a>
           </Link>
         </div>
+        
         <h5>
           <Link href={offer.url} as={offer.url}>
-            <a className="" target="_blank" rel="nofollow">
+            <a target="_blank">
               {offer.title}
             </a>
           </Link>
@@ -50,7 +59,7 @@ const FlipkartFlashOffers = ({ flipkartFlashOffers }) => {
       <li className="offerCard-Col" key={index}>
         <div className="offerCard offerCard-small">
           <Link href="${offer.url}" as={`${offer.url}`}>
-            <a>
+            <a target="_blank">
               <img
                 src={`${offer.imageUrls[0].url}`}
                 onError={(e) => {
@@ -63,7 +72,7 @@ const FlipkartFlashOffers = ({ flipkartFlashOffers }) => {
         </div>
         <h5>
           <Link href={offer.url} as={offer.url}>
-            <a className="" target="_blank" rel="nofollow">
+            <a target="_blank">
               {offer.title}
             </a>
           </Link>
@@ -111,7 +120,7 @@ const Index = (props) => {
 };
 
 export async function getServerSideProps() {
-  let response = await fetch(`http://localhost:3002/api/front/stores/`);
+  let response = await fetch(`https://ofccode-api-jd5rsee48-sportybruh1990.vercel.app/api/front/stores/`);
   let getStoreIdRes = await response.json();
   let selectedStoresArr = [
     15481,
@@ -136,16 +145,16 @@ export async function getServerSideProps() {
 
   getStoreIdRes = FinalData.filter((store) => store.site__StoreEnabled == 1);
 
-  let clinksRes = await fetch(`http://localhost:3002/api/front/cuels/offers`);
+  let clinksRes = await fetch(`https://ofccode-api-jd5rsee48-sportybruh1990.vercel.app/api/front/cuels/offers`);
   let cuelinksOffers = await clinksRes.json();
 
   let flipkartOffersRes = await fetch(
-    `http://localhost:3002/api/front/directPartners/flipkart__offers`
+    `https://ofccode-api-jd5rsee48-sportybruh1990.vercel.app/api/front/directPartners/flipkart__offers`
   );
   let getflipkartOffers = await flipkartOffersRes.json();
 
   let flipkartFlashOffersRes = await fetch(
-    `http://localhost:3002/api/front/directPartners/flipkart__offers?q=dotd`
+    `https://ofccode-api-jd5rsee48-sportybruh1990.vercel.app/api/front/directPartners/flipkart__offers?q=dotd`
   );
   let getflipkartFlashOffers = await flipkartFlashOffersRes.json();
 

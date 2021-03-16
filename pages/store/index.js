@@ -36,7 +36,7 @@ const Stores = (props) => {
 };
 
 export const getStaticProps = async () => {
-  let response = await fetch(`http://localhost:3002/api/front`);
+  let response = await fetch(`https://ofccode-api-jd5rsee48-sportybruh1990.vercel.app/api/front/stores`);
   let getStoreIdRes = await response.json();
   let selectedStoresArr = [
     15481,
@@ -61,7 +61,7 @@ export const getStaticProps = async () => {
 
   getStoreIdRes = FinalData.filter((store) => store.site__StoreEnabled == 1);
 
-  let clinksRes = await fetch(`http://localhost:3002/api/front/cuels/offers`);
+  let clinksRes = await fetch(`https://ofccode-api-jd5rsee48-sportybruh1990.vercel.app/api/front/cuels/offers`);
   let cuelinksOffers = await clinksRes.json();
 
   return {

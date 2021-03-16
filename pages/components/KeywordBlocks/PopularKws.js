@@ -4,8 +4,7 @@ import _ from 'lodash'
 const TopKeywords = ({ keywordSet }) => {
   let Keywords = [];  
   Keywords = keywordSet;
-  Keywords = Keywords.slice(1, 10);
-
+  Keywords = (Keywords)?Keywords.slice(1, 10):[];
   if(Keywords){
   const LiElements = Keywords.map((keyword, index) => (
     <li className="storeCard-Col" key={index}>
@@ -19,8 +18,6 @@ const TopKeywords = ({ keywordSet }) => {
     return '';
   }
 };
-
-
 
 const PopularKws  = (props) => {
     return (

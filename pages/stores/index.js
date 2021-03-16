@@ -18,20 +18,21 @@ const Index = (props) => {
   );
 };
 
-
 export async function getServerSideProps() {
   let getStoreIdRes = await axios.get(
-    `http://localhost:3002/api/front/`
+    `https://ofccode-api-jd5rsee48-sportybruh1990.vercel.app/api/front/`
   );
- 
+
   getStoreIdRes = getStoreIdRes.data;
-  getStoreIdRes = getStoreIdRes.filter((store) => store.site__StoreEnabled == 1);
+  getStoreIdRes = getStoreIdRes.filter(
+    (store) => store.site__StoreEnabled == 1
+  );
 
   return {
     props: {
       storeInfo: getStoreIdRes,
     },
   };
-};
+}
 
 export default Index;
