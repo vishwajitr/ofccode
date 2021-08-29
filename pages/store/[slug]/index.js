@@ -45,14 +45,20 @@ const StorePage = (props) => {
         }
         description={props.storeInfo.metaInfo__desc}
       />
-        {/* <hr/> */}
-       {/* <OffersPageContent
-        {...props}
-        headerTag1={
-          "Trending Offers from Top Stores "
-        }       
-        description={'We are please to provide some trending offers from other stores if you have habbit of saving while doing online shopping this is best place for you'}
-      /> */}
+        
+       {(props.cuelinksOffers.length > 0 ) ? 
+       <div>
+         <hr/>
+         <OffersPageContent
+          {...props}
+          headerTag1={
+            "Trending Offers from Top Stores "
+          }       
+          description={'We are please to provide some trending offers from other stores if you have habbit of saving while doing online shopping this is best place for you'}
+        />
+       </div>
+       : <div></div>} 
+       
     </div>
   );
 };
@@ -60,10 +66,10 @@ const StorePage = (props) => {
 export async function getServerSideProps({ params }) {
   const storeSlug = params.slug;
   const response = await fetch(
-    `https://ofccode-api-jd5rsee48-sportybruh1990.vercel.app/api/front/search/store__by__slug?q=${storeSlug}`
+    `http://localhost:3002/api/front/search/store__by__slug?q=${storeSlug}`
   );
   const getStoreIdRes = await response.json();
-  console.log(getStoreIdRes)
+  // console.log(getStoreIdRes)
   const storeId = getStoreIdRes.affInfo__StoreId;
   const dataUrl =
     "https://export.admitad.com/en/webmaster/websites/1777052/coupons/export/?website=1777052&advcampaigns=" +
@@ -73,16 +79,22 @@ export async function getServerSideProps({ params }) {
   const data = Papa.parse(res.data);
 
 
+  // let clinksRes = await fetch(
+  //   `http://localhost:3002/api/front/cuels/offers`
+  // );
+  // let cuelinksOffers = await clinksRes.json();  
+
   let clinksRes = await fetch(
-    `https://ofccode-api-jd5rsee48-sportybruh1990.vercel.app/api/front/cuels/offers`
+    `http://localhost:3002/api/front/search/offers__by__query?q=${storeSlug}`
   );
   let cuelinksOffers = await clinksRes.json();  
+    
 
   return {
     props: {
       storeInfo: getStoreIdRes,
       couponsData1: data,
-      cuelinksOffers: cuelinksOffers,
+      cuelinksOffers: cuelinksOffers.results,
     },
   };
 }

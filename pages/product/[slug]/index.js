@@ -27,13 +27,33 @@ const getParsedDate = () => {
 };
 
 const ProductPage = (props) => {
-  return <div>{console.log(props)}</div>;
+  return <div className="ProdPage">
+  <div className="prodCard">
+  <div className="prodCard__image">
+    <img src={props.results.image_url}/>
+  </div>
+  <div className="prodCard__field prodCard__name">{props.results.title}</div>
+  <div className="prodCard__field prodCard__cat">Categories: {props.results.categories}</div>
+  <div className="prodCard__field prodCard__brand">Brand: {props.results.merchant}</div>
+  <div className="prodCard__field prodCard__desc">Description: {props.results.description}</div>
+  <div className="prodCard__field prodCard__couponcode">Coupon_Code: {props.results.coupon_code}</div>
+  <div className="prodCard__field prodCard__buybtn"><a href={props.results.url} target="_blank">Buy Now</a> </div>
+  </div>
+  </div>;
 };
 
-ProductPage.getInitialProps = async ({ req }) => {
-    const res = await fetch('https://api.github.com/repos/vercel/next.js')
+export async function getServerSideProps({ params }) {
+  const Slug = params.slug;
+    const res = await fetch(`http://localhost:3002/api/front/offers/prod__by__slug?q=${Slug}`)
     const json = await res.json()
-    return { stars: json.stargazers_count }
-};
+    console.log(json)
+    
+    return { 
+      props: {
+        results: json.results[0],
+      },
+    };
+  }
+  
 
 export default ProductPage;

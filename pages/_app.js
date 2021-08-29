@@ -5,6 +5,7 @@ import Navbar from "./components/Header";
 import Footer from "./components/Footer";
 import "../styles/global.scss";
 import "../styles/Layout.scss";
+
 const tagManagerArgs = {
   gtmId: "GTM-WQDK67V",
 };
@@ -12,46 +13,42 @@ if (process.browser) {
   TagManager.initialize(tagManagerArgs);
 }
 
+
 function MyApp({ Component, pageProps }) {
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
     window.ao_subid = "moneylink";
 
 
-    window.cId = '126335';
+    // window.cId = '126335';
 
-    (function(d, t) {
-      var s = document.createElement('script');
-      s.type = 'text/javascript';
-      s.async = true;
-      s.src = (document.location.protocol == 'https:' ? 'https://cdn0.cuelinks.com/js/' : 'http://cdn0.cuelinks.com/js/')  + 'cuelinksv2.js';
-      document.getElementsByTagName('body')[0].appendChild(s);
-    }());
+    // (function(d, t) {
+    //   var s = document.createElement('script');
+    //   s.type = 'text/javascript';
+    //   s.async = true;
+    //   s.src = (document.location.protocol == 'https:' ? 'https://cdn0.cuelinks.com/js/' : 'http://cdn0.cuelinks.com/js/')  + 'cuelinksv2.js';
+    //   document.getElementsByTagName('body')[0].appendChild(s);
+    // }());
 
+    // window.OneSignal = window.OneSignal || [];
+    // const OneSignal = window.OneSignal;
 
-
-
-    
-
-    window.OneSignal = window.OneSignal || [];
-    const OneSignal = window.OneSignal;
-
-    OneSignal.push(()=> {
-      OneSignal.init(
-        {
-          appId: "b0bdcbd7-4c41-46e8-89db-1984ea5e49e1", //STEP 9
-          welcomeNotification: {
-            "title": "One Signal",
-            "message": "Thanks for subscribing!",
-          }
-      },
-        //Automatically subscribe to the new_app_version tag
-        OneSignal.sendTag("new_app_version", "new_app_version", tagsSent => {
-          // Callback called when tag has finished sending
-          console.log('new_app_version TAG SENT', tagsSent);
-        })
-      );
-    });
+    // OneSignal.push(()=> {
+    //   OneSignal.init(
+    //     {
+    //       appId: "b0bdcbd7-4c41-46e8-89db-1984ea5e49e1", //STEP 9
+    //       welcomeNotification: {
+    //         "title": "One Signal",
+    //         "message": "Thanks for subscribing!",
+    //       }
+    //   },
+    //     //Automatically subscribe to the new_app_version tag
+    //     OneSignal.sendTag("new_app_version", "new_app_version", tagsSent => {
+    //       // Callback called when tag has finished sending
+    //       console.log('new_app_version TAG SENT', tagsSent);
+    //     })
+    //   );
+    // });
   });
 
   return (
@@ -100,11 +97,11 @@ function MyApp({ Component, pageProps }) {
         />
         <meta itemProp="image" content="logo.jpg" />
 
-        <script
+        {/* <script
           src="//js.mamydirect.com/js/?h=j528d0OH"
           type="text/javascript"
           async
-        ></script>
+        ></script> */}
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-RVN1V7NSW4"
@@ -114,7 +111,7 @@ function MyApp({ Component, pageProps }) {
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
         ></script>
-        <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+        {/* <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script> */}
       </Head>
       <div id="fb-root"></div>
       <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId=1873426346256864&autoLogAppEvents=1" nonce="zojCv1Bq"></script>

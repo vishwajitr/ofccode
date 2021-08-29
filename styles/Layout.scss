@@ -70,7 +70,7 @@ body {
 .header {
   color: #ffffff;
   .Logo__Box {
-    color: red;
+    color: grey;
   }
 }
 
@@ -580,6 +580,51 @@ body {
   }
 }
 
+.FlipkartOffers_Ul{
+  padding: 0;
+  margin: 0;
+  .offerCard-Col{
+    width: 25%;
+    padding: 10px;
+    display: inline-block;
+      
+    .offerCard{
+      margin: 0 1% 10px;
+     background-color: #ffffff;
+      padding: 20px;
+      text-align: center;
+      min-height: 300px;
+      img{
+        object-fit: contain;
+        max-width: 100%;
+        max-height: 200px;
+      }
+    }
+  }
+}
+
+.FlipkartCPProd_Ul{
+  padding: 0;
+  margin: 0;
+  .CpCard-Col{
+    width: 25%;
+    padding: 10px;
+    display: inline-block;
+      
+    .CpCard{
+      margin: 0 1% 10px;
+     background-color: #ffffff;
+      padding: 20px;
+      text-align: center;
+      min-height: 300px;
+      img{
+        object-fit: contain;
+        max-width: 100%;
+        max-height: 200px;
+      }
+    }
+  }
+}
 @media only screen and (max-width: 600px) {
   .topStores__wrapper {
     .storeCard-Col {
@@ -643,27 +688,44 @@ body {
     font-size: 16px;
     line-height: 19px;
   }
-}
 
-.FlipkartOffers_Ul{
-  padding: 0;
-  margin: 0;
-  .offerCard-Col{
-    width: 25%;
-    padding: 10px;
-    display: inline-block;
-      
-    .offerCard{
-      margin: 0 1% 10px;
-     background-color: #ffffff;
-      padding: 20px;
-      text-align: center;
-      min-height: 300px;
-      img{
-        object-fit: contain;
-        max-width: 100%;
-        max-height: 200px;
-      }
+  .FlipkartOffers_Ul{
+    .offerCard-Col{
+      width: 100%;
     }
   }
 }
+
+
+.prodCard{
+  font-size: 17px;
+  .prodCard__image{
+    height: auto;
+    margin-bottom: 50px;
+    background-color: #e7e7e7;
+    padding: 50px;
+    text-align: center;
+    border-radius: 10px;
+    img{
+      margin: 0px auto;
+      max-width: 300px;
+    }
+  }
+  .prodCard__name{
+    font-size: 25px;
+  }
+  .prodCard__field{
+    margin-bottom: 20px;
+  }
+  .prodCard__buybtn{
+    display: block;
+    a{
+      background-color: #007bff;
+      padding: 10px;
+      display: inline-block;
+    }
+  }
+  
+}
+
+

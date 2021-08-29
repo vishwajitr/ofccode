@@ -7,6 +7,7 @@ import axios from "axios";
 import _ from "lodash";
 import KwContent from "../components/KwContent";
 import OffersPageContent from "../components/OffersPageContent";
+import KwRightSide from "../components/KwRightSide";
 var Papa = require("papaparse");
 
 const getParsedDate = () => {
@@ -38,13 +39,23 @@ const StorePage = (props) => {
 
       Store Overview
 
-      Popular Search
+      Popular Search  
       // Category Browse
 
 
       */}
-      {console.log(props.keywordInfo.keyword)}
-      <KwContent {...props} headerTag1={props.keywordInfo.keyword} />
+      {/* {console.log(props.keywordInfo.keyword)} */}
+      {/* <KwContent {...props} headerTag1={props.keywordInfo.keyword} /> */}
+
+      <OffersPageContent
+        {...props}
+        headerTag1={
+          props.keywordInfo.keyword
+        }
+        description={''}
+      />
+      <KwRightSide {...props} />
+      
     </div>
   );
 };
@@ -52,23 +63,22 @@ const StorePage = (props) => {
 export async function getServerSideProps({ params }) {
   const Slug = params.slug;
   const response = await fetch(
-    `https://ofccode-api-jd5rsee48-sportybruh1990.vercel.app/api/front/search/kws__by__slug?q=${Slug}`
+    `https://ofccode-api-git-main-sportybruh1990.vercel.app/api/front/search/kws__by__slug?q=${Slug}`
   );
   const getStoreIdRes = await response.json();
 
 
   const storeId = getStoreIdRes.dataSet__storesId[0];
-  const dataUrl =
-    "https://export.admitad.com/en/webmaster/websites/1777052/coupons/export/?website=1777052&advcampaigns=" +
-    storeId +
-    "&region=00&code=eyq48w62bj&user=vishwajit82&format=csv&v=4";
-  const res = await axios.get(dataUrl);
-  const data = Papa.parse(res.data);
+  const dataUrl = getStoreIdRes.dataSet__offers;
+  const clinksRes =  await fetch(
+    dataUrl
+  );
+  let cuelinksOffers = await clinksRes.json();    
 
 
 
   const kws__response = await fetch(
-    `https://ofccode-api-jd5rsee48-sportybruh1990.vercel.app/api/front/keywords/`
+    `https://ofccode-api-git-main-sportybruh1990.vercel.app/api/front/keywords/`
   );
   const getKeywordsRes = await kws__response.json();
 
@@ -78,7 +88,7 @@ export async function getServerSideProps({ params }) {
     props: {
       keywordInfo: getStoreIdRes,
       keywordSet: getKeywordsRes,
-      couponsData1: data,
+      cuelinksOffers: cuelinksOffers.results,
     },
   };
 }

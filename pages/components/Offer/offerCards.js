@@ -2,6 +2,7 @@ import React, { Component, useState, useEffect } from "react";
 import _ from "lodash";
 import Moment from "moment";
 import Link from "next/link";
+var slug = require('slug')
 
 const getParsedDate = (date) => {
   return Moment(date).startOf("hour").fromNow();
@@ -19,8 +20,22 @@ const Card = (props) => {
         <div className="clearfix">
           {_.map(cuelinksOffers, (value, key) => {
             let promocodeCard = false;
-            if (key > 0 && value[0] !== "") {
-              if (value["Coupon_Code"] != "") {
+            let cuelOffers = {}
+            cuelOffers['title'] = value['title'];
+            cuelOffers['merchant'] = value['merchant'];
+            cuelOffers['id'] = value['id'];
+            cuelOffers['categories'] = value['categories'];
+            cuelOffers['description'] = value['description'];
+            cuelOffers['coupon_code'] = value['coupon_code'];
+            cuelOffers['url'] = value['url'];
+            cuelOffers['start_date'] = value['start_date'];
+            cuelOffers['end_date'] = value['end_date'];
+            cuelOffers['offer_added_at'] = value['offer_added_at'];
+            cuelOffers['image_url'] = value['image_url'];
+            cuelOffers['campaign_name'] = value['campaign_name'];
+
+            if (value['title'] !== "") {
+              if (cuelOffers['coupon_code'] != "") {
                 promocodeCard = true;
               }
               return (
@@ -31,12 +46,12 @@ const Card = (props) => {
                         <div className="deal__info">
                           <div>
                             <img
-                              src={value["Image_URL"]}
+                              src={cuelOffers['image_url']}
                               onError={(e) => {
                                 e.target.onerror = null;
                                 e.target.src = "/img-notfound.jpg";
                               }}
-                              alt={value["Title"]}
+                              alt={cuelOffers['title']}
                             />{" "}
                           </div>
                         </div>
@@ -45,22 +60,22 @@ const Card = (props) => {
                         <div className="deal__desc-type"></div>
                         <div className="deal__desc-title">
                           <h3>
-                            <Link href={value["URL"]}>
+                            <Link href={'/product/'+slug(cuelOffers['title'])}>
                               <a
-                                data-url={value["URL"]}
-                                data-promolink={value["URL"]}
+                                data-url={'/product/'+slug(cuelOffers['title'])}
+                                data-promolink={'/product/'+slug(cuelOffers['title'])}
                                 data-func="getPromoCode"
                                 className="getPromoCode"
                                 target="_blank"
                                 title={
                                   `OffersCode.in - Promo code for ` +
-                                  value["Campaign_Name"] +
+                                  cuelOffers['campaign_name'] +
                                   ` deal ` +
-                                  value["Title"]
+                                  cuelOffers['title']
                                 }
                                 rel="nofollow"
                               >
-                                {value["Merchant"]} : {value["Title"]}
+                                {cuelOffers['merchant']} : {cuelOffers['title']}
                               </a>
                             </Link>
                           </h3>
@@ -73,41 +88,41 @@ const Card = (props) => {
                           </span>
                           &nbsp;|&nbsp;
                           <span className="deal__desc-meta-lastused">
-                            {value["Categories"]}
+                            {cuelOffers['categories']}
                           </span>
                         </div>
 
                         <div className="deal__cta">
                           {promocodeCard ? (
                             <div>
-                              <Link href={value["URL"]}>
+                              <Link href={'/product/'+slug(cuelOffers['title'])}>
                                 <a
-                                  data-url={value["URL"]}
+                                  data-url={'/product/'+slug(cuelOffers['title'])}
                                   // data-promocode={''}
                                   // data-species={''}
-                                  data-promolink={value["URL"]}
+                                  data-promolink={'/product/'+slug(cuelOffers['title'])}
                                   data-func="getPromoCode"
                                   className="getPromoCode"
                                   // data-website={''}
                                   target="_blank"
                                   title={
                                     `OffersCode.in - Promo code for ` +
-                                    value["Campaign_Name"] +
+                                    cuelOffers['campaign_name'] +
                                     ` deal ` +
-                                    value["Title"]
+                                    cuelOffers['title']
                                   }
                                   rel="nofollow"
                                 >
-                                  {value["Coupon_Code"]}
+                                  {cuelOffers['coupon_code']}
                                 </a>
                               </Link>
                             </div>
                           ) : (
                             <div>
-                              <Link href={value["URL"]}>
+                              <Link href={'/product/'+slug(cuelOffers['title'])}>
                                 <a
                                   // href={`/goto`}
-                                  data-url={value["URL"]}
+                                  data-url={'/product/'+slug(cuelOffers['title'])}
                                   // data-promocode={}
                                   // data-species={}
                                   // data-promolink={}
