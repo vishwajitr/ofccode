@@ -114,13 +114,13 @@ export async function getServerSideProps() {
   let cuelinksOffers = await clinksRes.json();
 
   let flipkartOffersRes = await fetch(
-    `http://localhost:3002/api/front/directPartners/flipkart__offers`
+    `https://ofccode-api-sportybruh1990.vercel.app/api/front/directPartners/flipkart__offers`
   );
   let getflipkartOffers = await flipkartOffersRes.json();
   // console.log(getflipkartOffers);
 
   let flipkartFlashOffersRes = await fetch(
-    `http://localhost:3002/api/front/directPartners/flipkart__offers?q=dotd`
+    `https://ofccode-api-sportybruh1990.vercel.app/api/front/directPartners/flipkart__offers?q=dotd`
   );
   let getflipkartFlashOffers = await flipkartFlashOffersRes.json();
 

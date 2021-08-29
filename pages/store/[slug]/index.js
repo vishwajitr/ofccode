@@ -66,7 +66,7 @@ const StorePage = (props) => {
 export async function getServerSideProps({ params }) {
   const storeSlug = params.slug;
   const response = await fetch(
-    `http://localhost:3002/api/front/search/store__by__slug?q=${storeSlug}`
+    `https://ofccode-api-sportybruh1990.vercel.app/api/front/search/store__by__slug?q=${storeSlug}`
   );
   const getStoreIdRes = await response.json();
   // console.log(getStoreIdRes)
@@ -80,12 +80,12 @@ export async function getServerSideProps({ params }) {
 
 
   // let clinksRes = await fetch(
-  //   `http://localhost:3002/api/front/cuels/offers`
+  //   `https://ofccode-api-sportybruh1990.vercel.app/api/front/cuels/offers`
   // );
   // let cuelinksOffers = await clinksRes.json();  
 
   let clinksRes = await fetch(
-    `http://localhost:3002/api/front/search/offers__by__query?q=${storeSlug}`
+    `https://ofccode-api-sportybruh1990.vercel.app/api/front/search/offers__by__query?q=${storeSlug}`
   );
   let cuelinksOffers = await clinksRes.json();  
     

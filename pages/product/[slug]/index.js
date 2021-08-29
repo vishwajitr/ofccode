@@ -44,7 +44,7 @@ const ProductPage = (props) => {
 
 export async function getServerSideProps({ params }) {
   const Slug = params.slug;
-    const res = await fetch(`http://localhost:3002/api/front/offers/prod__by__slug?q=${Slug}`)
+    const res = await fetch(`https://ofccode-api-sportybruh1990.vercel.app/api/front/offers/prod__by__slug?q=${Slug}`)
     const json = await res.json()
     console.log(json)
     
