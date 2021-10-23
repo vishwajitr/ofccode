@@ -611,6 +611,10 @@ body {
     padding: 10px;
     display: inline-block;
       
+    h5{
+      max-height: 52px;
+      overflow: hidden;
+    }
     .CpCard{
       margin: 0 1% 10px;
      background-color: #ffffff;
@@ -720,9 +724,13 @@ body {
   .prodCard__buybtn{
     display: block;
     a{
-      background-color: #007bff;
+      background-color: #fe6751;
       padding: 10px;
       display: inline-block;
+      color: #fff;
+      min-width: 190px;
+      text-align: center;
+      border-radius: 3px;
     }
   }
   

@@ -30,7 +30,7 @@ const getParsedDate = () => {
 const StorePage = (props) => {  
   return (
     <div>
-      <Content
+      {/* <Content
         {...props}
         headerTag1={
           props.storeInfo.formatted_name +
@@ -44,11 +44,10 @@ const StorePage = (props) => {
           " Coupon Codes, Discount Offers & Promotional Deals"
         }
         description={props.storeInfo.metaInfo__desc}
-      />
+      /> */}
         
        {(props.cuelinksOffers.length > 0 ) ? 
        <div>
-         <hr/>
          <OffersPageContent
           {...props}
           headerTag1={
@@ -66,7 +65,7 @@ const StorePage = (props) => {
 export async function getServerSideProps({ params }) {
   const storeSlug = params.slug;
   const response = await fetch(
-    `https://ofccode-api-sportybruh1990.vercel.app/api/front/search/store__by__slug?q=${storeSlug}`
+    `https://ofccode-api-git-main-sportybruh1990.vercel.app/api/front/search/store__by__slug?q=${storeSlug}`
   );
   const getStoreIdRes = await response.json();
   // console.log(getStoreIdRes)
@@ -80,12 +79,12 @@ export async function getServerSideProps({ params }) {
 
 
   // let clinksRes = await fetch(
-  //   `https://ofccode-api-sportybruh1990.vercel.app/api/front/cuels/offers`
+  //   `https://ofccode-api-git-main-sportybruh1990.vercel.app/api/front/cuels/offers`
   // );
   // let cuelinksOffers = await clinksRes.json();  
 
   let clinksRes = await fetch(
-    `https://ofccode-api-sportybruh1990.vercel.app/api/front/search/offers__by__query?q=${storeSlug}`
+    `https://ofccode-api-git-main-sportybruh1990.vercel.app/api/front/search/offers__by__query?q=${storeSlug}`
   );
   let cuelinksOffers = await clinksRes.json();  
     

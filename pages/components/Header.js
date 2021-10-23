@@ -7,22 +7,34 @@ const HeaderList = () => {
 
 
   const HeaderLinks = [
+    // {
+    //   label: "Wow",
+    //   path: "/store/buywow",
+    // },
+    // {
+    //   label: "FirstCry",
+    //   path: "/store/firstcry",
+    // },
+    // {
+    //   label: "Boat",
+    //   path: "/store/boat-lifestyle",
+    // },
+    // {
+    //   label: "Tata Cliq",
+    //   path: "/store/tatacliq",
+    // },
     {
-      label: "Wow",
-      path: "/store/buywow",
+      label: "Amazon",
+      path: "/store/amazon",
     },
     {
-      label: "FirstCry",
-      path: "/store/firstcry",
+      label: "Flipkart",
+      path: "/store/flipkart",
     },
-    {
-      label: "Boat",
-      path: "/store/boat-lifestyle",
-    },
-    {
-      label: "Tata Cliq",
-      path: "/store/tatacliq",
-    },
+    // {
+    //   label: "Myntra",
+    //   path: "/store/myntra",
+    // },
     {
       label: "Hot Offers",
       path: "/offers",

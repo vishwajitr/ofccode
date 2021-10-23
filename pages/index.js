@@ -17,7 +17,7 @@ const convertToSlug = (Text) =>{
 }
 
 const FlipkartOffers = ({ flipkartOffers }) => {
-  console.log(flipkartOffers)
+  // console.log(flipkartOffers)
   for (var i = 0; i < flipkartOffers.length; i++ ) {
     const LiElements = flipkartOffers.map((offer, index) => (
       <li className="offerCard-Col" key={index}>
@@ -69,15 +69,15 @@ const Index = (props) => {
         <br />
       </div>
 
-      <h3>Flipkart Deal Of The Day Offers (Flash Offers)</h3>
+      {/* <h3>Flipkart Deal Of The Day Offers (Flash Offers)</h3>
       <ul className="FlipkartOffers_Ul">
         <FlipkartOffers flipkartOffers={props.flipkartFlashOffers} />
-      </ul>
+      </ul> */}
       
-      <h3>Flipkart Live Offers</h3>
-      <ul className="FlipkartOffers_Ul">
-        <FlipkartOffers flipkartOffers={props.flipkartOffers} />
-      </ul>
+      {/* <h3>Flipkart Live Offers</h3> */}
+      {/* <ul className="FlipkartOffers_Ul"> */}
+        {/* <FlipkartOffers flipkartOffers={props.flipkartOffers} /> */}
+      {/* </ul> */}
 
       
       {/* <h3>Trending Offers</h3> */}
@@ -92,13 +92,14 @@ export async function getServerSideProps() {
   let selectedStoresArr = [
     1001,
     1002,
-    15481,
-    15542,
-    14719,
-    23961,
-    23825,
-    15591,
-    21361
+    // 15481,
+    // 15481,
+    // 15542,
+    // 14719,
+    // 23961,
+    // 23825,
+    // 15591,
+    // 21361
   ];
   let FinalData = [];
   var selectedStores = _.map(selectedStoresArr, function (storeId, Index) {
@@ -110,27 +111,27 @@ export async function getServerSideProps() {
 
   getStoreIdRes = FinalData.filter((store) => store.site__StoreEnabled == 1);
 
-  let clinksRes = await fetch(`https://ofccode-api-git-main-sportybruh1990.vercel.app/api/front/cuels/offers`);
-  let cuelinksOffers = await clinksRes.json();
+  // let clinksRes = await fetch(`https://ofccode-api-git-main-sportybruh1990.vercel.app/api/front/offers`);
+  // let cuelinksOffers = await clinksRes.json();
 
-  let flipkartOffersRes = await fetch(
-    `https://ofccode-api-sportybruh1990.vercel.app/api/front/directPartners/flipkart__offers`
-  );
-  let getflipkartOffers = await flipkartOffersRes.json();
+  // let flipkartOffersRes = await fetch(
+  //   `https://ofccode-api-git-main-sportybruh1990.vercel.app/api/front/directPartners/flipkart__offers`
+  // );
+  // let getflipkartOffers = await flipkartOffersRes.json();
   // console.log(getflipkartOffers);
 
-  let flipkartFlashOffersRes = await fetch(
-    `https://ofccode-api-sportybruh1990.vercel.app/api/front/directPartners/flipkart__offers?q=dotd`
-  );
-  let getflipkartFlashOffers = await flipkartFlashOffersRes.json();
+  // let flipkartFlashOffersRes = await fetch(
+  //   `https://ofccode-api-git-main-sportybruh1990.vercel.app/api/front/directPartners/flipkart__offers?q=dotd`
+  // );
+  // let getflipkartFlashOffers = await flipkartFlashOffersRes.json();
 
 
   return {
     props: {
       storeInfo: getStoreIdRes,
       // cuelinksOffers: cuelinksOffers,
-      flipkartOffers: getflipkartOffers,
-      flipkartFlashOffers: getflipkartFlashOffers,
+      // flipkartOffers: getflipkartOffers,
+      // flipkartFlashOffers: getflipkartFlashOffers,
     },
   };
 }

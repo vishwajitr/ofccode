@@ -35,8 +35,10 @@ const CatCard = (props) => {
                   
                   <h5>
                       <Link
-                        href={`/product/${slug(products[value].url)}`}
-                        as={`/product/${slug(products[value].url)}`}
+                        // href={`/product/${slug(products[value].url)}`}
+                        // as={`/product/${slug(products[value].url)}`}
+                        href={`${products[value].url}`}
+                        as={`${products[value].url}`}
                       >
                         <a target="_blank">{products[value].title}</a>
                       </Link>

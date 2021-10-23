@@ -1,3 +1,4 @@
+
 import React, { Component, useState, useEffect } from "react";
 import _ from "lodash";
 import Moment from "moment";
@@ -8,12 +9,21 @@ const getParsedDate = (date) => {
   return Moment(date).startOf("hour").fromNow();
 };
 
+
+// const clickUrl = (target) => {
+//   // http://localhost:3000/offers
+//     if (typeof window !== "undefined") {
+//     window.location.href = target;
+//     }
+// };
+
+
 const Card = (props) => {
   const cuelinksOffers = props.cuelinksOffers ? props.cuelinksOffers : {};
   const store__logo = props.storeInfo ? props.storeInfo.slug : {};
   const store__name = props.storeInfo ? props.storeInfo.name : {};
   const limit = props.limit ? props.limit : {};
-
+  
   if (cuelinksOffers) {
     return (
       <section>
@@ -46,7 +56,11 @@ const Card = (props) => {
                         <div className="deal__info">
                           <div>
                             <img
-                              src={cuelOffers['image_url']}
+                              src={
+                                  `/stores__logo/` +
+                                  cuelOffers['merchant'] +
+                                  `-logo-small.jpg`
+                                }
                               onError={(e) => {
                                 e.target.onerror = null;
                                 e.target.src = "/img-notfound.jpg";
@@ -95,7 +109,8 @@ const Card = (props) => {
                         <div className="deal__cta">
                           {promocodeCard ? (
                             <div>
-                              <Link href={'/product/'+slug(cuelOffers['title'])}>
+                              <Link  
+                                href={'/product/'+slug(cuelOffers['title'])}>
                                 <a
                                   data-url={'/product/'+slug(cuelOffers['title'])}
                                   // data-promocode={''}
@@ -113,7 +128,7 @@ const Card = (props) => {
                                   }
                                   rel="nofollow"
                                 >
-                                  {cuelOffers['coupon_code']}
+                                 Get This Deal
                                 </a>
                               </Link>
                             </div>
@@ -133,7 +148,7 @@ const Card = (props) => {
                                   // gotoLink = {value[11]}
                                   rel="nofollow"
                                 >
-                                  Get Deal
+                                  Get This Deal
                                 </a>
                               </Link>
                             </div>

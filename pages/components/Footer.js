@@ -4,21 +4,37 @@ import Link from "next/link";
 
 const FooterLinksList = () => {
   const FooterLinks = [
+    // {
+    //   label: "Wow",
+    //   path: "/store/buywow",
+    // },
+    // {
+    //   label: "FirstCry",
+    //   path: "/store/firstcry",
+    // },
+    // {
+    //   label: "Boat",
+    //   path: "/store/boat-lifestyle",
+    // },
+    // {
+    //   label: "Tata Cliq",
+    //   path: "/store/tatacliq",
+    // },
     {
-      label: "Wow",
-      path: "/store/buywow",
+      label: "Amazon",
+      path: "/store/amazon",
     },
     {
-      label: "FirstCry",
-      path: "/store/firstcry",
+      label: "Flipkart",
+      path: "/store/flipkart",
     },
+    // {
+    //   label: "Myntra",
+    //   path: "/store/myntra",
+    // },
     {
-      label: "Boat",
-      path: "/store/boat-lifestyle",
-    },
-    {
-      label: "Tata Cliq",
-      path: "/store/tatacliq",
+      label: "Hot Offers",
+      path: "/offers",
     },
   ];
 
