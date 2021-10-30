@@ -31,10 +31,14 @@ const HeaderList = () => {
       label: "Flipkart",
       path: "/store/flipkart",
     },
-    // {
-    //   label: "Myntra",
-    //   path: "/store/myntra",
-    // },
+    {
+      label: "Myntra",
+      path: "/store/myntra",
+    },
+    {
+      label: "Ajio",
+      path: "/store/ajio",
+    },
     {
       label: "Hot Offers",
       path: "/offers",

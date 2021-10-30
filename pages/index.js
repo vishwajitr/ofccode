@@ -92,13 +92,13 @@ export async function getServerSideProps() {
   let selectedStoresArr = [
     1001,
     1002,
-    // 15481,
+    15481,
     // 15481,
     // 15542,
     // 14719,
     // 23961,
     // 23825,
-    // 15591,
+    15591,
     // 21361
   ];
   let FinalData = [];
