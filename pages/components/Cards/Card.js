@@ -95,7 +95,7 @@ const Card = (props) => {
                         <div className="deal__discount">
                           <div className="deal__info">
                             <div>
-                              <Image
+                              {/* <Image
                                 src={value[6]}
                                 onError={(e) => {
                                   e.target.onerror = null;
@@ -104,7 +104,8 @@ const Card = (props) => {
                                 alt={value[1]}
                                 height="50"
                                 width="100%"
-                              />{" "}
+                              />{" "} */}
+                              {store__name}
                             </div>
                           </div>
                         </div>

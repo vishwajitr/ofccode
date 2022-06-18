@@ -30,7 +30,7 @@ const getParsedDate = () => {
 const StorePage = (props) => {  
   return (
     <div>
-      {/* <Content
+      <Content
         {...props}
         headerTag1={
           props.storeInfo.formatted_name +
@@ -44,7 +44,7 @@ const StorePage = (props) => {
           " Coupon Codes, Discount Offers & Promotional Deals"
         }
         description={props.storeInfo.metaInfo__desc}
-      /> */}
+      />
         
        {(props.cuelinksOffers.length > 0 ) ? 
        <div>
