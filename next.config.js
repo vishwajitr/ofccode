@@ -1,7 +1,9 @@
 // next.config.js
 module.exports = {
     images: {
-        loader: "imgix"
+        loader: "imgix",
+        // formats: ['image/webp'],
+        path: '/'
     },
     future: {
         webpack5: true
