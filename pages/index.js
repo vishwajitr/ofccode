@@ -1,5 +1,6 @@
 import axios from "axios";
 import _ from "lodash";
+import Image from 'next/image'
 import Search from "./search/searchBox";
 import TopStores from "./components/Store/topStores";
 import OffersPageContent from "./components/OffersPageContent";
@@ -24,7 +25,8 @@ const FlipkartOffers = ({ flipkartOffers }) => {
         <div className="offerCard offerCard-small">
           <Link href={`${offer.url + "&affor=flipkart&affid=vishwajit8" }`} as={`${offer.url  + "&affor=flipkart&affid=vishwajit8" }`}>
             <a target="_blank">
-              <img
+            <Image
+            loader={myLoader}
                 src={`${offer.image_url[0].url}`}
                 onError={(e) => {
                   e.target.onerror = null;
