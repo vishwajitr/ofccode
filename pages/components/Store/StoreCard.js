@@ -10,7 +10,8 @@ const StoreCard = (props) => {
             <div className="StoreCard__name"><i className="fas fa-store"></i> <Link href="/"><a>Shop on {(props.storeInfo)? props.storeInfo.name : ""}</a></Link></div>
             <div className="StoreCard__ratings"><Link href="/" title="OffersCode.in | Home"><a>Home</a></Link> <i className="fas fa-angle-right"></i> <Link href={`/stores/`}><a>Stores</a></Link></div>
             <div className="StoreCard__ratings">
-            <Image src="/5star.png"/>
+            <Image src="/5star.png"  height="10"
+                width="100%"/>
             </div>
             <br/>
             <div className="StoreCard__submitCoupon"><Link href="/store/submit-coupon"><a>Submit a Coupons</a></Link></div>

@@ -5,7 +5,7 @@ import GetServerSideProps from "next";
 import NextPage from "next";
 import Link from "next/link";
 import axios from "axios";
-import _ from "lodash";
+import _, { head } from "lodash";
 import Image from 'next/image'
 
 // import OffersPageContent from "../components/OffersPageContent";
@@ -73,7 +73,10 @@ return <div className="ProdPage">
   `/stores__logo/` +
   props.results.merchant +
   `-logo-large.jpg`
-  }/>
+  }
+  height="80"
+  width="100%"
+  />
   </div>
   </a>
   <div className="prodCard__field prodCard__name">{props.results.title}</div>

@@ -128,8 +128,8 @@ const Card = (props) => {
                                   e.target.onerror = null;
                                   e.target.src = "/img-notfound.jpg";
                                 }}
-                                height={50}
-                                width="auto"
+                                height="50"
+                                width="100%"                              
                                 alt={cuelOffers["title"]}
                               />{" "}
                             </div>

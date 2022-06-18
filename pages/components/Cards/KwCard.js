@@ -104,6 +104,8 @@ const Card = (props) => {
                                   e.target.src = "/img-notfound.jpg";
                                 }}
                                 alt={value[1]}
+                                height="50"
+                                width="100%"
                               />{" "}
                             </div>
                           </div>

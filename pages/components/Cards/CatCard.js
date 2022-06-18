@@ -29,7 +29,8 @@ const CatCard = (props) => {
                             e.target.onerror = null;
                             e.target.src = "/img-notfound.jpg";
                           }}
-                          
+                          height="50"
+                          width="100%"
                         />
                       </a>
                     </Link>
