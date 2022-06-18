@@ -4,6 +4,8 @@ import { useRouter } from "next/router";
 import _ from "lodash";
 import Moment from "moment";
 import Link from "next/link";
+import Image from 'next/image'
+
 var slug = require('slug')
 const CatCard = (props) => {
   const products = props.products ? props.products : {};
@@ -21,7 +23,7 @@ const CatCard = (props) => {
                       as={`${products[value].url}`}
                     >
                       <a target="_blank">
-                        <img
+                        <Image
                           src={`${products[value]["image_url"]}`}
                           onError={(e) => {
                             e.target.onerror = null;

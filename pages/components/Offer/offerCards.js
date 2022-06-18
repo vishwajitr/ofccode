@@ -4,6 +4,8 @@ import { useRouter } from "next/router";
 import _ from "lodash";
 import Moment from "moment";
 import Link from "next/link";
+import Image from 'next/image'
+
 var SlugURL = require("slug");
 
 const getParsedDate = (date) => {
@@ -116,7 +118,7 @@ const Card = (props) => {
                         <div className="deal__discount">
                           <div className="deal__info">
                             <div>
-                              <img
+                              <Image
                                 src={
                                   `/stores__logo/` +
                                   cuelOffers["merchant"] +

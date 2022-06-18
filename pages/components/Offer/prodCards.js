@@ -2,6 +2,8 @@ import React, { Component, useState, useEffect } from "react";
 import _ from "lodash";
 import Moment from "moment";
 import Link from "next/link";
+import Image from 'next/image'
+
 var slug = require('slug')
 
 const getParsedDate = (date) => {
@@ -33,7 +35,7 @@ const Card = (props) => {
                       <div className="deal__discount">
                         <div className="deal__info">
                           <div>
-                            <img
+                            <Image
                               src={value["Image_URL"]}
                               onError={(e) => {
                                 e.target.onerror = null;

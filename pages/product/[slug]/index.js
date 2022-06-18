@@ -6,6 +6,8 @@ import NextPage from "next";
 import Link from "next/link";
 import axios from "axios";
 import _ from "lodash";
+import Image from 'next/image'
+
 // import OffersPageContent from "../components/OffersPageContent";
 var Papa = require("papaparse");
 
@@ -67,7 +69,7 @@ return <div className="ProdPage">
   <div className="prodCard">
   <a href={props.results.link} target="_blank">  
   <div className="prodCard__image">
-  <img src={
+  <Image src={
   `/stores__logo/` +
   props.results.merchant +
   `-logo-large.jpg`

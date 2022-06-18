@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import _ from "lodash";
 import Moment from "moment";
 import Link from "next/link";
+import Image from 'next/image'
 
 const getParsedDate = (date) => {
   return Moment(date).startOf("hour").fromNow();
@@ -94,7 +95,7 @@ const Card = (props) => {
                         <div className="deal__discount">
                           <div className="deal__info">
                             <div>
-                              <img
+                              <Image
                                 src={value[6]}
                                 onError={(e) => {
                                   e.target.onerror = null;
