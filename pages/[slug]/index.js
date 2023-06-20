@@ -63,13 +63,13 @@ const StorePage = (props) => {
 export async function getServerSideProps({ params }) {
   const Slug = params.slug;
   const response = await fetch(
-    `https://ofccode-api-git-main-sportybruh1990.vercel.app/api/front/search/kws__by__slug?q=${Slug}`
+    `http://140.238.244.200/kws__by__slug?q=amazon-coupons-free-shipping`
   );
   const getStoreIdRes = await response.json();
 
 
-  const storeId = getStoreIdRes.dataSet__storesId[0];
-  const dataUrl = getStoreIdRes.dataSet__offers;
+  const storeId = getStoreIdRes[0].dataSet__storesId[0];
+  const dataUrl = getStoreIdRes[0].dataSet__offers;
   const clinksRes =  await fetch(
     dataUrl
   );
@@ -78,7 +78,7 @@ export async function getServerSideProps({ params }) {
 
 
   const kws__response = await fetch(
-    `https://ofccode-api-git-main-sportybruh1990.vercel.app/api/front/keywords/`
+    `http://140.238.244.200/keywords`
   );
   const getKeywordsRes = await kws__response.json();
 

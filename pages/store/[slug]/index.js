@@ -30,7 +30,7 @@ const getParsedDate = () => {
 const StorePage = (props) => {  
   return (
     <div>
-      <Content
+      {/* <Content
         {...props}
         headerTag1={
           props.storeInfo.formatted_name +
@@ -44,7 +44,7 @@ const StorePage = (props) => {
           " Coupon Codes, Discount Offers & Promotional Deals"
         }
         description={props.storeInfo.metaInfo__desc}
-      />
+      /> */}
         
        {(props.cuelinksOffers.length > 0 ) ? 
        <div>
@@ -65,7 +65,7 @@ const StorePage = (props) => {
 export async function getServerSideProps({ params }) {
   const storeSlug = params.slug;
   const response = await fetch(
-    `https://ofccode-api-git-main-sportybruh1990.vercel.app/api/front/search/store__by__slug?q=${storeSlug}`
+    `http://140.238.244.200/search/store__by__slug?q=${storeSlug}`
   );
   const getStoreIdRes = await response.json();
   // console.log(getStoreIdRes)
@@ -79,12 +79,18 @@ export async function getServerSideProps({ params }) {
 
 
   // let clinksRes = await fetch(
-  //   `https://ofccode-api-git-main-sportybruh1990.vercel.app/api/front/cuels/offers`
+  //   `http://140.238.244.200/cuels/offers`
   // );
   // let cuelinksOffers = await clinksRes.json();  
 
+
+  let localstoresRes = await fetch(
+    `http://140.238.244.200/search/offer__by__store-slug?q=${storeSlug}`
+  );
+  let localstoresOffers = await localstoresRes.json();  
+  
   let clinksRes = await fetch(
-    `https://ofccode-api-git-main-sportybruh1990.vercel.app/api/front/search/offers__by__query?q=${storeSlug}`
+    `http://140.238.244.200/search/offers__by__query?q=${storeSlug}`
   );
   let cuelinksOffers = await clinksRes.json();  
     
@@ -92,8 +98,9 @@ export async function getServerSideProps({ params }) {
   return {
     props: {
       storeInfo: getStoreIdRes,
-      couponsData1: data,
-      cuelinksOffers: cuelinksOffers.results,
+      cuelinksOffers: localstoresOffers.results? localstoresOffers.results : [],
+      // couponsData:data? data: [],
+      // cuelinksOffers: cuelinksOffers.results? cuelinksOffers.results : [],
     },
   };
 }

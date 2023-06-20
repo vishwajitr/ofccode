@@ -91,18 +91,18 @@ const Index = (props) => {
 };
 
 export async function getServerSideProps() {
-  let response = await fetch(`https://ofccode-api-git-main-sportybruh1990.vercel.app/api/front/stores/`);
+  let response = await fetch(`http://140.238.244.200/stores`);
   let getStoreIdRes = await response.json();
   let selectedStoresArr = [
     1001,
     1002,
-    15481,
+    // 15481,
     // 15481,
     // 15542,
     // 14719,
     // 23961,
     // 23825,
-    15591,
+    // 15591,
     // 21361
   ];
   let FinalData = [];
@@ -113,19 +113,20 @@ export async function getServerSideProps() {
     FinalData[Index] = filteredData[0];
   });
 
+  
   getStoreIdRes = FinalData.filter((store) => store.site__StoreEnabled == 1);
 
-  // let clinksRes = await fetch(`https://ofccode-api-git-main-sportybruh1990.vercel.app/api/front/offers`);
+  // let clinksRes = await fetch(`http://140.238.244.200/offers`);
   // let cuelinksOffers = await clinksRes.json();
 
   // let flipkartOffersRes = await fetch(
-  //   `https://ofccode-api-git-main-sportybruh1990.vercel.app/api/front/directPartners/flipkart__offers`
+  //   `http://140.238.244.200/directPartners/flipkart__offers`
   // );
   // let getflipkartOffers = await flipkartOffersRes.json();
   // console.log(getflipkartOffers);
 
   // let flipkartFlashOffersRes = await fetch(
-  //   `https://ofccode-api-git-main-sportybruh1990.vercel.app/api/front/directPartners/flipkart__offers?q=dotd`
+  //   `http://140.238.244.200/directPartners/flipkart__offers?q=dotd`
   // );
   // let getflipkartFlashOffers = await flipkartFlashOffersRes.json();
 

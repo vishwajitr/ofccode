@@ -14,7 +14,13 @@ if (process.browser) {
 }
 
 
+import products from './products';
 function MyApp({ Component, pageProps }) {
+
+  products.forEach(prod => {
+    console.log(prod.title)
+  });
+
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
     window.ao_subid = "moneylink";

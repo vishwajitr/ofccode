@@ -61,8 +61,8 @@ const Card = (props) => {
   const couponsData = props.couponsData1 ? props.couponsData1.data : {};
   const store__logo = props.storeInfo ? props.storeInfo.slug : {};
   const store__name = props.storeInfo ? props.storeInfo.formatted_name : {};
-
-  if (couponsData.length > 2) {
+  
+  if ((couponsData) && couponsData.length > 2) {
     return (
       <section>
         <Head>

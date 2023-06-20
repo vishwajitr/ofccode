@@ -9,7 +9,7 @@ export default function Search() {
   const [active, setActive] = useState(false);
   const [results, setResults] = useState([]);
 
-  const searchEndpoint = (query) => `https://ofccode-api-git-main-sportybruh1990.vercel.app/api/front/search/kws__by__query?q=${query}`;
+  const searchEndpoint = (query) => `http://140.238.244.200/kws__by__query?q=${query}`;
 
 
   // console.log(searchEndpoint(query));
@@ -20,7 +20,11 @@ export default function Search() {
       fetch(searchEndpoint(query))
         .then((res) => res.json())
         .then((res) => {
-          setResults(res.results);
+          if (res && res.length) { // Check if the response contains data
+            setResults(res); // Assign the response directly to results
+          } else {
+            setResults([]); // No results, set an empty array
+          }
           // console.log(results);
         });
     } else {
@@ -56,7 +60,9 @@ export default function Search() {
         type="text"
         value={query}
       />
-      {active && results.length > 0 && (
+
+      {
+      active && results.length > 0 && (
         <ul className="results">
           {results.map(({ _id, keyword_slug, keyword }) => (
             <li className="result" key={_id}>

@@ -47,7 +47,7 @@ const OfferPage = (props) => {
 
 export async function getServerSideProps({ params }) {
   let clinksRes = await fetch(
-    `https://ofccode-api-git-main-sportybruh1990.vercel.app/api/front/offers`
+    `http://140.238.244.200/offers`
   );
   let cuelinksOffers = await clinksRes.json();  
 

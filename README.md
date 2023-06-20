@@ -16,3 +16,6 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 
 
 tset commit
+
+//todo searchbox debounce
+
