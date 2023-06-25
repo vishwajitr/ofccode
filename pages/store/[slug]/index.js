@@ -69,13 +69,13 @@ export async function getServerSideProps({ params }) {
   );
   const getStoreIdRes = await response.json();
   // console.log(getStoreIdRes)
-  const storeId = getStoreIdRes.affInfo__StoreId;
-  const dataUrl =
-    "https://export.admitad.com/en/webmaster/websites/1777052/coupons/export/?website=1777052&advcampaigns=" +
-    storeId +
-    "&region=00&code=eyq48w62bj&user=vishwajit82&format=csv&v=4";
-  const res = await axios.get(dataUrl);
-  const data = Papa.parse(res.data);
+  // const storeId = getStoreIdRes.affInfo__StoreId;
+  // const dataUrl =
+  //   "https://export.admitad.com/en/webmaster/websites/1777052/coupons/export/?website=1777052&advcampaigns=" +
+  //   storeId +
+  //   "&region=00&code=eyq48w62bj&user=vishwajit82&format=csv&v=4";
+  // const res = await axios.get(dataUrl);
+  // const data = Papa.parse(res.data);
 
 
   // let clinksRes = await fetch(
@@ -89,10 +89,10 @@ export async function getServerSideProps({ params }) {
   );
   let localstoresOffers = await localstoresRes.json();  
   
-  let clinksRes = await fetch(
-    `http://140.238.244.200/search/offers__by__query?q=${storeSlug}`
-  );
-  let cuelinksOffers = await clinksRes.json();  
+  // let clinksRes = await fetch(
+  //   `http://140.238.244.200/search/offers__by__query?q=${storeSlug}`
+  // );
+  // let cuelinksOffers = await clinksRes.json();  
     
 
   return {
