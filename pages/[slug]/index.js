@@ -63,7 +63,7 @@ const StorePage = (props) => {
 export async function getServerSideProps({ params }) {
   const Slug = params.slug;
   const response = await fetch(
-    `http://140.238.244.200/kws__by__slug?q=amazon-coupons-free-shipping`
+    `http://140.238.244.200/search/kws__by__slug?q=${Slug}`
   );
   const getStoreIdRes = await response.json();
 

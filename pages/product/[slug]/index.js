@@ -91,14 +91,14 @@ return <div className="ProdPage">
 
 export async function getServerSideProps({ params }) {
   const Slug = params.slug;
-  console.log(params)
-    const res = await fetch(`http://140.238.244.200/offers/prod__by__slug?q=${Slug}`)
+  // console.log(params)
+    const res = await fetch(`http://140.238.244.200/search/prod__by__slug?q=${Slug}`)
     const json = await res.json()
     // console.log(json)
     
     return { 
       props: {
-        results: json.results[0],
+        results: json[0] ? json[0] : [],
         prod__url : '//offerscode.in/product/' +params.slug
       },
     };

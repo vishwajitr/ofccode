@@ -85,7 +85,7 @@ export async function getServerSideProps({ params }) {
 
 
   let localstoresRes = await fetch(
-    `http://140.238.244.200/search/offer__by__store-slug?q=${storeSlug}`
+    `http://140.238.244.200/search/offer__by__store__slug?q=${storeSlug}`
   );
   let localstoresOffers = await localstoresRes.json();  
   

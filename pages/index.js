@@ -115,6 +115,7 @@ export async function getServerSideProps() {
 
   
   getStoreIdRes = FinalData.filter((store) => store.site__StoreEnabled == 1);
+  console.log(getStoreIdRes)
 
   // let clinksRes = await fetch(`http://140.238.244.200/offers`);
   // let cuelinksOffers = await clinksRes.json();

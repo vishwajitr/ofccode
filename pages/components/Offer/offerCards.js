@@ -6,8 +6,6 @@ import Moment from "moment";
 import Link from "next/link";
 import Image from 'next/image'
 
-var SlugURL = require("slug");
-
 const getParsedDate = (date) => {
   return Moment(date).startOf("hour").fromNow();
 };
@@ -72,6 +70,7 @@ const Card = (props) => {
   const store__name = props.storeInfo ? props.storeInfo.name : {};
   const limit = props.limit ? props.limit : {};
 
+
   if (cuelinksOffers) {
     return (
       <section>
@@ -96,6 +95,7 @@ const Card = (props) => {
               let cuelOffers = {};
               cuelOffers["title"] = value["title"];
               cuelOffers["merchant"] = value["merchant"];
+              cuelOffers["slug"] = value["slug"];
               cuelOffers["id"] = value["id"];
               cuelOffers["categories"] = value["categories"];
               cuelOffers["description"] = value["description"];
@@ -140,15 +140,11 @@ const Card = (props) => {
                           <div className="deal__desc-title">
                             <h3>
                               <Link
-                                href={"/product/" + SlugURL(cuelOffers["title"])}
+                                href={"/product/" + cuelOffers["slug"]}
                               >
                                 <a
-                                  data-url={
-                                    "/product/" + SlugURL(cuelOffers["title"])
-                                  }
-                                  data-promolink={
-                                    "/product/" + SlugURL(cuelOffers["title"])
-                                  }
+                                  data-url={"/product/" + cuelOffers["slug"]}
+                                  data-promolink={"/product/" + cuelOffers["slug"]}
                                   data-func="getPromoCode"
                                   className="getPromoCode"
                                   target="_blank"
@@ -182,16 +178,16 @@ const Card = (props) => {
                             {promocodeCard ? (
                               <div>
                                 <Link
-                                  href={"/product/" + SlugURL(cuelOffers["title"])}
+                                  href={"/product/" + cuelOffers["slug"]}
                                 >
                                   <a
                                     data-url={
-                                      "/product/" + SlugURL(cuelOffers["title"])
+                                      "/product/" + cuelOffers["slug"]
                                     }
                                     // data-promocode={''}
                                     // data-species={''}
                                     data-promolink={
-                                      "/product/" + SlugURL(cuelOffers["title"])
+                                      "/product/" + cuelOffers["slug"]
                                     }
                                     data-func="getPromoCode"
                                     className="getPromoCode"
@@ -212,12 +208,12 @@ const Card = (props) => {
                             ) : (
                               <div>
                                 <Link
-                                  href={"/product/" + SlugURL(cuelOffers["title"])}
+                                  href={"/product/" + slugify(cuelOffers["title"])}
                                 >
                                   <a
                                     // href={`/goto`}
                                     data-url={
-                                      "/product/" + SlugURL(cuelOffers["title"])
+                                      "/product/" + slugify(cuelOffers["title"])
                                     }
                                     // data-promocode={}
                                     // data-species={}
