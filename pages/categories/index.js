@@ -45,7 +45,7 @@ const CategoriesPage = (props) => {
 };
 
 export async function getServerSideProps({ params }) {
-  let response = await fetch(`http://140.238.244.200/directPartners/flipkart__offers?q=getCategoryFeed`);
+  let response = await fetch(`https://140.238.244.200/directPartners/flipkart__offers?q=getCategoryFeed`);
   let getCategoriesData = await response.json();
 
   return {

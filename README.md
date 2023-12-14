@@ -19,3 +19,7 @@ tset commit
 
 //todo searchbox debounce
 
+scp -r ofccode/main/ couponswebsite:/home/ubuntu/couponswebsite/
+
+
+https://vmleon.medium.com/how-to-run-nginx-on-ubuntu-in-the-cloud-for-free-1b34d7269418

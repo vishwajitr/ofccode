@@ -15,7 +15,7 @@ export async function getServerSideProps({ params }) {
   let cat__name = params.slug;
   cat__name = cat__name.replace("-", "_")
   const response = await fetch(
-    `http://140.238.244.200/directPartners/flipkart__offers?q=getCategoryFeed&catName=${cat__name}`
+    `https://140.238.244.200/directPartners/flipkart__offers?q=getCategoryFeed&catName=${cat__name}`
   );
   let getCatInfo = await response.json();
 
@@ -25,7 +25,7 @@ export async function getServerSideProps({ params }) {
 //   console.log(ProdURL);
 
   const responseProd = await fetch(
-    `http://140.238.244.200/directPartners/flipkart__offers?q=getProductsFeed&resourceName=${resourceName}&catName=${cat__name}`
+    `https://140.238.244.200/directPartners/flipkart__offers?q=getProductsFeed&resourceName=${resourceName}&catName=${cat__name}`
   );
   let responseProdData = await responseProd.json();
 
