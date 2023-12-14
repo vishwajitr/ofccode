@@ -47,7 +47,7 @@ const OfferPage = (props) => {
 
 export async function getServerSideProps({ params }) {
   let clinksRes = await fetch(
-    `https://140.238.244.200/offers`
+    `http://140.238.244.200/offers`
   );
   let cuelinksOffers = await clinksRes.json();  
 

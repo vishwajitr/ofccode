@@ -9,7 +9,7 @@ export default function Search() {
   const [active, setActive] = useState(false);
   const [results, setResults] = useState([]);
 
-  const searchEndpoint = (query) => `https://140.238.244.200/kws__by__query?q=${query}`;
+  const searchEndpoint = (query) => `http://140.238.244.200/kws__by__query?q=${query}`;
 
 
   // console.log(searchEndpoint(query));

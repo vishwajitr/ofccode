@@ -65,7 +65,7 @@ const StorePage = (props) => {
 export async function getServerSideProps({ params }) {
   const storeSlug = params.slug;
   const response = await fetch(
-    `https://140.238.244.200/search/store__by__slug?q=${storeSlug}`
+    `http://140.238.244.200/search/store__by__slug?q=${storeSlug}`
   );
   const getStoreIdRes = await response.json();
   // console.log(getStoreIdRes)
@@ -79,18 +79,18 @@ export async function getServerSideProps({ params }) {
 
 
   // let clinksRes = await fetch(
-  //   `https://140.238.244.200/cuels/offers`
+  //   `http://140.238.244.200/cuels/offers`
   // );
   // let cuelinksOffers = await clinksRes.json();  
 
 
   let localstoresRes = await fetch(
-    `https://140.238.244.200/search/offer__by__store__slug?q=${storeSlug}`
+    `http://140.238.244.200/search/offer__by__store__slug?q=${storeSlug}`
   );
   let localstoresOffers = await localstoresRes.json();  
   
   // let clinksRes = await fetch(
-  //   `https://140.238.244.200/search/offers__by__query?q=${storeSlug}`
+  //   `http://140.238.244.200/search/offers__by__query?q=${storeSlug}`
   // );
   // let cuelinksOffers = await clinksRes.json();  
     

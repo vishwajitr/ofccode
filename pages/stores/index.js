@@ -20,7 +20,7 @@ const Index = (props) => {
 
 export async function getServerSideProps() {
   let getStoreIdRes = await axios.get(
-    `https://140.238.244.200/stores/`
+    `http://140.238.244.200/stores/`
   );
 
   getStoreIdRes = getStoreIdRes.data;

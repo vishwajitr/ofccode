@@ -91,7 +91,7 @@ const Index = (props) => {
 };
 
 export async function getServerSideProps() {
-  let response = await fetch(`https://140.238.244.200/stores`);
+  let response = await fetch(`http://140.238.244.200/stores`);
   let getStoreIdRes = await response.json();
   let selectedStoresArr = [
     1001,
@@ -117,17 +117,17 @@ export async function getServerSideProps() {
   getStoreIdRes = FinalData.filter((store) => store.site__StoreEnabled == 1);
   // console.log(getStoreIdRes)
 
-  // let clinksRes = await fetch(`https://140.238.244.200/offers`);
+  // let clinksRes = await fetch(`http://140.238.244.200/offers`);
   // let cuelinksOffers = await clinksRes.json();
 
   // let flipkartOffersRes = await fetch(
-  //   `https://140.238.244.200/directPartners/flipkart__offers`
+  //   `http://140.238.244.200/directPartners/flipkart__offers`
   // );
   // let getflipkartOffers = await flipkartOffersRes.json();
   // console.log(getflipkartOffers);
 
   // let flipkartFlashOffersRes = await fetch(
-  //   `https://140.238.244.200/directPartners/flipkart__offers?q=dotd`
+  //   `http://140.238.244.200/directPartners/flipkart__offers?q=dotd`
   // );
   // let getflipkartFlashOffers = await flipkartFlashOffersRes.json();
 
