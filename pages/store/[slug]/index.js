@@ -46,7 +46,7 @@ const StorePage = (props) => {
         description={props.storeInfo.metaInfo__desc}
       /> */}
         
-       {(props.cuelinksOffers.length > 0 ) ? 
+       {(props.cuelinksOffers) ? 
        <div>
          <OffersPageContent
           {...props}

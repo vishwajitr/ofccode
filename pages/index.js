@@ -96,26 +96,34 @@ export async function getServerSideProps() {
   let selectedStoresArr = [
     1001,
     1002,
-    // 15481,
-    // 15481,
-    // 15542,
-    // 14719,
-    // 23961,
-    // 23825,
+    1003,
+    1004,
+    15542,
+    14719,
+    23961,
+    23825,
     // 15591,
-    // 21361
+    21361
   ];
   let FinalData = [];
-  var selectedStores = _.map(selectedStoresArr, function (storeId, Index) {
-    let filteredData = getStoreIdRes.filter(
-      (store) => store.affInfo__StoreId == storeId
-    );
-    FinalData[Index] = filteredData[0];
-  });
-
   
-  getStoreIdRes = FinalData.filter((store) => store.site__StoreEnabled == 1);
-  // console.log(getStoreIdRes)
+  selectedStoresArr.forEach((storeId, index) => {
+      let filteredData = getStoreIdRes.results.filter((store) => store.affInfo__StoreId === storeId);
+      // console.log(filteredData)
+  
+      // Use an if-else statement to handle the case when filteredData is not empty
+      if (filteredData.length > 0) {
+          FinalData[index] = filteredData[0];
+      } else {
+          // Handle the case when no match is found
+          console.log(`No data found for storeId ${storeId}`);
+      }
+  });
+  // console.log(FinalData)
+  
+  // Filter FinalData based on site__StoreEnabled
+  let filteredFinalData = FinalData.filter((store) => store.site__StoreEnabled == 1);
+  
 
   // let clinksRes = await fetch(`http://140.238.244.200/offers`);
   // let cuelinksOffers = await clinksRes.json();
@@ -134,7 +142,7 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      storeInfo: getStoreIdRes,
+      storeInfo: filteredFinalData,
       // cuelinksOffers: cuelinksOffers,
       // flipkartOffers: getflipkartOffers,
       // flipkartFlashOffers: getflipkartFlashOffers,

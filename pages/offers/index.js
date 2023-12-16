@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import GetServerSideProps from "next";
 import NextPage from "next";
@@ -26,6 +26,8 @@ const getParsedDate = () => {
   return month[d.getMonth()];
 };
 
+
+
 const OfferPage = (props) => {  
   return (
     <div>
@@ -45,15 +47,18 @@ const OfferPage = (props) => {
   );
 };
 
+
 export async function getServerSideProps({ params }) {
-  let clinksRes = await fetch(
+  let response = await fetch(
     `http://140.238.244.200/offers`
   );
-  let cuelinksOffers = await clinksRes.json();  
+  let offers = await response.json();  
+  // console.log(offers);
+  
 
   return {
     props: {
-      cuelinksOffers: cuelinksOffers,
+      cuelinksOffers: offers.results,
     },
   };
 }

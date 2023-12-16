@@ -11,22 +11,42 @@ export default function Search() {
 
   const searchEndpoint = (query) => `http://140.238.244.200/kws__by__query?q=${query}`;
 
+  // Debouncing function
+  const debounce = (func, delay) => {
+    let timeoutId;
+    return (...args) => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        func(...args);
+      }, delay);
+    };
+  };
 
-  // console.log(searchEndpoint(query));
+  const debouncedFetch = debounce((query) => {
+    fetch(searchEndpoint(query))
+      .then((res) => res.json())
+      .then((res) => {
+        // Check if the response is an array and has data
+        if (Array.isArray(res.results) && res.results.length > 0) {
+          // console.log(res.results);
+          setResults(res.results);
+        } else {
+          console.warn('Response is not an array or does not contain data:', res);
+          setResults([]); // Set an empty array or handle it in a way that suits your use case
+        }
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+        // Handle the error, e.g., show an error message to the user
+        setResults([]); // Set an empty array or handle it in a way that suits your use case
+      });
+  }, 300); // Adjust the delay as needed
+
   const onChange = useCallback((event) => {
     const query = event.target.value;
     setQuery(query);
     if (query.length) {
-      fetch(searchEndpoint(query))
-        .then((res) => res.json())
-        .then((res) => {
-          if (res && res.length) { // Check if the response contains data
-            setResults(res); // Assign the response directly to results
-          } else {
-            setResults([]); // No results, set an empty array
-          }
-          // console.log(results);
-        });
+      debouncedFetch(query); // Call the debounced fetch function
     } else {
       setResults([]);
     }
@@ -42,13 +62,12 @@ export default function Search() {
       setActive(false);
       window.removeEventListener("click", onClick);
     }
-  }, []);
-  
+  },);
+
   const highLight = (keyword) => {
     keyword =  _.replace(keyword, query, '<span class="smallcaps">'+query+'</span>')
     return (<div dangerouslySetInnerHTML={{__html: keyword}}></div>);
   }
-
 
   return (
     <div ref={searchRef} className="search__block">
@@ -61,8 +80,7 @@ export default function Search() {
         value={query}
       />
 
-      {
-      active && results.length > 0 && (
+      {active && results.length > 0 && (
         <ul className="results">
           {results.map(({ _id, keyword_slug, keyword }) => (
             <li className="result" key={_id}>

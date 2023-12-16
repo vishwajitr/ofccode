@@ -16,13 +16,33 @@ const getParsedDate = (date) => {
 //     window.location.href = target;
 //     }
 // };
+let shuffledOffers = []
 
 const Card = (props) => {
   const router = useRouter();
   const { slug } = router.query;
+
+  const [originalData, setOriginalData] = useState(props.cuelinksOffers);
+  // console.log(originalData);
+
+  const [shuffledData, setShuffledData] = useState([]);
+
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
     // <!-- other head elements from your page -->
+    // Function to shuffle the array using Fisher-Yates algorithm
+    const shuffleArray = (array) => {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    };
+
+    // Create a copy of the original array and shuffle it
+    const newArray = originalData;
+    shuffleArray(newArray);
+    // Update the state with the shuffled array
+    setShuffledData(newArray);    
 
     (function (g, o) {
       (g[o] =
@@ -63,34 +83,29 @@ const Card = (props) => {
     };
 
     _googCsa("ads", pageOptions, adblock1, adblock2);
-  });
+  }, [originalData]);
+  const shuffledOffers = shuffledData;
+ 
 
   const cuelinksOffers = props.cuelinksOffers ? props.cuelinksOffers : {};
+  // const cuelinksOffers = shuffledData[0];
+  
   const store__logo = props.storeInfo ? props.storeInfo.slug : {};
   const store__name = props.storeInfo ? props.storeInfo.name : {};
   const limit = props.limit ? props.limit : {};
 
-
   if (cuelinksOffers) {
     return (
       <section>
-        <Head>
-          <script
-            async="async"
-            src="https://www.google.com/adsense/search/ads.js"
-          ></script>
-          <script
-            async
-            src="https://cse.google.com/cse.js?cx=39bed8f3de88a4885"
-          ></script>
-        </Head>
+        
 
         <div className="clearfix">
           <div id="afscontainer1"></div>
           <br />
-
+        
           <div className="clearfix">
-            {_.map(cuelinksOffers, (value, key) => {
+            {_.map(shuffledOffers, (value, key) => {
+              // console.log(value)
               let promocodeCard = false;
               let cuelOffers = {};
               cuelOffers["title"] = value["title"];
@@ -243,8 +258,8 @@ const Card = (props) => {
           <div id="afscontainer1"></div>
         </div>
       </section>
-    );
-  } else {
+    );    
+  }else {
     return (
       <div>
         <br />
@@ -252,8 +267,8 @@ const Card = (props) => {
         <br />
         <h3>No New Deals Or Coupons Found</h3>
       </div>
-    );
+    )
   }
-};
+  };
 
 export default Card;

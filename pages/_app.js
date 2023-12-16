@@ -73,6 +73,7 @@ function MyApp({ Component, pageProps }) {
 
         {/* <!-- Open Graph Meta tags --> */}
         <link rel="canonical" href="https://offerscode.in/" />
+        <link rel="canonical" href="https://offerscode.in/" />
         <meta property="og:site_name" content="offerscode.in" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Offerscode.in" />
