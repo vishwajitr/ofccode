@@ -97,7 +97,7 @@ export async function getServerSideProps({ params }) {
 
   return {
     props: {
-      storeInfo: getStoreIdRes,
+      storeInfo: getStoreIdRes.results[0],
       cuelinksOffers: localstoresOffers.results? localstoresOffers.results : [],
       // couponsData:data? data: [],
       // cuelinksOffers: cuelinksOffers.results? cuelinksOffers.results : [],
