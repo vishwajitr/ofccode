@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "react-scripts --openssl-legacy-provider start"
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider && ng serve -o"
   },
   "dependencies": {
     "axios": "^0.21.1",
