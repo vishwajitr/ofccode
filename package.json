@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "npm start",
-    "postbuild": "next-sitemap --config awesome.config.js"
+    "start": "npm start"
   },
   "dependencies": {
     "axios": "^0.21.1",
