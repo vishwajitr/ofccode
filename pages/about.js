@@ -5,7 +5,7 @@ const AboutPage = (props) => {
     <section>
       <h2>About Us</h2>
       <p>
-        Welcome to OffersCode, your number one source for all things offers,
+        Welcome to DealsTodayIndia, your number one source for all things offers,
         deals and coupons. We’re dedicated to providing you the best of deals,
         with a focus on dependability. customer service.
       </p>
@@ -14,7 +14,7 @@ const AboutPage = (props) => {
         online space. We hope you enjoy our deals and offers as much as we enjoy
         offering them to you.
       </p>
-      <p>Sincerely, <br/>OffersCode.in</p>
+      <p>Sincerely, <br/>DealsTodayIndia.com</p>
     </section>
   );
 };

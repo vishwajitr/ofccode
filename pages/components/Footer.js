@@ -62,10 +62,10 @@ const Footer = () => {
           <div className="col-xs-12 col-sm-4 col-md-4">
             <div className="col-xs-12 col-sm-12 col-md-12">
               <h3 className="footer-logo-text">
-                OffersCode<small>.In</small>
+                DealsTodayIndia<small>.Com</small>
               </h3>
               <p>
-                OffersCode.in, one source for all things offers, deals and
+                DealsTodayIndia.com, one source for all things offers, deals and
                 coupons. We’re dedicated to providing you the best of deals,
                 with a focus on customer service.
               </p>
@@ -73,7 +73,7 @@ const Footer = () => {
               <ul className="list-unstyled list-inline social text-left">
                 <li className="list-inline-item">Follow Us On : </li>  
                 <li className="list-inline-item">
-                  <a target="_blank" href="https://www.facebook.com/OffersCodeIn-106145641343042">
+                  <a target="_blank" href="https://www.facebook.com/dealstodayindia1">
                     <i className="fa fa-facebook"></i>
                   </a>
                 </li>
@@ -120,7 +120,7 @@ const Footer = () => {
         </div>
         <div className="col-md-12">
           <p className="h6">
-            OffersCode<small>.In</small> © All right Reversed.
+            DealsTodayIndia<small>.In</small> © All right Reversed.
           </p>
         </div>
       </div>

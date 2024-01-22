@@ -12,7 +12,7 @@ const StoreCard = (props) => {
                {(props.storeInfo)? props.storeInfo.name : ""}
             </div>
             <div className="StoreCard__name"><i className="fas fa-store"></i> <Link href="/"><a>Shop on {(props.storeInfo)? props.storeInfo.name : ""}</a></Link></div>
-            <div className="StoreCard__ratings"><Link href="/" title="OffersCode.in | Home"><a>Home</a></Link> <i className="fas fa-angle-right"></i> <Link href={`/stores/`}><a>Stores</a></Link></div>
+            <div className="StoreCard__ratings"><Link href="/" title="DealsTodayIndia.com | Home"><a>Home</a></Link> <i className="fas fa-angle-right"></i> <Link href={`/stores/`}><a>Stores</a></Link></div>
             <div className="StoreCard__ratings">
             <Image src="/5star.png"  height="10"
                 width="100%"/>

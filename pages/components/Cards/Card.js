@@ -122,7 +122,7 @@ const Card = (props) => {
                               data-website={value[2]}
                               target="_blank"
                               title={
-                                `OffersCode.in - Promo code for ` +
+                                `DealsTodayIndia.com - Promo code for ` +
                                 store__name +
                                 ` deal ` +
                                 value[1]
@@ -155,7 +155,7 @@ const Card = (props) => {
                                 data-website={value[2]}
                                 target="_blank"
                                 title={
-                                  `OffersCode.in - Promo code for ` +
+                                  `DealsTodayIndia.com - Promo code for ` +
                                   store__name +
                                   ` deal ` +
                                   value[1]

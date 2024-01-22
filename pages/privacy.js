@@ -4,13 +4,13 @@ class PrivacyPage extends Component {
     return (
       <section>
         <div className="nv-content-wrap entry-content">
-          <h2>Privacy Policy for OffersCode</h2>
+          <h2>Privacy Policy for DealsTodayIndia</h2>
 
           <p>
-            At OffersCode.in, accessible from http://OffersCode.in, one of our
+            At DealsTodayIndia.com, accessible from http://DealsTodayIndia.com, one of our
             main priorities is the privacy of our visitors. This Privacy Policy
             document contains types of information that is collected and
-            recorded by OffersCode.in and how we use it.
+            recorded by DealsTodayIndia.com and how we use it.
           </p>
 
           <p>
@@ -21,7 +21,7 @@ class PrivacyPage extends Component {
           <p>
             This Privacy Policy applies only to our online activities and is
             valid for visitors to our website with regards to the information
-            that they shared and/or collect in OffersCode.in. This policy is not
+            that they shared and/or collect in DealsTodayIndia.com. This policy is not
             applicable to any information collected offline or via channels
             other than this website. Our Privacy Policy was created with the
             help of the&nbsp;
@@ -92,7 +92,7 @@ class PrivacyPage extends Component {
           <h2>Log Files</h2>
 
           <p>
-            OffersCode.in follows a standard procedure of using log files. These
+            DealsTodayIndia.com follows a standard procedure of using log files. These
             files log visitors when they visit websites. All hosting companies
             do this and a part of hosting services’ analytics. The information
             collected by log files include internet protocol (IP) addresses,
@@ -107,7 +107,7 @@ class PrivacyPage extends Component {
           <h2>Cookies and Web Beacons</h2>
 
           <p>
-            Like any other website, OffersCode.in uses ‘cookies’. These cookies
+            Like any other website, DealsTodayIndia.com uses ‘cookies’. These cookies
             are used to store information including visitors’ preferences, and
             the pages on the website that the visitor accessed or visited. The
             information is used to optimize the users’ experience by customizing
@@ -160,13 +160,13 @@ class PrivacyPage extends Component {
 
           <p>
             You may consult this list to find the Privacy Policy for each of the
-            advertising partners of OffersCode.in.
+            advertising partners of DealsTodayIndia.com.
           </p>
 
           <p>
             Third-party ad servers or ad networks uses technologies like
             cookies, JavaScript, or Web Beacons that are used in their
-            respective advertisements and links that appear on OffersCode.in,
+            respective advertisements and links that appear on DealsTodayIndia.com,
             which are sent directly to users’ browser. They automatically
             receive your IP address when this occurs. These technologies are
             used to measure the effectiveness of their advertising campaigns
@@ -175,14 +175,14 @@ class PrivacyPage extends Component {
           </p>
 
           <p>
-            Note that OffersCode.in has no access to or control over these
+            Note that DealsTodayIndia.com has no access to or control over these
             cookies that are used by third-party advertisers.
           </p>
 
           <h2>Third Party Privacy Policies</h2>
 
           <p>
-            OffersCode.in Privacy Policy does not apply to other advertisers or
+            DealsTodayIndia.com Privacy Policy does not apply to other advertisers or
             websites. Thus, we are advising you to consult the respective
             Privacy Policies of these third-party ad servers for more detailed
             information. It may include their practices and instructions about
@@ -279,7 +279,7 @@ class PrivacyPage extends Component {
           </p>
 
           <p>
-            OffersCode.in does not knowingly collect any Personal Identifiable
+            DealsTodayIndia.com does not knowingly collect any Personal Identifiable
             Information from children under the age of 13. If you think that
             your child provided this kind of information on our website, we
             strongly encourage you to contact us immediately and we will do our

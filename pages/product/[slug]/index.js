@@ -34,9 +34,9 @@ const ProductPage = (props) => {
 return <div className="ProdPage">
 <Head>
 <link rel="canonical" href={props.prod__url} />
-<meta property="og:site_name" content="offerscode.in" />
+<meta property="og:site_name" content="DealsTodayIndia.com" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Offerscode.in" />
+<meta property="og:title" content="DealsTodayIndia.com" />
 <meta property="og:url" content={props.prod__url} />
 <meta
   property="og:description"
@@ -52,12 +52,12 @@ return <div className="ProdPage">
   name="twitter:description"
   content={props.results.title}
 />
-<meta name="twitter:title" content="offerscode.in" />
-<meta name="twitter:site" content="@offerscodein" />
-<meta name="twitter:creator" content="@offerscodein" />
+<meta name="twitter:title" content="DealsTodayIndia.com" />
+<meta name="twitter:site" content="@dealstodayindia." />
+<meta name="twitter:creator" content="@dealstodayindia." />
 
 {/* <!-- Standard Meta tags --> */}
-<meta itemProp="name" content="offerscode.in" />
+<meta itemProp="name" content="DealsTodayIndia.com" />
 <meta
   itemProp="description"
   content={props.results.title}
@@ -100,7 +100,7 @@ export async function getServerSideProps({ params }) {
     return { 
       props: {
         results: jsonData ? jsonData : [],
-        prod__url : '//offerscode.in/product/' +params.slug
+        prod__url : '//DealsTodayIndia.com/product/' +params.slug
       },
     };
   }

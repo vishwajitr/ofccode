@@ -60,7 +60,7 @@ const Card = (props) => {
                                 className="getPromoCode"
                                 target="_blank"
                                 title={
-                                  `OffersCode.in - Promo code for ` +
+                                  `DealsTodayIndia.com - Promo code for ` +
                                   value["Campaign_Name"] +
                                   ` deal ` +
                                   value["Title"]

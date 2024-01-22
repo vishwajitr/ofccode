@@ -51,7 +51,12 @@ const StorePage = (props) => {
          <OffersPageContent
           {...props}
           headerTag1={
-            "Trending Offers from Top Stores "
+            "Trending Offers from "+ props.storeInfo['formatted_name']
+          }  
+          headerTag2={
+            "Promo Codes, Coupon Codes & Discounts for December " +
+            getParsedDate() +
+            " 2023"
           }       
           description={'We are please to provide some trending offers from other stores if you have habbit of saving while doing online shopping this is best place for you'}
         />
@@ -68,14 +73,17 @@ export async function getServerSideProps({ params }) {
     `http://140.238.244.200/search/store__by__slug?q=${storeSlug}`
   );
   const getStoreIdRes = await response.json();
+  
   // console.log(getStoreIdRes)
   // const storeId = getStoreIdRes.affInfo__StoreId;
   // const dataUrl =
   //   "https://export.admitad.com/en/webmaster/websites/1777052/coupons/export/?website=1777052&advcampaigns=" +
   //   storeId +
   //   "&region=00&code=eyq48w62bj&user=vishwajit82&format=csv&v=4";
+  // console.log(dataUrl)
   // const res = await axios.get(dataUrl);
   // const data = Papa.parse(res.data);
+  // console.log(data)
 
 
   // let clinksRes = await fetch(
@@ -88,7 +96,8 @@ export async function getServerSideProps({ params }) {
     `http://140.238.244.200/search/offer__by__store__slug?q=${storeSlug}`
   );
   let localstoresOffers = await localstoresRes.json();  
-  
+  localstoresOffers = (localstoresOffers.results.length > 0) ? localstoresOffers : []
+  // console.log(localstoresOffers);
   // let clinksRes = await fetch(
   //   `http://140.238.244.200/search/offers__by__query?q=${storeSlug}`
   // );
@@ -98,8 +107,8 @@ export async function getServerSideProps({ params }) {
   return {
     props: {
       storeInfo: getStoreIdRes.results[0],
-      cuelinksOffers: localstoresOffers.results? localstoresOffers.results : [],
-      // couponsData:data? data: [],
+      cuelinksOffers: localstoresOffers.results? localstoresOffers.results :[],
+      // couponsData:data? data.data: [],
       // cuelinksOffers: cuelinksOffers.results? cuelinksOffers.results : [],
     },
   };

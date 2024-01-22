@@ -41,7 +41,7 @@ const OfferPage = (props) => {
         headerTag2={
           "Latest Offers and Deals from Top Indian stores"
         }
-        description={''}
+        description={'We are please to provide some trending offers from stores if you have habbit of saving while doing online shopping this is best place for you'}
       />
     </div>
   );

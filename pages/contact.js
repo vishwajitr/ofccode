@@ -5,7 +5,7 @@ const AboutPage = (props) => {
     <section>
       <h2>Contact Us</h2>
       <p>
-      Kindly get in touch with us at <a href="mailto:contact@offerscode.in">contact@offerscode.in</a></p>
+      Kindly get in touch with us at <a href="mailto:contact@DealsTodayIndia.com">contact@DealsTodayIndia.com</a></p>
     </section>
   );
 };

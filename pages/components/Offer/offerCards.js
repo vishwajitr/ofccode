@@ -104,7 +104,7 @@ const Card = (props) => {
   
         _googCsa("ads", pageOptions, adblock1, adblock2);
       }
-      //AdsBlock()
+      AdsBlock()
   }, [router.query]);
   
  
@@ -187,7 +187,7 @@ const Card = (props) => {
                                   className="getPromoCode"
                                   target="_blank"
                                   title={
-                                    `OffersCode.in - Promo code for ` +
+                                    `DealsTodayIndia.com - Promo code for ` +
                                     cuelOffers["campaign_name"] +
                                     ` deal ` +
                                     cuelOffers["title"]
@@ -232,7 +232,7 @@ const Card = (props) => {
                                     // data-website={''}
                                     target="_blank"
                                     title={
-                                      `OffersCode.in - Promo code for ` +
+                                      `DealsTodayIndia.com - Promo code for ` +
                                       cuelOffers["campaign_name"] +
                                       ` deal ` +
                                       cuelOffers["title"]
@@ -278,7 +278,7 @@ const Card = (props) => {
             })}
           </div>
           <br />
-          <div id="afscontainer1"></div>
+          <div id="afscontainer2"></div>
         </div>
       </section>
     );    

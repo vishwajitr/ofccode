@@ -45,16 +45,25 @@ const StorePage = (props) => {
 
       */}
       {/* {console.log(props.keywordInfo.keyword)} */}
-      {/* <KwContent {...props} headerTag1={props.keywordInfo.keyword} /> */}
+     
 
       <OffersPageContent
         {...props}
         headerTag1={
-          props.keywordInfo.keyword
+          props.keywordInfo.keyword+ "for December " +
+          getParsedDate() +
+          " 2023"
         }
-        description={''}
-      />
-      <KwRightSide {...props} />
+          headerTag2={
+            "Promo Codes, Coupon Codes & Discounts for December " +
+            getParsedDate() +
+            " 2023"
+          }       
+          description={'We are please to provide some trending offers from other stores if you have habbit of saving while doing online shopping this is best place for you'}
+        
+      /> 
+      
+      {/* <KwContent {...props} headerTag1={props.keywordInfo.keyword} /> */}
       
     </div>
   );
@@ -63,13 +72,13 @@ const StorePage = (props) => {
 export async function getServerSideProps({ params }) {
   const Slug = params.slug;
   const response = await fetch(
-    `http://140.238.244.200/search/kws__by__slug?q=${Slug}`
+    `http://140.238.244.200/kws__by__slug?q=${Slug}`
   );
   const getStoreIdRes = await response.json();
 
-
-  const storeId = getStoreIdRes[0].dataSet__storesId[0];
-  const dataUrl = getStoreIdRes[0].dataSet__offers;
+  console.log(getStoreIdRes)
+  const storeId = getStoreIdRes.results[0].dataSet__storesId[0];
+  const dataUrl = getStoreIdRes.results[0].dataSet__offers;
   const clinksRes =  await fetch(
     dataUrl
   );
@@ -86,8 +95,8 @@ export async function getServerSideProps({ params }) {
   
   return {
     props: {
-      keywordInfo: getStoreIdRes,
-      keywordSet: getKeywordsRes,
+      keywordInfo: getStoreIdRes.results[0],
+      keywordSet: getKeywordsRes.results,
       cuelinksOffers: cuelinksOffers.results,
     },
   };
