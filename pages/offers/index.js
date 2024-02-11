@@ -50,7 +50,7 @@ const OfferPage = (props) => {
 
 export async function getServerSideProps({ params }) {
   let response = await fetch(
-    `https://ofccode-api-git-main-sportybruh1990.vercel.app/offers`
+    `http://ofccode-api-git-main-sportybruh1990.vercel.app/offers`
   );
   let offers = await response.json();  
   // console.log(offers);

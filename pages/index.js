@@ -91,7 +91,7 @@ const Index = (props) => {
 };
 
 export async function getServerSideProps() {
-  let response = await fetch(`https://ofccode-api-git-main-sportybruh1990.vercel.app/stores`);
+  let response = await fetch(`http://ofccode-api-git-main-sportybruh1990.vercel.app/stores`);
   let getStoreIdRes = await response.json();
   let selectedStoresArr = [
     1001,
@@ -125,17 +125,17 @@ export async function getServerSideProps() {
   let filteredFinalData = FinalData.filter((store) => store.site__StoreEnabled == 1);
   
 
-  // let clinksRes = await fetch(`https://ofccode-api-git-main-sportybruh1990.vercel.app/offers`);
+  // let clinksRes = await fetch(`http://ofccode-api-git-main-sportybruh1990.vercel.app/offers`);
   // let cuelinksOffers = await clinksRes.json();
 
   // let flipkartOffersRes = await fetch(
-  //   `https://ofccode-api-git-main-sportybruh1990.vercel.app/directPartners/flipkart__offers`
+  //   `http://ofccode-api-git-main-sportybruh1990.vercel.app/directPartners/flipkart__offers`
   // );
   // let getflipkartOffers = await flipkartOffersRes.json();
   // console.log(getflipkartOffers);
 
   // let flipkartFlashOffersRes = await fetch(
-  //   `https://ofccode-api-git-main-sportybruh1990.vercel.app/directPartners/flipkart__offers?q=dotd`
+  //   `http://ofccode-api-git-main-sportybruh1990.vercel.app/directPartners/flipkart__offers?q=dotd`
   // );
   // let getflipkartFlashOffers = await flipkartFlashOffersRes.json();
 

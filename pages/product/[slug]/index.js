@@ -92,7 +92,7 @@ return <div className="ProdPage">
 export async function getServerSideProps({ params }) {
   const Slug = params.slug;
   // console.log(params)
-    const res = await fetch(`https://ofccode-api-git-main-sportybruh1990.vercel.app/search/prod__by__slug?q=${Slug}`)
+    const res = await fetch(`http://ofccode-api-git-main-sportybruh1990.vercel.app/search/prod__by__slug?q=${Slug}`)
     const json = await res.json()
     let jsonData = json.results[0]
     // console.log(json)

@@ -20,7 +20,7 @@ const Index = (props) => {
 
 export async function getServerSideProps() {
   let getStoreIdRes = await axios.get(
-    `https://ofccode-api-git-main-sportybruh1990.vercel.app/stores/`
+    `http://ofccode-api-git-main-sportybruh1990.vercel.app/stores/`
   );
 
   getStoreIdRes = getStoreIdRes.data;
