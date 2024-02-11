@@ -8,26 +8,7 @@
     "start": "npm start"
   },
   "dependencies": {
-    "axios": "^0.21.1",
-    "express": "^4.17.1",
-    "isomorphic-fetch": "^3.0.0",
-    "lodash": "^4.17.20",
-    "moment": "^2.29.1",
-    "next": "^10.0.7",
-    "papaparse": "^5.3.0",
-    "react": "^17.0.1",
-    "react-adsense": "^0.1.0",
-    "react-dom": "^17.0.1",
-    "react-gtm-module": "^2.0.11",
-    "react-lazy-load-image-component": "^1.5.1",
-    "react-onesignal": "^1.7.0",
-    "request-promise-core": "^1.1.4",
-    "rss-parser": "^3.12.0",
-    "sass": "^1.32.8",
-    "sharp": "^0.28.3",
-    "slug": "^5.1.0",
-    "slugify": "^1.6.6",
-    "web-social-share": "^7.1.0",
-    "webpack": "^5.89.0"
+    "axios": "^0.21.1"
+    
   }
 }
