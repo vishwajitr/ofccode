@@ -28,6 +28,6 @@
     "slug": "^5.1.0",
     "slugify": "^1.6.6",
     "web-social-share": "^7.1.0",
-    "webpack": "^5.23.0"
+    "webpack": "^5.89.0"
   }
 }

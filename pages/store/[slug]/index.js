@@ -70,7 +70,7 @@ const StorePage = (props) => {
 export async function getServerSideProps({ params }) {
   const storeSlug = params.slug;
   const response = await fetch(
-    `http://140.238.244.200/search/store__by__slug?q=${storeSlug}`
+    `https://ofccode-api-git-main-sportybruh1990.vercel.app/search/store__by__slug?q=${storeSlug}`
   );
   const getStoreIdRes = await response.json();
   
@@ -87,19 +87,19 @@ export async function getServerSideProps({ params }) {
 
 
   // let clinksRes = await fetch(
-  //   `http://140.238.244.200/cuels/offers`
+  //   `https://ofccode-api-git-main-sportybruh1990.vercel.app/cuels/offers`
   // );
   // let cuelinksOffers = await clinksRes.json();  
 
 
   let localstoresRes = await fetch(
-    `http://140.238.244.200/search/offer__by__store__slug?q=${storeSlug}`
+    `https://ofccode-api-git-main-sportybruh1990.vercel.app/search/offer__by__store__slug?q=${storeSlug}`
   );
   let localstoresOffers = await localstoresRes.json();  
   localstoresOffers = (localstoresOffers.results.length > 0) ? localstoresOffers : []
   // console.log(localstoresOffers);
   // let clinksRes = await fetch(
-  //   `http://140.238.244.200/search/offers__by__query?q=${storeSlug}`
+  //   `https://ofccode-api-git-main-sportybruh1990.vercel.app/search/offers__by__query?q=${storeSlug}`
   // );
   // let cuelinksOffers = await clinksRes.json();  
     
