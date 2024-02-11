@@ -70,11 +70,11 @@ const StorePage = (props) => {
 export async function getServerSideProps({ params }) {
   const storeSlug = params.slug;
   const response = await fetch(
-    `http://ofccode-api-git-main-sportybruh1990.vercel.app/search/store__by__slug?q=${storeSlug}`
+    `https://ofccode-api-git-main-sportybruh1990.vercel.app/api/front/search/store__by__slug?q=${storeSlug}`
   );
   const getStoreIdRes = await response.json();
   
-  // console.log(getStoreIdRes)
+  console.log(getStoreIdRes)
   // const storeId = getStoreIdRes.affInfo__StoreId;
   // const dataUrl =
   //   "https://export.admitad.com/en/webmaster/websites/1777052/coupons/export/?website=1777052&advcampaigns=" +
@@ -87,26 +87,26 @@ export async function getServerSideProps({ params }) {
 
 
   // let clinksRes = await fetch(
-  //   `http://ofccode-api-git-main-sportybruh1990.vercel.app/cuels/offers`
+  //   `https://ofccode-api-git-main-sportybruh1990.vercel.app/api/front/cuels/offers`
   // );
   // let cuelinksOffers = await clinksRes.json();  
 
 
   let localstoresRes = await fetch(
-    `http://ofccode-api-git-main-sportybruh1990.vercel.app/search/offer__by__store__slug?q=${storeSlug}`
+    `https://ofccode-api-git-main-sportybruh1990.vercel.app/api/front/search/offers__by__query?q=${storeSlug}`
   );
   let localstoresOffers = await localstoresRes.json();  
   localstoresOffers = (localstoresOffers.results.length > 0) ? localstoresOffers : []
   // console.log(localstoresOffers);
   // let clinksRes = await fetch(
-  //   `http://ofccode-api-git-main-sportybruh1990.vercel.app/search/offers__by__query?q=${storeSlug}`
+  //   `https://ofccode-api-git-main-sportybruh1990.vercel.app/api/front/search/offers__by__query?q=${storeSlug}`
   // );
   // let cuelinksOffers = await clinksRes.json();  
     
-
+  console.log(getStoreIdRes[0]);
   return {
     props: {
-      storeInfo: getStoreIdRes.results[0],
+      storeInfo: getStoreIdRes,
       cuelinksOffers: localstoresOffers.results? localstoresOffers.results :[],
       // couponsData:data? data.data: [],
       // cuelinksOffers: cuelinksOffers.results? cuelinksOffers.results : [],
