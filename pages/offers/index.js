@@ -58,7 +58,7 @@ export async function getServerSideProps({ params }) {
 
   return {
     props: {
-      cuelinksOffers: offers.results,
+      cuelinksOffers: offers,
     },
   };
 }
