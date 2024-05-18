@@ -144,6 +144,7 @@ const Card = (props) => {
               cuelOffers["offer_added_at"] = value["offer_added_at"];
               cuelOffers["image_url"] = value["image_url"];
               cuelOffers["campaign_name"] = value["campaign_name"];
+              console.log(cuelOffers)
 
               if (value["title"] !== "") {
                 if (cuelOffers["coupon_code"] != "") {
