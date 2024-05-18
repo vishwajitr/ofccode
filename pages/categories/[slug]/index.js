@@ -15,7 +15,7 @@ export async function getServerSideProps({ params }) {
   let cat__name = params.slug;
   cat__name = cat__name.replace("-", "_")
   const response = await fetch(
-    `https://ofccode-api-git-main-sportybruh1990.vercel.app/api/front/directPartners/flipkart__offers?q=getCategoryFeed&catName=${cat__name}`
+    `https://ofccode-api-sportybruh1990s-projects.vercel.app/api/front/directPartners/flipkart__offers?q=getCategoryFeed&catName=${cat__name}`
   );
   let getCatInfo = await response.json();
 
@@ -25,7 +25,7 @@ export async function getServerSideProps({ params }) {
 //   console.log(ProdURL);
 
   const responseProd = await fetch(
-    `https://ofccode-api-git-main-sportybruh1990.vercel.app/api/front/directPartners/flipkart__offers?q=getProductsFeed&resourceName=${resourceName}&catName=${cat__name}`
+    `https://ofccode-api-sportybruh1990s-projects.vercel.app/api/front/directPartners/flipkart__offers?q=getProductsFeed&resourceName=${resourceName}&catName=${cat__name}`
   );
   let responseProdData = await responseProd.json();
 
