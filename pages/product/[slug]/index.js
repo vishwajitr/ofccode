@@ -75,7 +75,7 @@ return <div className="ProdPage">
   `-logo-large.jpg`
   }
   height="80"
-  width="100%"
+  width="100px"
   />
   </div>
   </a>

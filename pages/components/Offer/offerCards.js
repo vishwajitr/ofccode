@@ -168,7 +168,7 @@ const Card = (props) => {
                                   e.target.src = "/img-notfound.jpg";
                                 }}
                                 height="50"
-                                width="100%"                              
+                                width="100"                              
                                 alt={cuelOffers["title"]}
                               />{" "}
                             </div>
@@ -180,24 +180,22 @@ const Card = (props) => {
                             <h3>
                               <Link
                                 href={"/product/" + cuelOffers["slug"]}
-                              >
-                                <a
-                                  data-url={"/product/" + cuelOffers["slug"]}
-                                  data-promolink={"/product/" + cuelOffers["slug"]}
-                                  data-func="getPromoCode"
-                                  className="getPromoCode"
-                                  target="_blank"
-                                  title={
-                                    `DealsTodayIndia.com - Promo code for ` +
-                                    cuelOffers["campaign_name"] +
-                                    ` deal ` +
-                                    cuelOffers["title"]
-                                  }
-                                  rel="nofollow"
-                                >
-                                  {cuelOffers["merchant"]} :{" "}
-                                  {cuelOffers["title"]}
-                                </a>
+                                data-url={"/product/" + cuelOffers["slug"]}
+                                data-promolink={"/product/" + cuelOffers["slug"]}
+                                data-func="getPromoCode"
+                                className="getPromoCode"
+                                target="_blank"
+                                title={
+                                  `DealsTodayIndia.com - Promo code for ` +
+                                  cuelOffers["campaign_name"] +
+                                  ` deal ` +
+                                  cuelOffers["title"]
+                                }
+                                rel="nofollow">
+
+                                {cuelOffers["merchant"]}:{" "}
+                                {cuelOffers["title"]}
+
                               </Link>
                             </h3>
                           </div>
@@ -218,54 +216,50 @@ const Card = (props) => {
                               <div>
                                 <Link
                                   href={"/product/" + cuelOffers["slug"]}
-                                >
-                                  <a
-                                    data-url={
-                                      "/product/" + cuelOffers["slug"]
-                                    }
-                                    // data-promocode={''}
-                                    // data-species={''}
-                                    data-promolink={
-                                      "/product/" + cuelOffers["slug"]
-                                    }
-                                    data-func="getPromoCode"
-                                    className="getPromoCode"
-                                    // data-website={''}
-                                    target="_blank"
-                                    title={
-                                      `DealsTodayIndia.com - Promo code for ` +
-                                      cuelOffers["campaign_name"] +
-                                      ` deal ` +
-                                      cuelOffers["title"]
-                                    }
-                                    rel="nofollow"
-                                  >
+                                  data-url={
+                                    "/product/" + cuelOffers["slug"]
+                                  }
+                                  // data-promocode={''}
+                                  // data-species={''}
+                                  data-promolink={
+                                    "/product/" + cuelOffers["slug"]
+                                  }
+                                  data-func="getPromoCode"
+                                  className="getPromoCode"
+                                  // data-website={''}
+                                  target="_blank"
+                                  title={
+                                    `DealsTodayIndia.com - Promo code for ` +
+                                    cuelOffers["campaign_name"] +
+                                    ` deal ` +
+                                    cuelOffers["title"]
+                                  }
+                                  rel="nofollow">
+                                  
                                     Get This Deal
-                                  </a>
+                                  
                                 </Link>
                               </div>
                             ) : (
                               <div>
                                 <Link
                                   href={"/product/" + slugify(cuelOffers["title"])}
-                                >
-                                  <a
-                                    // href={`/goto`}
-                                    data-url={
-                                      "/product/" + slugify(cuelOffers["title"])
-                                    }
-                                    // data-promocode={}
-                                    // data-species={}
-                                    // data-promolink={}
-                                    data-func="getDeal"
-                                    className="getDeal"
-                                    // data-website={}
-                                    target="_blank"
-                                    // gotoLink = {value[11]}
-                                    rel="nofollow"
-                                  >
+                                  // href={`/goto`}
+                                  data-url={
+                                    "/product/" + slugify(cuelOffers["title"])
+                                  }
+                                  // data-promocode={}
+                                  // data-species={}
+                                  // data-promolink={}
+                                  data-func="getDeal"
+                                  className="getDeal"
+                                  // data-website={}
+                                  target="_blank"
+                                  // gotoLink = {value[11]}
+                                  rel="nofollow">
+                                  
                                     Get This Deal
-                                  </a>
+                                  
                                 </Link>
                               </div>
                             )}

@@ -48,8 +48,8 @@ const HeaderList = () => {
   const array = HeaderLinks;
   const LiElements = array.map((list, index) => (
     <li className="nav-item" key={index}>
-      <Link href={list.path}>
-        <a className="nav-link">{list.label}</a>
+      <Link href={list.path} className="nav-link">
+        {list.label}
       </Link> 
     </li>
   ));
@@ -75,8 +75,8 @@ const Header = () => {
     <header className="header">
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
-          <Link href="/">
-            <a className="navbar-brand">DealsTodayIndia<small>.Com</small></a>
+          <Link href="/" className="navbar-brand">
+            DealsTodayIndia<small>.Com</small>
           </Link>
           <button
             className="navbar-toggler"
@@ -94,18 +94,18 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="headerNav1">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <Link href="/about">
-                  <a className="nav-link">About</a>
+                <Link href="/about" className="nav-link">
+                  About
                 </Link>
               </li>
               <li className="nav-item">
-                <Link href="/privacy">
-                  <a className="nav-link">Privacy</a>
+                <Link href="/privacy" className="nav-link">
+                  Privacy
                 </Link>
               </li>
               <li className="nav-item">
-                <Link href="/contact">
-                  <a className="nav-link">Contact</a>
+                <Link href="/contact" className="nav-link">
+                  Contact
                 </Link>
               </li>
               {/* <li className="nav-item">

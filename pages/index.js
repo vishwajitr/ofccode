@@ -13,8 +13,7 @@ const convertToSlug = (Text) =>{
     return Text
         .toLowerCase()
         .replace(/ /g,'-')
-        .replace(/[^\w-]+/g,'')
-        ;
+        .replace(/[^\w-]+/g,'');
 }
 
 const FlipkartOffers = ({ flipkartOffers }) => {
@@ -23,8 +22,11 @@ const FlipkartOffers = ({ flipkartOffers }) => {
     const LiElements = flipkartOffers.map((offer, index) => (
       <li className="offerCard-Col" key={index}>
         <div className="offerCard offerCard-small">
-          <Link href={`${offer.url + "&affor=flipkart&affid=vishwajit8" }`} as={`${offer.url  + "&affor=flipkart&affid=vishwajit8" }`}>
-            <a target="_blank">
+          <Link
+            href={`${offer.url + "&affor=flipkart&affid=vishwajit8" }`}
+            as={`${offer.url  + "&affor=flipkart&affid=vishwajit8" }`}
+            target="_blank">
+
             <Image
             loader={myLoader}
                 src={`${offer.image_url[0].url}`}
@@ -33,17 +35,20 @@ const FlipkartOffers = ({ flipkartOffers }) => {
                   e.target.src = "/img-notfound.jpg";
                 }}
                 height="50"
-                width="100%"
+                // width="100"
               />
-            </a>
+
           </Link>
         </div>
         
         <h5>
-          <Link href={`${offer.url  + "&afffor=flipkart&affid=vishwajit8" }`} as={`${offer.url  + "&afffor=flipkart&affid=vishwajit8" }`}>
-            <a target="_blank">
-              {offer.title}
-            </a>
+          <Link
+            href={`${offer.url  + "&afffor=flipkart&affid=vishwajit8" }`}
+            as={`${offer.url  + "&afffor=flipkart&affid=vishwajit8" }`}
+            target="_blank">
+
+            {offer.title}
+
           </Link>
         </h5>
         <p> {offer.name}</p>

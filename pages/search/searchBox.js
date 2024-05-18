@@ -60,7 +60,7 @@ export default function Search() {
           {results.map(({ id, slug, formatted_name }) => (
             <li className="result" key={id}>
               <Link href="/store/[slug]" as={`/store/${slug}`}>
-                <a>{highLight(formatted_name)}</a>
+                {highLight(formatted_name)}
               </Link>
             </li>
           ))}

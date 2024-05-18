@@ -43,7 +43,7 @@ const Card = (props) => {
                               }}
                               alt={value["Title"]}
                               height="50"
-                              width="100%"
+                              width="100"
                             />{" "}
                           </div>
                         </div>
@@ -52,23 +52,23 @@ const Card = (props) => {
                         <div className="deal__desc-type"></div>
                         <div className="deal__desc-title">
                           <h3>
-                            <Link href={value["URL"]}>
-                              <a
-                                data-url={value["URL"]}
-                                data-promolink={value["URL"]}
-                                data-func="getPromoCode"
-                                className="getPromoCode"
-                                target="_blank"
-                                title={
-                                  `DealsTodayIndia.com - Promo code for ` +
-                                  value["Campaign_Name"] +
-                                  ` deal ` +
-                                  value["Title"]
-                                }
-                                rel="nofollow"
-                              >
-                                {value["Merchant"]} : {value["Title"]}
-                              </a>
+                            <Link
+                              href={value["URL"]}
+                              data-url={value["URL"]}
+                              data-promolink={value["URL"]}
+                              data-func="getPromoCode"
+                              className="getPromoCode"
+                              target="_blank"
+                              title={
+                                `DealsTodayIndia.com - Promo code for ` +
+                                value["Campaign_Name"] +
+                                ` deal ` +
+                                value["Title"]
+                              }
+                              rel="nofollow">
+
+                              {value["Merchant"]}:{value["Title"]}
+
                             </Link>
                           </h3>
                         </div>
@@ -87,22 +87,22 @@ const Card = (props) => {
                         <div className="deal__cta">
                           
                             <div>
-                              <Link href={'product/'+slug(value["Title"])}>
-                                <a
-                                  // href={`/goto`}
-                                  data-url={'product/'+slug(value["Title"])}
-                                  // data-promocode={}
-                                  // data-species={}
-                                  // data-promolink={}
-                                  data-func="getDeal"
-                                  className="getDeal"
-                                  // data-website={}
-                                  target="_blank"
-                                  // gotoLink = {value[11]}
-                                  rel="nofollow"
-                                >
+                              <Link
+                                href={'product/'+slug(value["Title"])}
+                                // href={`/goto`}
+                                data-url={'product/'+slug(value["Title"])}
+                                // data-promocode={}
+                                // data-species={}
+                                // data-promolink={}
+                                data-func="getDeal"
+                                className="getDeal"
+                                // data-website={}
+                                target="_blank"
+                                // gotoLink = {value[11]}
+                                rel="nofollow">
+                                
                                   Get Deal
-                                </a>
+                                
                               </Link>
                             </div>
                         </div>

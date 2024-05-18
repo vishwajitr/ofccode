@@ -8,8 +8,11 @@ const TopKeywords = ({ keywordSet }) => {
   if(Keywords){
   const LiElements = Keywords.map((keyword, index) => (
     <li className="storeCard-Col" key={index}>
-        <Link href={`/${keyword.keyword_slug}`} as={`/${keyword.keyword_slug}`}>
-            <a className="link">{keyword.keyword}</a>
+        <Link
+          href={`/${keyword.keyword_slug}`}
+          as={`/${keyword.keyword_slug}`}
+          className="link">
+            {keyword.keyword}
         </Link>
     </li>
   ));

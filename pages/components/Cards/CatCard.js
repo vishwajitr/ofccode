@@ -21,18 +21,18 @@ const CatCard = (props) => {
                     <Link
                       href={`${products[value].url}`}
                       as={`${products[value].url}`}
-                    >
-                      <a target="_blank">
-                        <Image
-                          src={`${products[value]["image_url"]}`}
-                          onError={(e) => {
-                            e.target.onerror = null;
-                            e.target.src = "/img-notfound.jpg";
-                          }}
-                          height="50"
-                          width="100%"
-                        />
-                      </a>
+                      target="_blank">
+
+                      <Image
+                        src={`${products[value]["image_url"]}`}
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = "/img-notfound.jpg";
+                        }}
+                        height="50"
+                        width="100"
+                      />
+
                     </Link>
                   </div>
                   
@@ -42,8 +42,8 @@ const CatCard = (props) => {
                         // as={`/product/${slug(products[value].url)}`}
                         href={`${products[value].url}`}
                         as={`${products[value].url}`}
-                      >
-                        <a target="_blank">{products[value].title}</a>
+                        target="_blank">
+                        {products[value].title}
                       </Link>
                     </h5>
                 </li>

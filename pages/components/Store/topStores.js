@@ -10,14 +10,14 @@ const TopStores = ({ storeInfo }) => {
       <li className="storeCard-Col" key={index}>
         <div className="storeCard storeCard-small">
           <Link href={`/store/${store.slug}`} as={`/store/${store.slug}`}>
-            <a>             
-              <LazyLoadImage alt={store.formatted_name} effect="blur" src={`/stores__logo/${store.slug}-logo-large.jpg`} onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = "/img-notfound.jpg";
-              }} />
-            </a>
+
+            <LazyLoadImage alt={store.formatted_name} effect="blur" src={`/stores__logo/${store.slug}-logo-large.jpg`} onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = "/img-notfound.jpg";
+            }} />
+
           </Link>
-          <Link href={`/store/${store.slug}`} as={`/store/${store.slug}`}>
+          <Link href={`/store/${store.slug}`} as={`/store/${store.slug}`} legacyBehavior>
             <h5>
               <a className="nav-link">{store.formatted_name}</a>
             </h5>

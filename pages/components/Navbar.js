@@ -6,22 +6,22 @@ const Navbar = () => {
             <ul>
             <li >
             <Link href="/home">
-            <a>home</a>   
+            home   
             </Link>
             </li>
             <li >
             <Link href="/about">
-            <a>About</a>   
+            About   
             </Link>
             </li>   
             <li >
             <Link href="/terms">
-            <a>terms</a>   
+            terms   
             </Link>
             </li>        
             </ul> 
         </div>
-    )
+    );
 }
 
 export default Navbar;

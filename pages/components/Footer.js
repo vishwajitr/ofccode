@@ -47,7 +47,7 @@ const FooterLinksList = () => {
     <li className="nav-item" key={index}>
       <i className="fas fa-angle-double-right"></i>
       <Link href={list.path}>
-        <a>{list.label}</a>
+        {list.label}
       </Link>
     </li>
   ));

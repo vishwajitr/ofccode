@@ -103,7 +103,7 @@ const Card = (props) => {
                                 }}
                                 alt={value[1]}
                                 height="50"
-                                width="100%"
+                                width="100"
                               />{" "}
                             </div>
                           </div>
@@ -165,22 +165,22 @@ const Card = (props) => {
                               </a>
                             ) : (
                               <div>
-                                <Link href={value[11]}>
-                                  <a
-                                    // href={`/goto`}
-                                    data-url={value[10]}
-                                    data-promocode={value[9]}
-                                    data-species={value[8]}
-                                    data-promolink={value[10]}
-                                    data-func="getDeal"
-                                    className="getDeal"
-                                    data-website={value[2]}
-                                    target="_blank"
-                                    // gotoLink = {value[11]}
-                                    rel="nofollow"
-                                  >
+                                <Link
+                                  href={value[11]}
+                                  // href={`/goto`}
+                                  data-url={value[10]}
+                                  data-promocode={value[9]}
+                                  data-species={value[8]}
+                                  data-promolink={value[10]}
+                                  data-func="getDeal"
+                                  className="getDeal"
+                                  data-website={value[2]}
+                                  target="_blank"
+                                  // gotoLink = {value[11]}
+                                  rel="nofollow">
+                                  
                                     Get Deal
-                                  </a>
+                                  
                                 </Link>
                               </div>
                             )}

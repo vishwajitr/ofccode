@@ -12,17 +12,19 @@ var slug = require('slug')
 
 const FlipkartCategories = ({ flipkartCategories }) => {
  
-return(
-
+return (
   <div>
       <ul>
         {Object.keys(flipkartCategories).map((value, index)=>(
             <li>  
             <h6>  
-            <Link href={`categories/${flipkartCategories[index]['cat__name'].replace(" ", "-")}`} as={`categories/${flipkartCategories[index]['cat__name'].replace(" ", "-")}`}>
-            <a target="_blank">
-            {`${flipkartCategories[index]['cat__name']}`}
-            </a>
+            <Link
+              href={`categories/${flipkartCategories[index]['cat__name'].replace(" ", "-")}`}
+              as={`categories/${flipkartCategories[index]['cat__name'].replace(" ", "-")}`}
+              target="_blank">
+
+              {`${flipkartCategories[index]['cat__name']}`}
+
             </Link>
             </h6>
             </li>
@@ -30,7 +32,7 @@ return(
       </ul>
 
   </div>
-)
+);
 }
 
 
