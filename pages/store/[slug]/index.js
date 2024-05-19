@@ -93,7 +93,7 @@ export async function getServerSideProps({ params }) {
 
 
   let localstoresRes = await fetch(
-    `https://ofccode-api-sportybruh1990s-projects.vercel.app/api/front/search/offers__by__query?q=${storeSlug}`
+    `https://ofccode-api-sportybruh1990s-projects.vercel.app/api/front/search/offers__by__store__slug?q=${storeSlug}`
   );
   let localstoresOffers = await localstoresRes.json();  
   localstoresOffers = (localstoresOffers.results.length > 0) ? localstoresOffers : []
