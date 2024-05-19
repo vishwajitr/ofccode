@@ -95,7 +95,7 @@ export async function getServerSideProps({ params }) {
   
   return {
     props: {
-      keywordInfo: storeId,
+      keywordInfo: getStoreIdRes,
       keywordSet: getKeywordsRes,
       cuelinksOffers: cuelinksOffers.results,
     },
