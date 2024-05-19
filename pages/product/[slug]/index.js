@@ -75,7 +75,7 @@ return <div className="ProdPage">
   `-logo-large.jpg`
   }
   height="80"
-  width="100px"
+  width="100"
   />
   </div>
   </a>
@@ -92,7 +92,7 @@ return <div className="ProdPage">
 export async function getServerSideProps({ params }) {
   const Slug = params.slug;
   // console.log(params)
-    const res = await fetch(`https://ofccode-api-sportybruh1990s-projects.vercel.app/api/front/search/prod__by__slug?q=${Slug}`)
+    const res = await fetch(`https://ofccode-api-sportybruh1990s-projects.vercel.app/api/front/search/offers__by__query?q=${Slug}`)
     const json = await res.json()
     let jsonData = json.results[0]
     // console.log(json)
