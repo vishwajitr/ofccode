@@ -9,7 +9,7 @@ export default function Search() {
   const [active, setActive] = useState(false);
   const [results, setResults] = useState([]);
 
-  const searchEndpoint = (query) => `https://ofccode-api-sportybruh1990s-projects.vercel.app/api/front/kws__by__query?q=${query}`;
+  const searchEndpoint = (query) => `https://ofccode-api-sportybruh1990s-projects.vercel.app/api/front/search/kws__by__query?q=${query}`;
 
   // Debouncing function
   const debounce = (func, delay) => {

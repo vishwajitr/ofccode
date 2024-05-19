@@ -9,7 +9,7 @@ export default function Search() {
   const [active, setActive] = useState(false);
   const [results, setResults] = useState([]);
 
-  const searchEndpoint = (query) => `//140.238.244.200/search/stores__by__query?q=${query}`;
+  const searchEndpoint = (query) => `//ofccode-api-sportybruh1990s-projects.vercel.app/api/front/search/stores__by__query?q=${query}`;
 
 
   const onChange = useCallback((event) => {
