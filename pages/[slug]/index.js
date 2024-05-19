@@ -77,8 +77,8 @@ export async function getServerSideProps({ params }) {
   const getStoreIdRes = await response.json();
 
   console.log(getStoreIdRes)
-  const storeId = getStoreIdRes.results[0].dataSet__storesId[0];
-  const dataUrl = getStoreIdRes.results[0].dataSet__offers;
+  const storeId = getStoreIdRes.dataSet__storesId[0];
+  const dataUrl = getStoreIdRes.dataSet__offers;
   const clinksRes =  await fetch(
     dataUrl
   );
@@ -87,7 +87,7 @@ export async function getServerSideProps({ params }) {
 
 
   const kws__response = await fetch(
-    `https://ofccode-api-sportybruh1990s-projects.vercel.app/api/front/search/keywords`
+    `https://ofccode-api-sportybruh1990s-projects.vercel.app/api/front/keywords`
   );
   const getKeywordsRes = await kws__response.json();
 
@@ -95,8 +95,8 @@ export async function getServerSideProps({ params }) {
   
   return {
     props: {
-      keywordInfo: getStoreIdRes.results[0],
-      keywordSet: getKeywordsRes.results,
+      keywordInfo: storeId,
+      keywordSet: getKeywordsRes,
       cuelinksOffers: cuelinksOffers.results,
     },
   };
