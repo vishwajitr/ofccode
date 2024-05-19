@@ -277,7 +277,6 @@ class PrivacyPage extends Component {
             using the internet. We encourage parents and guardians to observe,
             participate in, and/or monitor and guide their online activity.
           </p>
-
           <p>
             DealsTodayIndia.com does not knowingly collect any Personal Identifiable
             Information from children under the age of 13. If you think that
