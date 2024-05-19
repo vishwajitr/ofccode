@@ -72,7 +72,7 @@ const StorePage = (props) => {
 export async function getServerSideProps({ params }) {
   const Slug = params.slug;
   const response = await fetch(
-    `https://ofccode-api-sportybruh1990s-projects.vercel.app/api/front/kws__by__slug?q=${Slug}`
+    `https://ofccode-api-sportybruh1990s-projects.vercel.app/api/front/search/kws__by__slug?q=${Slug}`
   );
   const getStoreIdRes = await response.json();
 
@@ -87,7 +87,7 @@ export async function getServerSideProps({ params }) {
 
 
   const kws__response = await fetch(
-    `https://ofccode-api-sportybruh1990s-projects.vercel.app/api/front/keywords`
+    `https://ofccode-api-sportybruh1990s-projects.vercel.app/api/front/search/keywords`
   );
   const getKeywordsRes = await kws__response.json();
 
